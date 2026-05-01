@@ -1,6 +1,6 @@
 ﻿namespace BuzzCafe
 {
-    partial class Coffeemenu
+    partial class CakesMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Coffeemenu));
-            lblCoffeemenu = new Label();
-            panel1 = new Panel();
-            btnsnacks = new Button();
-            btnCoffee = new Button();
-            btnbeverage = new Button();
-            btncake = new Button();
-            btnlogo = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CakesMenu));
             panelcoffee = new Panel();
             btncappu = new Button();
             btnespresso = new Button();
@@ -43,21 +36,84 @@
             btnmocha = new Button();
             btnlatte = new Button();
             btnamericano = new Button();
-            panel1.SuspendLayout();
+            panel1 = new Panel();
+            btnsnacks = new Button();
+            btnCoffee = new Button();
+            btnbeverage = new Button();
+            btncake = new Button();
+            btnlogo = new Button();
+            lblCakemenu = new Label();
             panelcoffee.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // lblCoffeemenu
+            // panelcoffee
             // 
-            lblCoffeemenu.AutoSize = true;
-            lblCoffeemenu.BackColor = Color.Transparent;
-            lblCoffeemenu.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCoffeemenu.ForeColor = Color.Black;
-            lblCoffeemenu.Location = new Point(210, 13);
-            lblCoffeemenu.Name = "lblCoffeemenu";
-            lblCoffeemenu.Size = new Size(181, 56);
-            lblCoffeemenu.TabIndex = 9;
-            lblCoffeemenu.Text = "Coffee";
+            panelcoffee.BackColor = Color.Silver;
+            panelcoffee.Controls.Add(btncappu);
+            panelcoffee.Controls.Add(btnespresso);
+            panelcoffee.Controls.Add(btnbreve);
+            panelcoffee.Controls.Add(btnmocha);
+            panelcoffee.Controls.Add(btnlatte);
+            panelcoffee.Controls.Add(btnamericano);
+            panelcoffee.Location = new Point(106, 77);
+            panelcoffee.Name = "panelcoffee";
+            panelcoffee.Size = new Size(403, 652);
+            panelcoffee.TabIndex = 14;
+            // 
+            // btncappu
+            // 
+            btncappu.BackgroundImageLayout = ImageLayout.Zoom;
+            btncappu.Location = new Point(203, 417);
+            btncappu.Name = "btncappu";
+            btncappu.Size = new Size(158, 201);
+            btncappu.TabIndex = 5;
+            btncappu.UseVisualStyleBackColor = true;
+            // 
+            // btnespresso
+            // 
+            btnespresso.BackgroundImageLayout = ImageLayout.Stretch;
+            btnespresso.Location = new Point(27, 417);
+            btnespresso.Name = "btnespresso";
+            btnespresso.Size = new Size(158, 201);
+            btnespresso.TabIndex = 4;
+            btnespresso.UseVisualStyleBackColor = true;
+            // 
+            // btnbreve
+            // 
+            btnbreve.BackgroundImageLayout = ImageLayout.Zoom;
+            btnbreve.Location = new Point(203, 210);
+            btnbreve.Name = "btnbreve";
+            btnbreve.Size = new Size(158, 201);
+            btnbreve.TabIndex = 3;
+            btnbreve.UseVisualStyleBackColor = true;
+            // 
+            // btnmocha
+            // 
+            btnmocha.BackgroundImageLayout = ImageLayout.Stretch;
+            btnmocha.Location = new Point(27, 210);
+            btnmocha.Name = "btnmocha";
+            btnmocha.Size = new Size(158, 201);
+            btnmocha.TabIndex = 2;
+            btnmocha.UseVisualStyleBackColor = true;
+            // 
+            // btnlatte
+            // 
+            btnlatte.BackgroundImageLayout = ImageLayout.Stretch;
+            btnlatte.Location = new Point(203, 3);
+            btnlatte.Name = "btnlatte";
+            btnlatte.Size = new Size(158, 201);
+            btnlatte.TabIndex = 1;
+            btnlatte.UseVisualStyleBackColor = true;
+            // 
+            // btnamericano
+            // 
+            btnamericano.BackgroundImageLayout = ImageLayout.Stretch;
+            btnamericano.Location = new Point(27, 3);
+            btnamericano.Name = "btnamericano";
+            btnamericano.Size = new Size(158, 201);
+            btnamericano.TabIndex = 0;
+            btnamericano.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -67,10 +123,10 @@
             panel1.Controls.Add(btnbeverage);
             panel1.Controls.Add(btncake);
             panel1.Controls.Add(btnlogo);
-            panel1.Location = new Point(3, 7);
+            panel1.Location = new Point(4, 8);
             panel1.Name = "panel1";
             panel1.Size = new Size(100, 723);
-            panel1.TabIndex = 10;
+            panel1.TabIndex = 13;
             // 
             // btnsnacks
             // 
@@ -129,113 +185,52 @@
             btnlogo.TabIndex = 14;
             btnlogo.UseVisualStyleBackColor = false;
             // 
-            // panelcoffee
+            // lblCakemenu
             // 
-            panelcoffee.BackColor = Color.Silver;
-            panelcoffee.Controls.Add(btncappu);
-            panelcoffee.Controls.Add(btnespresso);
-            panelcoffee.Controls.Add(btnbreve);
-            panelcoffee.Controls.Add(btnmocha);
-            panelcoffee.Controls.Add(btnlatte);
-            panelcoffee.Controls.Add(btnamericano);
-            panelcoffee.Location = new Point(104, 77);
-            panelcoffee.Name = "panelcoffee";
-            panelcoffee.Size = new Size(403, 652);
-            panelcoffee.TabIndex = 11;
+            lblCakemenu.AutoSize = true;
+            lblCakemenu.BackColor = Color.Transparent;
+            lblCakemenu.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCakemenu.ForeColor = Color.Black;
+            lblCakemenu.Location = new Point(218, 12);
+            lblCakemenu.Name = "lblCakemenu";
+            lblCakemenu.Size = new Size(169, 56);
+            lblCakemenu.TabIndex = 12;
+            lblCakemenu.Text = "Cakes";
+            lblCakemenu.Click += lblCoffeemenu_Click;
             // 
-            // btncappu
-            // 
-            btncappu.BackgroundImage = Properties.Resources.cappu;
-            btncappu.BackgroundImageLayout = ImageLayout.Zoom;
-            btncappu.Location = new Point(203, 417);
-            btncappu.Name = "btncappu";
-            btncappu.Size = new Size(158, 201);
-            btncappu.TabIndex = 5;
-            btncappu.UseVisualStyleBackColor = true;
-            // 
-            // btnespresso
-            // 
-            btnespresso.BackgroundImage = (Image)resources.GetObject("btnespresso.BackgroundImage");
-            btnespresso.BackgroundImageLayout = ImageLayout.Stretch;
-            btnespresso.Location = new Point(27, 417);
-            btnespresso.Name = "btnespresso";
-            btnespresso.Size = new Size(158, 201);
-            btnespresso.TabIndex = 4;
-            btnespresso.UseVisualStyleBackColor = true;
-            // 
-            // btnbreve
-            // 
-            btnbreve.BackgroundImage = Properties.Resources.breve;
-            btnbreve.BackgroundImageLayout = ImageLayout.Zoom;
-            btnbreve.Location = new Point(203, 210);
-            btnbreve.Name = "btnbreve";
-            btnbreve.Size = new Size(158, 201);
-            btnbreve.TabIndex = 3;
-            btnbreve.UseVisualStyleBackColor = true;
-            // 
-            // btnmocha
-            // 
-            btnmocha.BackgroundImage = Properties.Resources.mocha;
-            btnmocha.BackgroundImageLayout = ImageLayout.Stretch;
-            btnmocha.Location = new Point(27, 210);
-            btnmocha.Name = "btnmocha";
-            btnmocha.Size = new Size(158, 201);
-            btnmocha.TabIndex = 2;
-            btnmocha.UseVisualStyleBackColor = true;
-            // 
-            // btnlatte
-            // 
-            btnlatte.BackgroundImage = Properties.Resources.latterr;
-            btnlatte.BackgroundImageLayout = ImageLayout.Stretch;
-            btnlatte.Location = new Point(203, 3);
-            btnlatte.Name = "btnlatte";
-            btnlatte.Size = new Size(158, 201);
-            btnlatte.TabIndex = 1;
-            btnlatte.UseVisualStyleBackColor = true;
-            // 
-            // btnamericano
-            // 
-            btnamericano.BackgroundImage = Properties.Resources.ameri;
-            btnamericano.BackgroundImageLayout = ImageLayout.Stretch;
-            btnamericano.Location = new Point(27, 3);
-            btnamericano.Name = "btnamericano";
-            btnamericano.Size = new Size(158, 201);
-            btnamericano.TabIndex = 0;
-            btnamericano.UseVisualStyleBackColor = true;
-            // 
-            // Coffeemenu
+            // CakesMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__4_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(512, 728);
             Controls.Add(panelcoffee);
             Controls.Add(panel1);
-            Controls.Add(lblCoffeemenu);
-            Name = "Coffeemenu";
-            Text = "Coffeemenu";
-            Load += Coffeemenu_Load;
-            panel1.ResumeLayout(false);
+            Controls.Add(lblCakemenu);
+            Name = "CakesMenu";
+            Text = "CakesMenu";
             panelcoffee.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label lblCoffeemenu;
+
+        private Panel panelcoffee;
+        private Button btncappu;
+        private Button btnespresso;
+        private Button btnbreve;
+        private Button btnmocha;
+        private Button btnlatte;
+        private Button btnamericano;
         private Panel panel1;
         private Button btnsnacks;
         private Button btnCoffee;
         private Button btnbeverage;
         private Button btncake;
         private Button btnlogo;
-        private Panel panelcoffee;
-        private Button btnespresso;
-        private Button btnbreve;
-        private Button btnmocha;
-        private Button btnlatte;
-        private Button btnamericano;
-        private Button btncappu;
+        private Label lblCakemenu;
     }
 }

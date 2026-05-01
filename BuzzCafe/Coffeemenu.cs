@@ -29,5 +29,10 @@ namespace BuzzCafe
         {
 
         }
+
+        private void Coffeemenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BuzzCafe
 {
-    partial class Beverage
+    partial class Homemenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,121 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Beverage));
-            panel1 = new Panel();
-            btnsnacks = new Button();
-            btnCoffee = new Button();
-            btnbeverage = new Button();
-            btncake = new Button();
-            btnlogo = new Button();
-            lblBeverage = new Label();
-            panel2 = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homemenu));
+            panelcoffee = new Panel();
             btncappu = new Button();
             btnespresso = new Button();
             btnbreve = new Button();
             btnmocha = new Button();
             btnlatte = new Button();
             btnamericano = new Button();
+            panel1 = new Panel();
+            btnsnacks = new Button();
+            btnCoffee = new Button();
+            btnbeverage = new Button();
+            btncake = new Button();
+            btnlogo = new Button();
+            lblBestSeller = new Label();
+            panelcoffee.SuspendLayout();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelcoffee
             // 
-            panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(btnsnacks);
-            panel1.Controls.Add(btnCoffee);
-            panel1.Controls.Add(btnbeverage);
-            panel1.Controls.Add(btncake);
-            panel1.Controls.Add(btnlogo);
-            panel1.Location = new Point(3, 7);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(100, 723);
-            panel1.TabIndex = 1;
-            // 
-            // btnsnacks
-            // 
-            btnsnacks.BackColor = SystemColors.ControlLightLight;
-            btnsnacks.Font = new Font("Georgia", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnsnacks.Location = new Point(2, 278);
-            btnsnacks.Name = "btnsnacks";
-            btnsnacks.Size = new Size(94, 66);
-            btnsnacks.TabIndex = 17;
-            btnsnacks.Text = "Snacks";
-            btnsnacks.UseVisualStyleBackColor = false;
-            btnsnacks.Click += button2_Click;
-            // 
-            // btnCoffee
-            // 
-            btnCoffee.BackColor = SystemColors.ControlLightLight;
-            btnCoffee.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCoffee.Location = new Point(3, 71);
-            btnCoffee.Name = "btnCoffee";
-            btnCoffee.Size = new Size(94, 66);
-            btnCoffee.TabIndex = 17;
-            btnCoffee.Text = "Coffee";
-            btnCoffee.UseVisualStyleBackColor = false;
-            // 
-            // btnbeverage
-            // 
-            btnbeverage.BackColor = SystemColors.ControlLightLight;
-            btnbeverage.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnbeverage.Location = new Point(3, 140);
-            btnbeverage.Name = "btnbeverage";
-            btnbeverage.Size = new Size(94, 66);
-            btnbeverage.TabIndex = 17;
-            btnbeverage.Text = "Beverage";
-            btnbeverage.UseVisualStyleBackColor = false;
-            // 
-            // btncake
-            // 
-            btncake.BackColor = SystemColors.ControlLightLight;
-            btncake.Font = new Font("Georgia", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btncake.Location = new Point(2, 209);
-            btncake.Name = "btncake";
-            btncake.Size = new Size(94, 66);
-            btncake.TabIndex = 17;
-            btncake.Text = "Cakes";
-            btncake.UseVisualStyleBackColor = false;
-            // 
-            // btnlogo
-            // 
-            btnlogo.BackColor = Color.Transparent;
-            btnlogo.BackgroundImage = (Image)resources.GetObject("btnlogo.BackgroundImage");
-            btnlogo.FlatAppearance.BorderSize = 0;
-            btnlogo.FlatStyle = FlatStyle.Flat;
-            btnlogo.ForeColor = Color.Black;
-            btnlogo.Location = new Point(4, 7);
-            btnlogo.Name = "btnlogo";
-            btnlogo.Size = new Size(91, 60);
-            btnlogo.TabIndex = 14;
-            btnlogo.UseVisualStyleBackColor = false;
-            // 
-            // lblBeverage
-            // 
-            lblBeverage.AutoSize = true;
-            lblBeverage.BackColor = Color.Transparent;
-            lblBeverage.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBeverage.ForeColor = Color.Black;
-            lblBeverage.Location = new Point(168, 14);
-            lblBeverage.Name = "lblBeverage";
-            lblBeverage.Size = new Size(250, 56);
-            lblBeverage.TabIndex = 10;
-            lblBeverage.Text = "Beverage";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Silver;
-            panel2.Controls.Add(btncappu);
-            panel2.Controls.Add(btnespresso);
-            panel2.Controls.Add(btnbreve);
-            panel2.Controls.Add(btnmocha);
-            panel2.Controls.Add(btnlatte);
-            panel2.Controls.Add(btnamericano);
-            panel2.Location = new Point(105, 78);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(403, 652);
-            panel2.TabIndex = 12;
+            panelcoffee.BackColor = Color.Silver;
+            panelcoffee.Controls.Add(btncappu);
+            panelcoffee.Controls.Add(btnespresso);
+            panelcoffee.Controls.Add(btnbreve);
+            panelcoffee.Controls.Add(btnmocha);
+            panelcoffee.Controls.Add(btnlatte);
+            panelcoffee.Controls.Add(btnamericano);
+            panelcoffee.Location = new Point(106, 77);
+            panelcoffee.Name = "panelcoffee";
+            panelcoffee.Size = new Size(403, 652);
+            panelcoffee.TabIndex = 13;
             // 
             // btncappu
             // 
@@ -198,39 +115,121 @@
             btnamericano.TabIndex = 0;
             btnamericano.UseVisualStyleBackColor = true;
             // 
-            // Beverage
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ControlDarkDark;
+            panel1.Controls.Add(btnsnacks);
+            panel1.Controls.Add(btnCoffee);
+            panel1.Controls.Add(btnbeverage);
+            panel1.Controls.Add(btncake);
+            panel1.Controls.Add(btnlogo);
+            panel1.Location = new Point(5, 8);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(100, 720);
+            panel1.TabIndex = 12;
+            // 
+            // btnsnacks
+            // 
+            btnsnacks.BackColor = SystemColors.ControlLightLight;
+            btnsnacks.Font = new Font("Georgia", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnsnacks.Location = new Point(2, 278);
+            btnsnacks.Name = "btnsnacks";
+            btnsnacks.Size = new Size(94, 66);
+            btnsnacks.TabIndex = 17;
+            btnsnacks.Text = "Snacks";
+            btnsnacks.UseVisualStyleBackColor = false;
+            // 
+            // btnCoffee
+            // 
+            btnCoffee.BackColor = SystemColors.ControlLightLight;
+            btnCoffee.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCoffee.Location = new Point(3, 71);
+            btnCoffee.Name = "btnCoffee";
+            btnCoffee.Size = new Size(94, 66);
+            btnCoffee.TabIndex = 17;
+            btnCoffee.Text = "Coffee";
+            btnCoffee.UseVisualStyleBackColor = false;
+            // 
+            // btnbeverage
+            // 
+            btnbeverage.BackColor = SystemColors.ControlLightLight;
+            btnbeverage.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnbeverage.Location = new Point(3, 140);
+            btnbeverage.Name = "btnbeverage";
+            btnbeverage.Size = new Size(94, 66);
+            btnbeverage.TabIndex = 17;
+            btnbeverage.Text = "Beverage";
+            btnbeverage.UseVisualStyleBackColor = false;
+            // 
+            // btncake
+            // 
+            btncake.BackColor = SystemColors.ControlLightLight;
+            btncake.Font = new Font("Georgia", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btncake.Location = new Point(2, 209);
+            btncake.Name = "btncake";
+            btncake.Size = new Size(94, 66);
+            btncake.TabIndex = 17;
+            btncake.Text = "Cakes";
+            btncake.UseVisualStyleBackColor = false;
+            // 
+            // btnlogo
+            // 
+            btnlogo.BackColor = Color.Transparent;
+            btnlogo.BackgroundImage = (Image)resources.GetObject("btnlogo.BackgroundImage");
+            btnlogo.FlatAppearance.BorderSize = 0;
+            btnlogo.FlatStyle = FlatStyle.Flat;
+            btnlogo.ForeColor = Color.Black;
+            btnlogo.Location = new Point(4, 6);
+            btnlogo.Name = "btnlogo";
+            btnlogo.Size = new Size(91, 60);
+            btnlogo.TabIndex = 14;
+            btnlogo.UseVisualStyleBackColor = false;
+            // 
+            // lblBestSeller
+            // 
+            lblBestSeller.AutoSize = true;
+            lblBestSeller.BackColor = Color.Transparent;
+            lblBestSeller.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBestSeller.ForeColor = Color.Black;
+            lblBestSeller.Location = new Point(155, 14);
+            lblBestSeller.Name = "lblBestSeller";
+            lblBestSeller.Size = new Size(287, 56);
+            lblBestSeller.TabIndex = 14;
+            lblBestSeller.Text = "Best Seller";
+            // 
+            // Homemenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__4_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(512, 728);
-            Controls.Add(panel2);
-            Controls.Add(lblBeverage);
+            Controls.Add(lblBestSeller);
+            Controls.Add(panelcoffee);
             Controls.Add(panel1);
-            Name = "Beverage";
-            Text = "Beverage";
+            Name = "Homemenu";
+            Text = "Homemenu";
+            panelcoffee.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Panel panel1;
-        private Button btnsnacks;
-        private Button btnbeverage;
-        private Button btncake;
-        private Button btnCoffee;
-        private Button btnlogo;
-        private Label lblBeverage;
-        private Panel panel2;
+        private Panel panelcoffee;
         private Button btncappu;
         private Button btnespresso;
         private Button btnbreve;
         private Button btnmocha;
         private Button btnlatte;
         private Button btnamericano;
+        private Panel panel1;
+        private Button btnsnacks;
+        private Button btnCoffee;
+        private Button btnbeverage;
+        private Button btncake;
+        private Button btnlogo;
+        private Label lblBestSeller;
     }
 }
