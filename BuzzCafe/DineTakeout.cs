@@ -23,7 +23,7 @@ namespace BuzzCafe
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            //eto kita ba?
         }
 
         private void button1_Click(object sender, EventArgs e)
