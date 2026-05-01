@@ -7,12 +7,12 @@ using System.Data.SqlClient;
 
 namespace BuzzCafe
 {
-    public class DBconnection
+    public class DBConnection
     {
         public static string con = "Data Source=.\\SQLEXPRESS;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";
 
 
-        public static SqlConnection GetSqlConnection()
+        public static SqlConnection GetConnection()
         {
             return new SqlConnection(con);
         }

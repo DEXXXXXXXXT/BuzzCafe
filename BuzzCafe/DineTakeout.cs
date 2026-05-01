@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+
 
 
 namespace BuzzCafe
@@ -16,10 +18,7 @@ namespace BuzzCafe
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -29,6 +28,13 @@ namespace BuzzCafe
         private void button1_Click(object sender, EventArgs e)
         {
             //eto dex kita ba?
+            using (SqlConnection con = DBConnection.GetConnection())
+            {
+                string query = "INSERT INTO Orders(order_type) VALUES (@order_type)";
+
+
+                con.Open();
+            }
         }
     }
 }
