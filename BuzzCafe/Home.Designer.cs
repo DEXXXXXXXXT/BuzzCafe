@@ -76,7 +76,7 @@
             label1.Size = new Size(321, 56);
             label1.TabIndex = 0;
             label1.Text = "WELCOME!";
-            label1.Click += label1_Click_1;
+       
             // 
             // label2
             // 
@@ -89,7 +89,7 @@
             label2.Size = new Size(374, 112);
             label2.TabIndex = 7;
             label2.Text = "Start your day\r\n  with coffee";
-            label2.Click += label2_Click;
+           
             // 
             // panelhome
             // 
@@ -143,7 +143,7 @@
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = " Buzz Coffee";
-            Load += Form1_Load;
+          
             panelhome.ResumeLayout(false);
             panelhome.PerformLayout();
             ResumeLayout(false);
