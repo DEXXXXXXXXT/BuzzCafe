@@ -5,12 +5,6 @@
     <Compile Update="Pasteries.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CakesMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Coffeemenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="DineTakeout.cs">
       <SubType>Form</SubType>
     </Compile>
