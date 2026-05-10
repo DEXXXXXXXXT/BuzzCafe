@@ -52,17 +52,7 @@
             panel1.Size = new Size(114, 960);
             panel1.TabIndex = 12;
             // 
-            // btnsnacks
-            // 
-            btnsnacks.BackColor = SystemColors.ControlLightLight;
-            btnsnacks.Font = new Font("Georgia", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnsnacks.Location = new Point(2, 278);
-            btnsnacks.Name = "btnsnacks";
-            btnsnacks.Size = new Size(94, 66);
-            btnsnacks.TabIndex = 17;
-            btnsnacks.Text = "Snacks";
-            btnsnacks.UseVisualStyleBackColor = false;
-            // 
+
             // btnCoffee
             // 
             btnCoffee.BackColor = SystemColors.ControlLightLight;
