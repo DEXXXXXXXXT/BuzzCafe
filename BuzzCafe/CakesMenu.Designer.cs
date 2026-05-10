@@ -37,7 +37,6 @@
             btnlatte = new Button();
             btnamericano = new Button();
             panel1 = new Panel();
-            btnsnacks = new Button();
             btnCoffee = new Button();
             btnbeverage = new Button();
             btncake = new Button();
@@ -118,7 +117,6 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(btnsnacks);
             panel1.Controls.Add(btnCoffee);
             panel1.Controls.Add(btnbeverage);
             panel1.Controls.Add(btncake);
@@ -127,17 +125,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(100, 723);
             panel1.TabIndex = 13;
-            // 
-            // btnsnacks
-            // 
-            btnsnacks.BackColor = SystemColors.ControlLightLight;
-            btnsnacks.Font = new Font("Georgia", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnsnacks.Location = new Point(2, 278);
-            btnsnacks.Name = "btnsnacks";
-            btnsnacks.Size = new Size(94, 66);
-            btnsnacks.TabIndex = 17;
-            btnsnacks.Text = "Snacks";
-            btnsnacks.UseVisualStyleBackColor = false;
             // 
             // btnCoffee
             // 
@@ -158,7 +145,7 @@
             btnbeverage.Name = "btnbeverage";
             btnbeverage.Size = new Size(94, 66);
             btnbeverage.TabIndex = 17;
-            btnbeverage.Text = "Beverage";
+            btnbeverage.Text = "Pasteries";
             btnbeverage.UseVisualStyleBackColor = false;
             // 
             // btncake
@@ -169,7 +156,7 @@
             btncake.Name = "btncake";
             btncake.Size = new Size(94, 66);
             btncake.TabIndex = 17;
-            btncake.Text = "Cakes";
+            btncake.Text = "Rice Meal";
             btncake.UseVisualStyleBackColor = false;
             // 
             // btnlogo
@@ -191,18 +178,18 @@
             lblCakemenu.BackColor = Color.Transparent;
             lblCakemenu.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCakemenu.ForeColor = Color.Black;
-            lblCakemenu.Location = new Point(218, 12);
+            lblCakemenu.Location = new Point(169, 14);
             lblCakemenu.Name = "lblCakemenu";
-            lblCakemenu.Size = new Size(169, 56);
+            lblCakemenu.Size = new Size(266, 56);
             lblCakemenu.TabIndex = 12;
-            lblCakemenu.Text = "Cakes";
+            lblCakemenu.Text = "Rice Meal";
             lblCakemenu.Click += lblCoffeemenu_Click;
             // 
             // CakesMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            //BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__4_;
+            BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__1_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(512, 728);
             Controls.Add(panelcoffee);
@@ -226,7 +213,6 @@
         private Button btnlatte;
         private Button btnamericano;
         private Panel panel1;
-        private Button btnsnacks;
         private Button btnCoffee;
         private Button btnbeverage;
         private Button btncake;
