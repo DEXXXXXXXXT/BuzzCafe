@@ -22,44 +22,18 @@ namespace BuzzCafe
         {
             lbTopText.Text = "CAFE MENU";
         }
-        private void btnCoffee_Click(object sender, EventArgs e)
-        {
-            lbTopText.Text = "COFFEE'zz";
-            LoadProduct(1);
-            Homemenu hmenuu = new Homemenu();
-            hmenuu.Show();
-            this.Hide();
+        
+      
 
-        }
 
-        private void btnbeverage_Click(object sender, EventArgs e)
-        {
-            lbTopText.Text = "BEVERAGE'zz";
-            LoadProduct(2);
-            Pasteries paster = new Pasteries();
-            paster.Show();
-            this.Hide();
 
-        }
 
-        private void btncake_Click(object sender, EventArgs e)
-        {
-            lbTopText.Text = "CAKE'zz";
-            LoadProduct(3);
-        }
 
-        private void btnsnacks_Click(object sender, EventArgs e)
-        {
-            lbTopText.Text = "SNACK'zz";
-            LoadProduct(4);
-
-        }
         void ShowCoffee()
         {
-            lbTopText.Text = "COFFEE'zz";
+            lbTopText.Text = "Drink'zz";
             LoadProduct(1);
         }
-
         void LoadProduct(int category_id)
         {
             flLayoutMain.Controls.Clear();
@@ -135,5 +109,7 @@ namespace BuzzCafe
         {
 
         }
+
+        
     }
 }
