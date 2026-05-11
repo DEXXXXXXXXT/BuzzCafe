@@ -26,6 +26,9 @@ namespace BuzzCafe
         {
             lbTopText.Text = "COFFEE'zz";
             LoadProduct(1);
+            Homemenu hmenuu = new Homemenu();
+            hmenuu.Show();
+            this.Hide();
 
         }
 
@@ -33,6 +36,9 @@ namespace BuzzCafe
         {
             lbTopText.Text = "BEVERAGE'zz";
             LoadProduct(2);
+            Pasteries paster = new Pasteries();
+            paster.Show();
+            this.Hide();
 
         }
 
@@ -40,7 +46,6 @@ namespace BuzzCafe
         {
             lbTopText.Text = "CAKE'zz";
             LoadProduct(3);
-
         }
 
         private void btnsnacks_Click(object sender, EventArgs e)
@@ -126,5 +131,9 @@ namespace BuzzCafe
             return card;
         }
 
+        private void lbTopText_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

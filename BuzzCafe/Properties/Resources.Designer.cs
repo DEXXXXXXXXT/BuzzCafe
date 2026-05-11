@@ -173,6 +173,16 @@ namespace BuzzCafe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Black_and_White_Simple_Modern_Background_Instagram_Story__4_ {
+            get {
+                object obj = ResourceManager.GetObject("Black and White Simple Modern Background Instagram Story (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Black_and_White_Simple_Modern_Background_Instagram_Story__4__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Black_and_White_Simple_Modern_Background_Instagram_Story__4_-removebg-preview", resourceCulture);

@@ -77,7 +77,7 @@
             btnbeverage.Name = "btnbeverage";
             btnbeverage.Size = new Size(94, 66);
             btnbeverage.TabIndex = 17;
-            btnbeverage.Text = "Beverage";
+            btnbeverage.Text = "Pasteries";
             btnbeverage.UseVisualStyleBackColor = false;
             // 
             // btncake
@@ -88,7 +88,7 @@
             btncake.Name = "btncake";
             btncake.Size = new Size(94, 66);
             btncake.TabIndex = 17;
-            btncake.Text = "Cakes";
+            btncake.Text = "Rice Meal";
             btncake.UseVisualStyleBackColor = false;
             // 
             // btnlogo
@@ -112,9 +112,9 @@
             lblBeverage.ForeColor = Color.Black;
             lblBeverage.Location = new Point(168, 14);
             lblBeverage.Name = "lblBeverage";
-            lblBeverage.Size = new Size(250, 56);
+            lblBeverage.Size = new Size(252, 56);
             lblBeverage.TabIndex = 10;
-            lblBeverage.Text = "Beverage";
+            lblBeverage.Text = "Pasteries";
             lblBeverage.Click += lblBeverage_Click;
             // 
             // panel2
