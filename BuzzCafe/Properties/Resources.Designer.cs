@@ -544,9 +544,49 @@ namespace BuzzCafe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ricem_beef {
+            get {
+                object obj = ResourceManager.GetObject("ricem_beef", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ricem_burger {
             get {
                 object obj = ResourceManager.GetObject("ricem_burger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ricem_long {
+            get {
+                object obj = ResourceManager.GetObject("ricem_long", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ricem_pork {
+            get {
+                object obj = ResourceManager.GetObject("ricem_pork", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ricem_spam {
+            get {
+                object obj = ResourceManager.GetObject("ricem_spam", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -594,9 +634,29 @@ namespace BuzzCafe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap snack_moza {
+            get {
+                object obj = ResourceManager.GetObject("snack_moza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap snack_nachos {
             get {
                 object obj = ResourceManager.GetObject("snack_nachos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap snack_onion {
+            get {
+                object obj = ResourceManager.GetObject("snack_onion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
