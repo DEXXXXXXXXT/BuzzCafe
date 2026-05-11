@@ -76,7 +76,6 @@
             label1.Size = new Size(321, 56);
             label1.TabIndex = 0;
             label1.Text = "WELCOME!";
-       
             // 
             // label2
             // 
@@ -89,7 +88,6 @@
             label2.Size = new Size(374, 112);
             label2.TabIndex = 7;
             label2.Text = "Start your day\r\n  with coffee";
-           
             // 
             // panelhome
             // 
@@ -123,7 +121,7 @@
             btnStart.ForeColor = Color.White;
             btnStart.Location = new Point(0, 645);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(480, 73);
+            btnStart.Size = new Size(480, 70);
             btnStart.TabIndex = 8;
             btnStart.Text = "Touch to start";
             btnStart.UseVisualStyleBackColor = false;
@@ -143,7 +141,6 @@
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = " Buzz Coffee";
-          
             panelhome.ResumeLayout(false);
             panelhome.PerformLayout();
             ResumeLayout(false);
