@@ -22,8 +22,25 @@ namespace BuzzCafe
         {
             lbTopText.Text = "CAFE MENU";
         }
-        
-      
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            lbTopText.Text = "Pasterie'zz";
+            LoadProduct(2);
+        }
+
+        private void btnSnacks_Click(object sender, EventArgs e)
+        {
+            lbTopText.Text = "Snack'zz";
+            LoadProduct(3);
+        }
+
+        private void btnRicemeal_Click(object sender, EventArgs e)
+        {
+            lbTopText.Text = "Rice Meal'zz";
+            LoadProduct(4);
+        }
+
+
 
 
 
@@ -105,11 +122,6 @@ namespace BuzzCafe
             return card;
         }
 
-        private void lbTopText_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        
     }
 }

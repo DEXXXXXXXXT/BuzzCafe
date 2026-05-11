@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homemenu));
             panel1 = new Panel();
-            btnCoffee = new Button();
+            btnSnacks = new Button();
+            btnDrinks = new Button();
             btnPaste = new Button();
-            btncake = new Button();
+            btnRicemeal = new Button();
             btnlogo = new Button();
             lbTopText = new Label();
             flLayoutMain = new FlowLayoutPanel();
@@ -42,9 +43,10 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(btnCoffee);
+            panel1.Controls.Add(btnSnacks);
+            panel1.Controls.Add(btnDrinks);
             panel1.Controls.Add(btnPaste);
-            panel1.Controls.Add(btncake);
+            panel1.Controls.Add(btnRicemeal);
             panel1.Controls.Add(btnlogo);
             panel1.Location = new Point(6, 11);
             panel1.Margin = new Padding(3, 4, 3, 4);
@@ -52,18 +54,31 @@
             panel1.Size = new Size(114, 960);
             panel1.TabIndex = 12;
             // 
-            // btnCoffee
+            // btnSnacks
             // 
-            btnCoffee.BackColor = SystemColors.ControlLightLight;
-            btnCoffee.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCoffee.Location = new Point(3, 95);
-            btnCoffee.Margin = new Padding(3, 4, 3, 4);
-            btnCoffee.Name = "btnCoffee";
-            btnCoffee.Size = new Size(107, 88);
-            btnCoffee.TabIndex = 17;
-            btnCoffee.Text = "Coffee";
-            btnCoffee.UseVisualStyleBackColor = false;
-          
+            btnSnacks.BackColor = SystemColors.ControlLightLight;
+            btnSnacks.Font = new Font("Georgia", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSnacks.Location = new Point(3, 283);
+            btnSnacks.Margin = new Padding(3, 4, 3, 4);
+            btnSnacks.Name = "btnSnacks";
+            btnSnacks.Size = new Size(111, 88);
+            btnSnacks.TabIndex = 18;
+            btnSnacks.Text = "Snacks";
+            btnSnacks.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnSnacks.UseVisualStyleBackColor = false;
+            btnSnacks.Click += btnSnacks_Click;
+            // 
+            // btnDrinks
+            // 
+            btnDrinks.BackColor = SystemColors.ControlLightLight;
+            btnDrinks.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDrinks.Location = new Point(0, 91);
+            btnDrinks.Margin = new Padding(3, 4, 3, 4);
+            btnDrinks.Name = "btnDrinks";
+            btnDrinks.Size = new Size(120, 88);
+            btnDrinks.TabIndex = 17;
+            btnDrinks.Text = "Drinks";
+            btnDrinks.UseVisualStyleBackColor = false;
             // 
             // btnPaste
             // 
@@ -72,24 +87,24 @@
             btnPaste.Location = new Point(3, 187);
             btnPaste.Margin = new Padding(3, 4, 3, 4);
             btnPaste.Name = "btnPaste";
-            btnPaste.Size = new Size(107, 88);
+            btnPaste.Size = new Size(111, 88);
             btnPaste.TabIndex = 17;
             btnPaste.Text = "Pasteries";
             btnPaste.UseVisualStyleBackColor = false;
-          
+            btnPaste.Click += btnPaste_Click;
             // 
-            // btncake
+            // btnRicemeal
             // 
-            btncake.BackColor = SystemColors.ControlLightLight;
-            btncake.Font = new Font("Georgia", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btncake.Location = new Point(2, 279);
-            btncake.Margin = new Padding(3, 4, 3, 4);
-            btncake.Name = "btncake";
-            btncake.Size = new Size(107, 88);
-            btncake.TabIndex = 17;
-            btncake.Text = "Rice Meal";
-            btncake.UseVisualStyleBackColor = false;
-         
+            btnRicemeal.BackColor = SystemColors.ControlLightLight;
+            btnRicemeal.Font = new Font("Georgia", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRicemeal.Location = new Point(4, 379);
+            btnRicemeal.Margin = new Padding(3, 4, 3, 4);
+            btnRicemeal.Name = "btnRicemeal";
+            btnRicemeal.Size = new Size(107, 88);
+            btnRicemeal.TabIndex = 17;
+            btnRicemeal.Text = "Rice Meal";
+            btnRicemeal.UseVisualStyleBackColor = false;
+            btnRicemeal.Click += btnRicemeal_Click;
             // 
             // btnlogo
             // 
@@ -110,14 +125,13 @@
             // 
             lbTopText.AutoSize = true;
             lbTopText.BackColor = Color.Transparent;
-            lbTopText.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTopText.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbTopText.ForeColor = Color.Black;
-            lbTopText.Location = new Point(227, 19);
+            lbTopText.Location = new Point(179, 28);
             lbTopText.Name = "lbTopText";
-            lbTopText.Size = new Size(274, 69);
+            lbTopText.Size = new Size(311, 46);
             lbTopText.TabIndex = 14;
-            lbTopText.Text = "Coffee's";
-            lbTopText.Click += lbTopText_Click;
+            lbTopText.Text = "Category Type";
             // 
             // flLayoutMain
             // 
@@ -148,11 +162,12 @@
 
         #endregion
         private Panel panel1;
-        private Button btnCoffee;
+        private Button btnDrinks;
         private Button btnPaste;
-        private Button btncake;
+        private Button btnRicemeal;
         private Button btnlogo;
         private Label lbTopText;
         private FlowLayoutPanel flLayoutMain;
+        private Button btnSnacks;
     }
 }
