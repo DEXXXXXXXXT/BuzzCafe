@@ -18,6 +18,12 @@ namespace BuzzCafe
             InitializeComponent();
             ShowCoffee();
         }
+
+        private void btnDrinks_Click(object sender, EventArgs e)
+        {
+            lbTopText.Text = "Drink'zz";
+            LoadProduct(1);
+        }
         private void btnlogo_Click(object sender, EventArgs e)
         {
             lbTopText.Text = "CAFE MENU";
@@ -122,6 +128,6 @@ namespace BuzzCafe
             return card;
         }
 
-
+       
     }
 }

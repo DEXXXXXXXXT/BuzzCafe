@@ -79,6 +79,7 @@
             btnDrinks.TabIndex = 17;
             btnDrinks.Text = "Drinks";
             btnDrinks.UseVisualStyleBackColor = false;
+            btnDrinks.Click += btnDrinks_Click;
             // 
             // btnPaste
             // 
