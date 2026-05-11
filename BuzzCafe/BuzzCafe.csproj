@@ -11,10 +11,20 @@
   <ItemGroup>
     <Compile Remove="CakesMenu.Designer.cs" />
     <Compile Remove="Coffeemenu.Designer.cs" />
+    <Compile Remove="Pasteries.cs" />
+    <Compile Remove="Pasteries.Designer.cs" />
+    <Compile Remove="Pop_up.cs" />
+    <Compile Remove="Pop_up.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="Coffeemenu.resx" />
+    <EmbeddedResource Remove="Pasteries.resx" />
+    <EmbeddedResource Remove="Pop_up.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Products\Drinks\placeholder.png" />
   </ItemGroup>
 
   <ItemGroup>
