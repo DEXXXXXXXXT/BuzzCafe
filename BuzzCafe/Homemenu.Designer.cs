@@ -90,7 +90,7 @@
             btnPaste.Name = "btnPaste";
             btnPaste.Size = new Size(111, 88);
             btnPaste.TabIndex = 17;
-            btnPaste.Text = "Pasteries";
+            btnPaste.Text = "Pastries";
             btnPaste.UseVisualStyleBackColor = false;
             btnPaste.Click += btnPaste_Click;
             // 
@@ -140,7 +140,7 @@
             flLayoutMain.BackColor = Color.Gray;
             flLayoutMain.Location = new Point(126, 107);
             flLayoutMain.Name = "flLayoutMain";
-            flLayoutMain.Size = new Size(456, 865);
+            flLayoutMain.Size = new Size(480, 865);
             flLayoutMain.TabIndex = 15;
             // 
             // Homemenu
@@ -149,7 +149,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__4_;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(585, 971);
+            ClientSize = new Size(610, 971);
             Controls.Add(flLayoutMain);
             Controls.Add(lbTopText);
             Controls.Add(panel1);

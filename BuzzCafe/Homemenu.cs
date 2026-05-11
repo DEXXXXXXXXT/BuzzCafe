@@ -31,7 +31,7 @@ namespace BuzzCafe
         }
         private void btnPaste_Click(object sender, EventArgs e)
         {
-            lbTopText.Text = "Pasterie'zz";
+            lbTopText.Text = "Pastrie'zz";
             LoadProduct(2);
         }
 
