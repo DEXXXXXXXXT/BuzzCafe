@@ -1,4 +1,8 @@
-﻿namespace BuzzCafe
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace BuzzCafe
 {
     partial class Homemenu
     {
@@ -148,7 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__4_;
+            //BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__4_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(610, 971);
             Controls.Add(flLayoutMain);

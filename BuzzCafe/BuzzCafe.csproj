@@ -9,6 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="bin\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="CakesMenu.Designer.cs" />
     <Compile Remove="Coffeemenu.Designer.cs" />
     <Compile Remove="Pasteries.cs" />
@@ -24,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Products\Drinks\how-to-make-chocolate-milk-7.webp" />
     <None Remove="Resources\Products\Drinks\placeholder.png" />
   </ItemGroup>
 
@@ -45,6 +55,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>
