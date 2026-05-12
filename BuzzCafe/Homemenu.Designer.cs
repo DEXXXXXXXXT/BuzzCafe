@@ -133,6 +133,7 @@
             lbTopText.Size = new Size(311, 46);
             lbTopText.TabIndex = 14;
             lbTopText.Text = "Category Type";
+            lbTopText.Click += lbTopText_Click;
             // 
             // flLayoutMain
             // 
