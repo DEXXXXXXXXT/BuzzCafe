@@ -1,4 +1,8 @@
-﻿namespace BuzzCafe
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace BuzzCafe
 {
     partial class DineTakeout
     {
@@ -55,7 +59,7 @@
             // btnTake
             // 
             btnTake.BackColor = Color.Transparent;
-            btnTake.BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__4__removebg_preview;
+            btnTake.BackgroundImage = Properties.Resources.background1;
             btnTake.BackgroundImageLayout = ImageLayout.Zoom;
             btnTake.FlatAppearance.BorderSize = 0;
             btnTake.FlatStyle = FlatStyle.Popup;
@@ -72,7 +76,7 @@
             // btnDine
             // 
             btnDine.BackColor = Color.Transparent;
-            btnDine.BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__5__removebg_preview;
+            btnDine.BackgroundImage = Properties.Resources.background2;
             btnDine.BackgroundImageLayout = ImageLayout.Stretch;
             btnDine.FlatAppearance.BorderSize = 0;
             btnDine.FlatStyle = FlatStyle.Popup;
@@ -113,7 +117,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.coffe_removebg_preview;
+            pictureBox1.BackgroundImage = Properties.Resources.coffee;
             pictureBox1.Location = new Point(1, 15);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
