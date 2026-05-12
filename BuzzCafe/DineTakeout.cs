@@ -23,7 +23,9 @@ namespace BuzzCafe
         //dine in button
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Homemenu hmenu = new Homemenu();
+            hmenu.Show();
+            this.Hide();
 
             //eto dex kita ba?
             using (SqlConnection con = DBConnection.GetConnection())

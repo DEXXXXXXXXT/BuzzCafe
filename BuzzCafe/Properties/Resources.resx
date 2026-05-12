@@ -205,4 +205,103 @@
   <data name="Black and White Simple Modern Background Instagram Story (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black and White Simple Modern Background Instagram Story (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="drink_choco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\0a344cfabbe54777fb3b1ff22405507c.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_hameri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_hameri.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_hcappu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_hcappu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_hespre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_hespre.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_hlatte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_hlatte.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_icara" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_icara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_ispanish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_ispanish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_ltea" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_ltea.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_matcha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_matcha.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_stea" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_stea.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drink_straw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink_straw.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="past_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\past_blue.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="past_cookie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\past_cookie.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="past_croi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\past_croi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="past_donut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\past_donut.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="past_maca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\past_maca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="past_straw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\past_straw.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="past_misu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\past_misu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="past_waff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\past_waff.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ricem_burger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ricem_burger.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ricem_tapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ricem_tapa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ricem_toci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ricem_toci.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="snack_chick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\snack_chick.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="snack_fries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\snack_fries.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="snack_nachos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\snack_nachos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="snack_pasta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\snack_pasta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="snack_sand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\snack_sand.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ricem_long" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ricem_long.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ricem_pork" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ricem_pork.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ricem_beef" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ricem_beef.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ricem_spam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ricem_spam.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="snack_moza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\snack_moza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="snack_onion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\snack_onion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
