@@ -61,10 +61,10 @@ namespace BuzzCafe
             panel1.Controls.Add(btnPaste);
             panel1.Controls.Add(btnRicemeal);
             panel1.Controls.Add(btnlogo);
-            panel1.Location = new Point(6, 11);
+            panel1.Location = new Point(6, 4);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(114, 960);
+            panel1.Size = new Size(114, 967);
             panel1.TabIndex = 12;
             // 
             // btnSnacks
@@ -141,7 +141,7 @@ namespace BuzzCafe
             lbTopText.BackColor = Color.Transparent;
             lbTopText.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbTopText.ForeColor = Color.Black;
-            lbTopText.Location = new Point(179, 28);
+            lbTopText.Location = new Point(204, 21);
             lbTopText.Name = "lbTopText";
             lbTopText.Size = new Size(311, 46);
             lbTopText.TabIndex = 14;
@@ -151,9 +151,9 @@ namespace BuzzCafe
             // 
             flLayoutMain.AutoScroll = true;
             flLayoutMain.BackColor = Color.Gray;
-            flLayoutMain.Location = new Point(126, 107);
+            flLayoutMain.Location = new Point(123, 95);
             flLayoutMain.Name = "flLayoutMain";
-            flLayoutMain.Size = new Size(480, 865);
+            flLayoutMain.Size = new Size(483, 877);
             flLayoutMain.TabIndex = 15;
             // 
             // panelPopup
@@ -256,9 +256,9 @@ namespace BuzzCafe
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(610, 971);
+            Controls.Add(lbTopText);
             Controls.Add(panelPopup);
             Controls.Add(flLayoutMain);
-            Controls.Add(lbTopText);
             Controls.Add(panel1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Homemenu";

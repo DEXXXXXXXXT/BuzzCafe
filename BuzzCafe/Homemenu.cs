@@ -21,13 +21,13 @@ namespace BuzzCafe
             ShowCoffee();
         }
 
-        private void btnDrinks_Click(object sender, EventArgs e) { lbTopText.Text = "Drink'zz"; LoadProduct(1); }
+        private void btnDrinks_Click(object sender, EventArgs e) { lbTopText.Text = "Drinks"; LoadProduct(1); }
         private void btnlogo_Click(object sender, EventArgs e) { lbTopText.Text = "CAFE MENU"; }
-        private void btnPaste_Click(object sender, EventArgs e) { lbTopText.Text = "Pastrie'zz"; LoadProduct(2); }
-        private void btnSnacks_Click(object sender, EventArgs e) { lbTopText.Text = "Snack'zz"; LoadProduct(3); }
-        private void btnRicemeal_Click(object sender, EventArgs e) { lbTopText.Text = "Rice Meal'zz"; LoadProduct(4); }
+        private void btnPaste_Click(object sender, EventArgs e) { lbTopText.Text = "Pastries"; LoadProduct(2); }
+        private void btnSnacks_Click(object sender, EventArgs e) { lbTopText.Text = "Snacks"; LoadProduct(3); }
+        private void btnRicemeal_Click(object sender, EventArgs e) { lbTopText.Text = "Rice Meals"; LoadProduct(4); }
 
-        void ShowCoffee() { lbTopText.Text = "Drink'zz"; LoadProduct(1); }
+        void ShowCoffee() { lbTopText.Text = "Drinks"; LoadProduct(1); }
 
         void LoadProduct(int category_id)
         {
@@ -105,12 +105,11 @@ namespace BuzzCafe
             btnAdd.BackColor = Color.SaddleBrown; btnAdd.ForeColor = Color.White;
             btnAdd.FlatStyle = FlatStyle.Flat; btnAdd.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 
+            
             btnAdd.Click += (s, e) =>
             {
-                //btnAddtoCart(name, price, imageFile);
-                lblProductname.MaximumSize = new Size(350, 0);
-
-
+             
+                lblPrices.Top = lblProductname.Bottom + 10;
                 panelPopup.Visible = true;
 
                 lblProductname.Text = name;
@@ -120,31 +119,23 @@ namespace BuzzCafe
                 {
                     pbProduct.Image = Image.FromFile(imageFile);
                 }
+
+              
             };
 
             card.Controls.Add(pic); card.Controls.Add(lblName); card.Controls.Add(lblPrice); card.Controls.Add(btnAdd);
             return card;
         }
 
-    /*    void btnAddtoCart(string name, string price, string imageFile)
-        {
-            Details popup = new Details();
-
-            popup.lblProductname.Text = name;
-            popup.lblPrices.Text = "₱" + price;
-
-            if (File.Exists(imageFile))
-            {
-                popup.pbProduct.Image = Image.FromFile(imageFile);
-            }
-
-            popup.ShowDialog();
-
-        }
-    */
+    
         private void btnBack_Click(object sender, EventArgs e)
         {
             panelPopup.Visible = false;
+           
         }
+
+       
+
+
     }
 }
