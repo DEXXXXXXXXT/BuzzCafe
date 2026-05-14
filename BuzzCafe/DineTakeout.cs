@@ -24,6 +24,7 @@ namespace BuzzCafe
         private void button1_Click(object sender, EventArgs e)
         {
 
+
             //eto dex kita ba?
             using (SqlConnection con = DBConnection.GetConnection())
             {

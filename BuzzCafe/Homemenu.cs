@@ -109,6 +109,6 @@ namespace BuzzCafe
             return card;
         }
 
-        private void lbTopText_Click(object sender, EventArgs e) { }
+       
     }
 }
