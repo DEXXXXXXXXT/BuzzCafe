@@ -105,10 +105,10 @@ namespace BuzzCafe
             btnAdd.BackColor = Color.SaddleBrown; btnAdd.ForeColor = Color.White;
             btnAdd.FlatStyle = FlatStyle.Flat; btnAdd.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 
-            
+
             btnAdd.Click += (s, e) =>
             {
-             
+
                 lblPrices.Top = lblProductname.Bottom + 10;
                 panelPopup.Visible = true;
 
@@ -120,22 +120,20 @@ namespace BuzzCafe
                     pbProduct.Image = Image.FromFile(imageFile);
                 }
 
-              
+
             };
 
             card.Controls.Add(pic); card.Controls.Add(lblName); card.Controls.Add(lblPrice); card.Controls.Add(btnAdd);
             return card;
         }
 
-    
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             panelPopup.Visible = false;
-           
+
         }
 
-       
-
-
+        }
     }
 }
