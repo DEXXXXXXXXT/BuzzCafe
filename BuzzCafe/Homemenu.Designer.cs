@@ -41,7 +41,16 @@ namespace BuzzCafe
             btnlogo = new Button();
             lbTopText = new Label();
             flLayoutMain = new FlowLayoutPanel();
+            panelPopup = new Panel();
+            btnminus = new Button();
+            btnadd = new Button();
+            btnBack = new Button();
+            lblPrices = new Label();
+            lblProductname = new Label();
+            pbProduct = new PictureBox();
             panel1.SuspendLayout();
+            panelPopup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbProduct).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -137,7 +146,6 @@ namespace BuzzCafe
             lbTopText.Size = new Size(311, 46);
             lbTopText.TabIndex = 14;
             lbTopText.Text = "Category Type";
- 
             // 
             // flLayoutMain
             // 
@@ -148,13 +156,107 @@ namespace BuzzCafe
             flLayoutMain.Size = new Size(480, 865);
             flLayoutMain.TabIndex = 15;
             // 
+            // panelPopup
+            // 
+            panelPopup.BackColor = Color.LightSlateGray;
+            panelPopup.Controls.Add(btnminus);
+            panelPopup.Controls.Add(btnadd);
+            panelPopup.Controls.Add(btnBack);
+            panelPopup.Controls.Add(lblPrices);
+            panelPopup.Controls.Add(lblProductname);
+            panelPopup.Controls.Add(pbProduct);
+            panelPopup.Location = new Point(6, 575);
+            panelPopup.Name = "panelPopup";
+            panelPopup.Size = new Size(600, 397);
+            panelPopup.TabIndex = 0;
+            panelPopup.Visible = false;
+            // 
+            // btnminus
+            // 
+            btnminus.BackColor = Color.White;
+            btnminus.BackgroundImage = (Image)resources.GetObject("btnminus.BackgroundImage");
+            btnminus.BackgroundImageLayout = ImageLayout.Zoom;
+            btnminus.FlatStyle = FlatStyle.Flat;
+            btnminus.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnminus.ForeColor = Color.Black;
+            btnminus.ImageAlign = ContentAlignment.MiddleLeft;
+            btnminus.Location = new Point(495, 165);
+            btnminus.Margin = new Padding(3, 4, 3, 4);
+            btnminus.Name = "btnminus";
+            btnminus.RightToLeft = RightToLeft.Yes;
+            btnminus.Size = new Size(23, 27);
+            btnminus.TabIndex = 5;
+            btnminus.UseVisualStyleBackColor = false;
+            // 
+            // btnadd
+            // 
+            btnadd.BackColor = Color.White;
+            btnadd.BackgroundImage = Properties.Resources.add;
+            btnadd.BackgroundImageLayout = ImageLayout.Stretch;
+            btnadd.FlatStyle = FlatStyle.Flat;
+            btnadd.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnadd.ForeColor = Color.Black;
+            btnadd.ImageAlign = ContentAlignment.MiddleLeft;
+            btnadd.Location = new Point(559, 165);
+            btnadd.Margin = new Padding(3, 4, 3, 4);
+            btnadd.Name = "btnadd";
+            btnadd.RightToLeft = RightToLeft.Yes;
+            btnadd.Size = new Size(23, 27);
+            btnadd.TabIndex = 4;
+            btnadd.UseVisualStyleBackColor = false;
+            // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(495, 328);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 3;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
+            // lblPrices
+            // 
+            lblPrices.AutoSize = true;
+            lblPrices.BackColor = Color.Transparent;
+            lblPrices.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrices.ForeColor = Color.Transparent;
+            lblPrices.Location = new Point(224, 67);
+            lblPrices.Name = "lblPrices";
+            lblPrices.Size = new Size(100, 34);
+            lblPrices.TabIndex = 2;
+            lblPrices.Text = "₱149.50";
+            // 
+            // lblProductname
+            // 
+            lblProductname.AutoEllipsis = true;
+            lblProductname.AutoSize = true;
+            lblProductname.BackColor = Color.Transparent;
+            lblProductname.Font = new Font("Constantia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProductname.ForeColor = Color.Transparent;
+            lblProductname.Location = new Point(215, 26);
+            lblProductname.Name = "lblProductname";
+            lblProductname.Size = new Size(193, 41);
+            lblProductname.TabIndex = 1;
+            lblProductname.Text = "Americano";
+            lblProductname.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pbProduct
+            // 
+            pbProduct.Location = new Point(43, 26);
+            pbProduct.Name = "pbProduct";
+            pbProduct.Size = new Size(166, 166);
+            pbProduct.SizeMode = PictureBoxSizeMode.Zoom;
+            pbProduct.TabIndex = 0;
+            pbProduct.TabStop = false;
+            // 
             // Homemenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            //BackgroundImage = Properties.Resources.Black_and_White_Simple_Modern_Background_Instagram_Story__4_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(610, 971);
+            Controls.Add(panelPopup);
             Controls.Add(flLayoutMain);
             Controls.Add(lbTopText);
             Controls.Add(panel1);
@@ -162,6 +264,9 @@ namespace BuzzCafe
             Name = "Homemenu";
             Text = "Homemenu";
             panel1.ResumeLayout(false);
+            panelPopup.ResumeLayout(false);
+            panelPopup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbProduct).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -175,5 +280,12 @@ namespace BuzzCafe
         private Label lbTopText;
         private FlowLayoutPanel flLayoutMain;
         private Button btnSnacks;
+        private Panel panelPopup;
+        public PictureBox pbProduct;
+        public Label lblProductname;
+        public Button btnBack;
+        public Label lblPrices;
+        private Button btnminus;
+        private Button btnadd;
     }
 }

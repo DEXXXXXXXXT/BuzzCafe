@@ -29,24 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Details));
-            pictureBox1 = new PictureBox();
+            pbProduct = new PictureBox();
             panel1 = new Panel();
             btnminus = new Button();
             btnadd = new Button();
             lblPrices = new Label();
             lblProductname = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbProduct).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pbProduct
             // 
-            pictureBox1.BackColor = Color.Gray;
-            pictureBox1.Location = new Point(157, 59);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(224, 205);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pbProduct.BackColor = Color.Gray;
+            pbProduct.Location = new Point(179, 79);
+            pbProduct.Margin = new Padding(3, 4, 3, 4);
+            pbProduct.Name = "pbProduct";
+            pbProduct.Size = new Size(256, 273);
+            pbProduct.SizeMode = PictureBoxSizeMode.Zoom;
+            pbProduct.TabIndex = 0;
+            pbProduct.TabStop = false;
             // 
             // panel1
             // 
@@ -55,9 +57,10 @@
             panel1.Controls.Add(btnadd);
             panel1.Controls.Add(lblPrices);
             panel1.Controls.Add(lblProductname);
-            panel1.Location = new Point(56, 281);
+            panel1.Location = new Point(64, 375);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(403, 87);
+            panel1.Size = new Size(461, 116);
             panel1.TabIndex = 1;
             // 
             // btnminus
@@ -69,10 +72,11 @@
             btnminus.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnminus.ForeColor = Color.Black;
             btnminus.ImageAlign = ContentAlignment.MiddleLeft;
-            btnminus.Location = new Point(324, 10);
+            btnminus.Location = new Point(370, 13);
+            btnminus.Margin = new Padding(3, 4, 3, 4);
             btnminus.Name = "btnminus";
             btnminus.RightToLeft = RightToLeft.Yes;
-            btnminus.Size = new Size(20, 20);
+            btnminus.Size = new Size(23, 27);
             btnminus.TabIndex = 3;
             btnminus.UseVisualStyleBackColor = false;
             // 
@@ -85,10 +89,11 @@
             btnadd.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnadd.ForeColor = Color.Black;
             btnadd.ImageAlign = ContentAlignment.MiddleLeft;
-            btnadd.Location = new Point(380, 10);
+            btnadd.Location = new Point(434, 13);
+            btnadd.Margin = new Padding(3, 4, 3, 4);
             btnadd.Name = "btnadd";
             btnadd.RightToLeft = RightToLeft.Yes;
-            btnadd.Size = new Size(20, 20);
+            btnadd.Size = new Size(23, 27);
             btnadd.TabIndex = 2;
             btnadd.UseVisualStyleBackColor = false;
             // 
@@ -98,9 +103,9 @@
             lblPrices.BackColor = Color.Transparent;
             lblPrices.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPrices.ForeColor = Color.Transparent;
-            lblPrices.Location = new Point(3, 43);
+            lblPrices.Location = new Point(3, 57);
             lblPrices.Name = "lblPrices";
-            lblPrices.Size = new Size(82, 27);
+            lblPrices.Size = new Size(100, 34);
             lblPrices.TabIndex = 1;
             lblPrices.Text = "₱149.50";
             // 
@@ -112,35 +117,39 @@
             lblProductname.ForeColor = Color.Transparent;
             lblProductname.Location = new Point(0, 0);
             lblProductname.Name = "lblProductname";
-            lblProductname.Size = new Size(154, 33);
+            lblProductname.Size = new Size(193, 41);
             lblProductname.TabIndex = 0;
             lblProductname.Text = "Americano";
+            lblProductname.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Details
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(534, 728);
+            ClientSize = new Size(610, 971);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
+            Controls.Add(pbProduct);
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Details";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Details";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbProduct).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Panel panel1;
-        private Label lblProductname;
-        private Label lblPrices;
         private Button btnadd;
         private Button btnminus;
+        public PictureBox pbProduct;
+        public Label lblProductname;
+        public Label lblPrices;
     }
 }

@@ -20,6 +20,8 @@
   <ItemGroup>
     <Compile Remove="CakesMenu.Designer.cs" />
     <Compile Remove="Coffeemenu.Designer.cs" />
+    <Compile Remove="Details.cs" />
+    <Compile Remove="Details.Designer.cs" />
     <Compile Remove="Pasteries.cs" />
     <Compile Remove="Pasteries.Designer.cs" />
     <Compile Remove="Pop_up.cs" />
@@ -28,6 +30,7 @@
 
   <ItemGroup>
     <EmbeddedResource Remove="Coffeemenu.resx" />
+    <EmbeddedResource Remove="Details.resx" />
     <EmbeddedResource Remove="Pasteries.resx" />
     <EmbeddedResource Remove="Pop_up.resx" />
   </ItemGroup>

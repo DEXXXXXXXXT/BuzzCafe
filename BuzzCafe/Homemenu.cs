@@ -105,10 +105,46 @@ namespace BuzzCafe
             btnAdd.BackColor = Color.SaddleBrown; btnAdd.ForeColor = Color.White;
             btnAdd.FlatStyle = FlatStyle.Flat; btnAdd.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 
+            btnAdd.Click += (s, e) =>
+            {
+                //btnAddtoCart(name, price, imageFile);
+                lblProductname.MaximumSize = new Size(350, 0);
+
+
+                panelPopup.Visible = true;
+
+                lblProductname.Text = name;
+                lblPrices.Text = "₱" + price;
+
+                if (File.Exists(imageFile))
+                {
+                    pbProduct.Image = Image.FromFile(imageFile);
+                }
+            };
+
             card.Controls.Add(pic); card.Controls.Add(lblName); card.Controls.Add(lblPrice); card.Controls.Add(btnAdd);
             return card;
         }
 
-       
+    /*    void btnAddtoCart(string name, string price, string imageFile)
+        {
+            Details popup = new Details();
+
+            popup.lblProductname.Text = name;
+            popup.lblPrices.Text = "₱" + price;
+
+            if (File.Exists(imageFile))
+            {
+                popup.pbProduct.Image = Image.FromFile(imageFile);
+            }
+
+            popup.ShowDialog();
+
+        }
+    */
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            panelPopup.Visible = false;
+        }
     }
 }
