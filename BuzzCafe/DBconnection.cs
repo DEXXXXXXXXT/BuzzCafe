@@ -9,8 +9,13 @@ namespace BuzzCafe
 {
     public class DBConnection
     {
+
        //public static string con = "Data Source=.\\SQLEXPRESS01;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";  // Ella server
         public static string con = "Data Source=.\\SQLEXPRESS;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True"; //Dex server
+
+     //  public static string con = "Data Source=.\\SQLEXPRESS01;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";
+        
+
 
 
         public static SqlConnection GetConnection()
