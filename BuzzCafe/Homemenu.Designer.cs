@@ -42,19 +42,28 @@ namespace BuzzCafe
             lbTopText = new Label();
             flLayoutMain = new FlowLayoutPanel();
             panelPopup = new Panel();
-            btnLarge = new Button();
-            btnMed = new Button();
-            lblSize = new Label();
-            label1 = new Label();
+            btnaddcart = new Button();
+            panel2 = new Panel();
+            lbltotalprice = new Label();
+            lblsizes = new Label();
+            lbltotalqty = new Label();
+            panelsize = new Panel();
             btnsmall = new Button();
+            btnMed = new Button();
+            btnLarge = new Button();
+            lblquantity = new Label();
+            label1 = new Label();
             btnminus = new Button();
             btnadd = new Button();
             btnBack = new Button();
             lblPrices = new Label();
             lblProductname = new Label();
             pbProduct = new PictureBox();
+            lblSize = new Label();
             panel1.SuspendLayout();
             panelPopup.SuspendLayout();
+            panel2.SuspendLayout();
+            panelsize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbProduct).BeginInit();
             SuspendLayout();
             // 
@@ -162,10 +171,11 @@ namespace BuzzCafe
             panelPopup.BackColor = Color.LightSlateGray;
             panelPopup.BackgroundImage = (Image)resources.GetObject("panelPopup.BackgroundImage");
             panelPopup.BackgroundImageLayout = ImageLayout.Stretch;
-            panelPopup.Controls.Add(btnLarge);
-            panelPopup.Controls.Add(btnMed);
+            panelPopup.Controls.Add(btnaddcart);
+            panelPopup.Controls.Add(panel2);
+            panelPopup.Controls.Add(panelsize);
+            panelPopup.Controls.Add(lblquantity);
             panelPopup.Controls.Add(label1);
-            panelPopup.Controls.Add(btnsmall);
             panelPopup.Controls.Add(btnminus);
             panelPopup.Controls.Add(btnadd);
             panelPopup.Controls.Add(btnBack);
@@ -180,37 +190,110 @@ namespace BuzzCafe
             panelPopup.TabIndex = 0;
             panelPopup.Visible = false;
             // 
-            // btnLarge
+            // btnaddcart
             // 
-            btnLarge.Font = new Font("Constantia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLarge.Location = new Point(341, 97);
-            btnLarge.Name = "btnLarge";
-            btnLarge.Size = new Size(71, 26);
-            btnLarge.TabIndex = 10;
-            btnLarge.Text = "LARGE";
-            btnLarge.UseVisualStyleBackColor = true;
+            btnaddcart.Font = new Font("Constantia", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnaddcart.Location = new Point(330, 211);
+            btnaddcart.Name = "btnaddcart";
+            btnaddcart.Size = new Size(99, 28);
+            btnaddcart.TabIndex = 15;
+            btnaddcart.Text = "Add to cart";
+            btnaddcart.UseVisualStyleBackColor = true;
+            btnaddcart.Click += button1_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(lbltotalprice);
+            panel2.Controls.Add(lblsizes);
+            panel2.Controls.Add(lbltotalqty);
+            panel2.Location = new Point(18, 199);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(296, 42);
+            panel2.TabIndex = 14;
+            // 
+            // lbltotalprice
+            // 
+            lbltotalprice.AutoSize = true;
+            lbltotalprice.BackColor = Color.DimGray;
+            lbltotalprice.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbltotalprice.Location = new Point(176, 6);
+            lbltotalprice.Name = "lbltotalprice";
+            lbltotalprice.Size = new Size(115, 30);
+            lbltotalprice.TabIndex = 17;
+            lbltotalprice.Text = "Total Price";
+            // 
+            // lblsizes
+            // 
+            lblsizes.AutoSize = true;
+            lblsizes.BackColor = Color.DimGray;
+            lblsizes.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblsizes.Location = new Point(109, 6);
+            lblsizes.Name = "lblsizes";
+            lblsizes.Size = new Size(61, 30);
+            lblsizes.TabIndex = 16;
+            lblsizes.Text = "Sizes";
+            // 
+            // lbltotalqty
+            // 
+            lbltotalqty.AutoSize = true;
+            lbltotalqty.BackColor = Color.DimGray;
+            lbltotalqty.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbltotalqty.Location = new Point(4, 6);
+            lbltotalqty.Name = "lbltotalqty";
+            lbltotalqty.Size = new Size(99, 30);
+            lbltotalqty.TabIndex = 15;
+            lbltotalqty.Text = "Quantity";
+            // 
+            // panelsize
+            // 
+            panelsize.BackColor = Color.Transparent;
+            panelsize.Controls.Add(btnsmall);
+            panelsize.Controls.Add(btnMed);
+            panelsize.Controls.Add(btnLarge);
+            panelsize.Location = new Point(176, 96);
+            panelsize.Name = "panelsize";
+            panelsize.Size = new Size(222, 33);
+            panelsize.TabIndex = 13;
+            // 
+            // btnsmall
+            // 
+            btnsmall.Font = new Font("Constantia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnsmall.Location = new Point(0, 3);
+            btnsmall.Name = "btnsmall";
+            btnsmall.Size = new Size(69, 26);
+            btnsmall.TabIndex = 6;
+            btnsmall.Text = "SMALL";
+            btnsmall.UseVisualStyleBackColor = true;
             // 
             // btnMed
             // 
             btnMed.Font = new Font("Constantia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMed.Location = new Point(261, 97);
+            btnMed.Location = new Point(70, 3);
             btnMed.Name = "btnMed";
             btnMed.Size = new Size(78, 26);
             btnMed.TabIndex = 9;
             btnMed.Text = "MEDIUM";
             btnMed.UseVisualStyleBackColor = true;
             // 
-            // lblSize
+            // btnLarge
             // 
-            lblSize.AutoSize = true;
-            lblSize.BackColor = Color.Transparent;
-            lblSize.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSize.ForeColor = Color.Transparent;
-            lblSize.Location = new Point(189, 77);
-            lblSize.Name = "lblSize";
-            lblSize.Size = new Size(53, 27);
-            lblSize.TabIndex = 8;
-            lblSize.Text = "Size:";
+            btnLarge.Font = new Font("Constantia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLarge.Location = new Point(148, 3);
+            btnLarge.Name = "btnLarge";
+            btnLarge.Size = new Size(71, 26);
+            btnLarge.TabIndex = 10;
+            btnLarge.Text = "LARGE";
+            btnLarge.UseVisualStyleBackColor = true;
+            // 
+            // lblquantity
+            // 
+            lblquantity.AutoSize = true;
+            lblquantity.Location = new Point(459, 54);
+            lblquantity.Name = "lblquantity";
+            lblquantity.Size = new Size(26, 15);
+            lblquantity.TabIndex = 12;
+            lblquantity.Text = "Qty";
             // 
             // label1
             // 
@@ -219,16 +302,6 @@ namespace BuzzCafe
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
             label1.TabIndex = 7;
-            // 
-            // btnsmall
-            // 
-            btnsmall.Font = new Font("Constantia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnsmall.Location = new Point(189, 97);
-            btnsmall.Name = "btnsmall";
-            btnsmall.Size = new Size(69, 26);
-            btnsmall.TabIndex = 6;
-            btnsmall.Text = "SMALL";
-            btnsmall.UseVisualStyleBackColor = true;
             // 
             // btnminus
             // 
@@ -239,7 +312,7 @@ namespace BuzzCafe
             btnminus.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnminus.ForeColor = Color.Black;
             btnminus.ImageAlign = ContentAlignment.MiddleLeft;
-            btnminus.Location = new Point(433, 139);
+            btnminus.Location = new Point(429, 50);
             btnminus.Name = "btnminus";
             btnminus.RightToLeft = RightToLeft.Yes;
             btnminus.Size = new Size(20, 20);
@@ -255,7 +328,7 @@ namespace BuzzCafe
             btnadd.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnadd.ForeColor = Color.Black;
             btnadd.ImageAlign = ContentAlignment.MiddleLeft;
-            btnadd.Location = new Point(495, 139);
+            btnadd.Location = new Point(491, 50);
             btnadd.Name = "btnadd";
             btnadd.RightToLeft = RightToLeft.Yes;
             btnadd.Size = new Size(20, 20);
@@ -265,7 +338,7 @@ namespace BuzzCafe
             // btnBack
             // 
             btnBack.Font = new Font("Constantia", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBack.Location = new Point(433, 214);
+            btnBack.Location = new Point(435, 211);
             btnBack.Margin = new Padding(3, 2, 3, 2);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(82, 28);
@@ -280,7 +353,7 @@ namespace BuzzCafe
             lblPrices.BackColor = Color.Transparent;
             lblPrices.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPrices.ForeColor = Color.Transparent;
-            lblPrices.Location = new Point(201, 50);
+            lblPrices.Location = new Point(176, 50);
             lblPrices.Name = "lblPrices";
             lblPrices.Size = new Size(82, 27);
             lblPrices.TabIndex = 2;
@@ -293,7 +366,7 @@ namespace BuzzCafe
             lblProductname.BackColor = Color.Transparent;
             lblProductname.Font = new Font("Constantia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProductname.ForeColor = Color.Transparent;
-            lblProductname.Location = new Point(188, 20);
+            lblProductname.Location = new Point(173, 20);
             lblProductname.Name = "lblProductname";
             lblProductname.Size = new Size(154, 33);
             lblProductname.TabIndex = 1;
@@ -302,13 +375,25 @@ namespace BuzzCafe
             // 
             // pbProduct
             // 
-            pbProduct.Location = new Point(38, 20);
+            pbProduct.Location = new Point(22, 20);
             pbProduct.Margin = new Padding(3, 2, 3, 2);
             pbProduct.Name = "pbProduct";
             pbProduct.Size = new Size(145, 124);
             pbProduct.SizeMode = PictureBoxSizeMode.Zoom;
             pbProduct.TabIndex = 0;
             pbProduct.TabStop = false;
+            // 
+            // lblSize
+            // 
+            lblSize.AutoSize = true;
+            lblSize.BackColor = Color.Transparent;
+            lblSize.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSize.ForeColor = Color.Transparent;
+            lblSize.Location = new Point(173, 77);
+            lblSize.Name = "lblSize";
+            lblSize.Size = new Size(53, 27);
+            lblSize.TabIndex = 8;
+            lblSize.Text = "Size:";
             // 
             // Homemenu
             // 
@@ -326,6 +411,9 @@ namespace BuzzCafe
             panel1.ResumeLayout(false);
             panelPopup.ResumeLayout(false);
             panelPopup.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panelsize.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbProduct).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -352,5 +440,12 @@ namespace BuzzCafe
         public Label lblSize;
         private Button btnMed;
         private Button btnLarge;
+        private Panel panelsize;
+        private Label lblquantity;
+        private Panel panel2;
+        private Label lbltotalprice;
+        private Label lblsizes;
+        private Label lbltotalqty;
+        private Button btnaddcart;
     }
 }
