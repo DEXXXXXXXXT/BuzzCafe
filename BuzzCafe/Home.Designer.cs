@@ -46,10 +46,10 @@
             lbltext2.FlatStyle = FlatStyle.Flat;
             lbltext2.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbltext2.ForeColor = Color.Black;
-            lbltext2.Location = new Point(137, 149);
+            lbltext2.Location = new Point(157, 199);
             lbltext2.Name = "lbltext2";
             lbltext2.RightToLeft = RightToLeft.No;
-            lbltext2.Size = new Size(0, 55);
+            lbltext2.Size = new Size(0, 69);
             lbltext2.TabIndex = 3;
             lbltext2.TextAlign = ContentAlignment.MiddleLeft;
             lbltext2.UseMnemonic = false;
@@ -59,35 +59,37 @@
             lbldescript.AutoSize = true;
             lbldescript.BackColor = Color.Transparent;
             lbldescript.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbldescript.Location = new Point(109, 204);
+            lbldescript.Location = new Point(125, 272);
             lbldescript.Name = "lbldescript";
-            lbldescript.Size = new Size(0, 15);
+            lbldescript.Size = new Size(0, 18);
             lbldescript.TabIndex = 4;
             lbldescript.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Linen;
-            label1.Location = new Point(86, 18);
+            label1.Location = new Point(98, 24);
             label1.Name = "label1";
-            label1.Size = new Size(321, 56);
+            label1.Size = new Size(401, 69);
             label1.TabIndex = 0;
             label1.Text = "WELCOME!";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            label2.AutoSize = true;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(54, 74);
+            label2.Location = new Point(62, 99);
             label2.Name = "label2";
-            label2.Size = new Size(374, 112);
+            label2.Size = new Size(468, 138);
             label2.TabIndex = 7;
             label2.Text = "Start your day\r\n  with coffee";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelhome
             // 
@@ -96,32 +98,37 @@
             panelhome.Controls.Add(btnStart);
             panelhome.Controls.Add(label1);
             panelhome.Controls.Add(label2);
-            panelhome.Location = new Point(17, 12);
+            panelhome.Dock = DockStyle.Fill;
+            panelhome.Location = new Point(0, 0);
+            panelhome.Margin = new Padding(3, 4, 3, 4);
             panelhome.Name = "panelhome";
-            panelhome.Size = new Size(480, 718);
+            panelhome.Size = new Size(585, 971);
             panelhome.TabIndex = 8;
             // 
             // label3
             // 
-            label3.AutoSize = true;
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(42, 602);
+            label3.Location = new Point(48, 803);
             label3.Name = "label3";
-            label3.Size = new Size(365, 32);
+            label3.Size = new Size(461, 40);
             label3.TabIndex = 9;
             label3.Text = "    Buzz Coffee Shop—where every cup gives you a boost. \r\nBold brews, smooth vibes, and the perfect place to recharge.";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnStart
             // 
+            btnStart.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnStart.BackColor = Color.Gray;
             btnStart.FlatAppearance.BorderColor = Color.Black;
             btnStart.FlatStyle = FlatStyle.Flat;
             btnStart.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStart.ForeColor = Color.White;
-            btnStart.Location = new Point(0, 645);
+            btnStart.Location = new Point(15, 863);
+            btnStart.Margin = new Padding(3, 4, 3, 4);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(480, 70);
+            btnStart.Size = new Size(549, 93);
             btnStart.TabIndex = 8;
             btnStart.Text = "Touch to start";
             btnStart.UseVisualStyleBackColor = false;
@@ -129,20 +136,18 @@
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(512, 728);
             Controls.Add(panelhome);
             Controls.Add(lbltext2);
             Controls.Add(lbldescript);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = " Buzz Coffee";
+            Size = new Size(585, 971);
             panelhome.ResumeLayout(false);
-            panelhome.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -153,7 +158,7 @@
         private Label label1;
         private Label label2;
         private Panel panelhome;
-        private Label label3;
         private Button btnStart;
+        private Label label3;
     }
 }

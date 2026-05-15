@@ -2,14 +2,20 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="DineTakeout.cs">
+    <Compile Update="DineTake.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Home.cs">
-      <SubType>Form</SubType>
+    <Compile Update="Menu.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Homemenu.cs">
-      <SubType>Form</SubType>
+    <Compile Update="Resources\Toolbox\ButtonPic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="WelcomeHome.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

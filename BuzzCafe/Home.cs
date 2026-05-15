@@ -2,7 +2,7 @@ using System.Windows.Forms;
 
 namespace BuzzCafe
 {
-    public partial class Home : Form
+    public partial class Home : UserControl
     {
         public Home()
         {
@@ -11,9 +11,11 @@ namespace BuzzCafe
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            DineTakeout dineTakepage = new DineTakeout();
-            dineTakepage.Show();
-            this.Hide();
+           
+           //DineTakeout page = new DineTakeout();
+           // this.Controls.Add(page);
+
+            
         }
     }
 }

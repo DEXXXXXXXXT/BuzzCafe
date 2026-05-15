@@ -1,6 +1,6 @@
 ﻿namespace BuzzCafe
 {
-    partial class Pop_up
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            mainPanel = new Panel();
             SuspendLayout();
             // 
-            // Pop_up
+            // mainPanel
+            // 
+            mainPanel.Dock = DockStyle.Fill;
+            mainPanel.Location = new Point(0, 0);
+            mainPanel.Name = "mainPanel";
+            mainPanel.Size = new Size(671, 989);
+            mainPanel.TabIndex = 0;
+            // 
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(608, 316);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "Pop_up";
-            Text = "Pop_up";
+            ClientSize = new Size(671, 989);
+            Controls.Add(mainPanel);
+            Name = "MainForm";
+            Text = "MainForm";
             ResumeLayout(false);
         }
 
         #endregion
+
+        public Panel mainPanel;
     }
 }

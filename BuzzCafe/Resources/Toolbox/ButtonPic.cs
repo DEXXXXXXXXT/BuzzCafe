@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BuzzCafe
+namespace BuzzCafe.Resources.Toolbox
 {
-    public partial class Pop_up : Form
+    public partial class ButtonPic : UserControl
     {
-        public Pop_up()
+        public ButtonPic()
         {
             InitializeComponent();
         }
