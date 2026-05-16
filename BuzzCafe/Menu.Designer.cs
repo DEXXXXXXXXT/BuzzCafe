@@ -149,7 +149,7 @@
             // 
             // panelPopup
             // 
-            panelPopup.Anchor = AnchorStyles.Bottom;
+            panelPopup.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panelPopup.BackColor = Color.LightSlateGray;
             panelPopup.BackgroundImage = (Image)resources.GetObject("panelPopup.BackgroundImage");
             panelPopup.BackgroundImageLayout = ImageLayout.Stretch;
@@ -163,9 +163,9 @@
             panelPopup.Controls.Add(lblPrices);
             panelPopup.Controls.Add(lblProductname);
             panelPopup.Controls.Add(pbProduct);
-            panelPopup.Location = new Point(25, 573);
+            panelPopup.Location = new Point(25, 516);
             panelPopup.Name = "panelPopup";
-            panelPopup.Size = new Size(656, 305);
+            panelPopup.Size = new Size(656, 337);
             panelPopup.TabIndex = 1;
             panelPopup.Visible = false;
             // 
@@ -175,7 +175,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Constantia", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(595, 4);
+            button2.Location = new Point(595, 25);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(49, 46);
@@ -198,6 +198,7 @@
             btnAddOrder.TabIndex = 16;
             btnAddOrder.Text = "Add Order";
             btnAddOrder.UseVisualStyleBackColor = false;
+            btnAddOrder.Click += btnAddOrder_Click;
             // 
             // lbTotalPrice
             // 
@@ -282,7 +283,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft Himalaya", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(0, 0);
+            label2.Location = new Point(19, 0);
             label2.Name = "label2";
             label2.Size = new Size(88, 30);
             label2.TabIndex = 9;

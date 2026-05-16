@@ -21,8 +21,6 @@ namespace BuzzCafe
 
         private void btnStart_Click_1(object sender, EventArgs e)
         {
-
-
             DineTake dine = new DineTake();
             MainForm main = (MainForm)this.ParentForm;
 

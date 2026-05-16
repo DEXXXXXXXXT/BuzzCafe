@@ -9,16 +9,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace BuzzCafe
 {
     public partial class Menu : UserControl
     {
 
+        // instance
         int quan = 1;
         string drinkSize = "";
         double productPrice;
         double sizePrice;
+        int selectedProductId;
+        int selectedSize;
+        double total_perItem;
+        int orderId;
 
         public Menu()
         {
@@ -26,14 +32,8 @@ namespace BuzzCafe
             ShowCoffee();
 
 
+        }
 
-           
-        }
-        void resetQuan()
-        {
-            quan = 1;
-            lbquanCount.Text = quan.ToString();
-        }
 
         private void btnDrinks_Click_1(object sender, EventArgs e)
         {
@@ -46,6 +46,7 @@ namespace BuzzCafe
 
         private void btnPaste_Click_1(object sender, EventArgs e)
         {
+            selectedSize = 4;
             lbTopText.Text = "Pastries";
             panelSizes.Visible = false;
             panelPopup.Visible = false;
@@ -55,6 +56,7 @@ namespace BuzzCafe
 
         private void btnSnacks_Click_1(object sender, EventArgs e)
         {
+            selectedSize = 4;
             lbTopText.Text = "Snacks";
             panelSizes.Visible = false;
             panelPopup.Visible = false;
@@ -64,6 +66,7 @@ namespace BuzzCafe
 
         private void btnRicemeal_Click_1(object sender, EventArgs e)
         {
+            selectedSize = 4;
             lbTopText.Text = "Rice Meals";
             panelSizes.Visible = false;
             panelPopup.Visible = false;
@@ -92,6 +95,7 @@ namespace BuzzCafe
                     while (reader.Read())
                     {
                         flPanel.Controls.Add(CreateCard(
+                            Convert.ToInt32(reader["Product_id"]),
                             reader["name"].ToString(),
                             reader["price"].ToString(),
                             reader["product_image"].ToString()
@@ -104,13 +108,13 @@ namespace BuzzCafe
         }
 
         //creating cards for each product
-        Panel CreateCard(string name, string price, string imageFile)
+        Panel CreateCard(int product_id , string name, string price, string imageFile)
         {
             Panel card = new Panel();
             card.Width = 190; card.Height = 280;
             card.Margin = new Padding(15); card.BackColor = Color.White;
 
-            // Rounded Corners
+            //Rounded Corners
             GraphicsPath pathCard = new GraphicsPath();
             pathCard.AddArc(0, 0, 20, 20, 180, 90);
             pathCard.AddArc(card.Width - 20, 0, 20, 20, 270, 90);
@@ -124,7 +128,7 @@ namespace BuzzCafe
             pic.SizeMode = PictureBoxSizeMode.Zoom;
             pic.BackColor = Color.FromArgb(245, 245, 245);
 
-            // --- THE FINAL IMAGE CHECKER ---
+            // image checker
             if (!string.IsNullOrEmpty(imageFile))
             {
                 string cleanPath = imageFile.Replace("\"", "").Trim();
@@ -136,7 +140,6 @@ namespace BuzzCafe
                 else
                 {
                     pic.BackColor = Color.LightGray;
-                    // Malalaman mo dito kung anong path ang hinahanap ng code mo:
                     System.Diagnostics.Debug.WriteLine("MISSING FILE: " + cleanPath);
                 }
             }
@@ -154,22 +157,27 @@ namespace BuzzCafe
             btnAdd.BackColor = Color.SaddleBrown; btnAdd.ForeColor = Color.White;
             btnAdd.FlatStyle = FlatStyle.Flat; btnAdd.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 
-
+            //when clicking cart
             btnAdd.Click += (s, e) =>
             {
+
+                selectedProductId = product_id;
                 resetColor();
                 resetQuan();
                 lblPrices.Top = lblProductname.Bottom + 10;
                 panelPopup.Visible = true;
 
                 //button color
+              
                 drinkSize = "Small";
                 btnS.BackColor = Color.DarkGray;
-                
+
+                selectedSize = 1;
+
 
                 lblProductname.Text = name;
                 lblPrices.Text = "₱" + price;
-                
+
 
                 //pic
                 if (File.Exists(imageFile))
@@ -201,6 +209,11 @@ namespace BuzzCafe
 
 
         //for quanti
+        void resetQuan()
+        {
+            quan = 1;
+            lbquanCount.Text = quan.ToString();
+        }
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
             quan++;
@@ -218,9 +231,11 @@ namespace BuzzCafe
         }
 
 
-        //for sizes(button color)
+
+        //for button(sizes, color)
         private void btnS_Click(object sender, EventArgs e)
         {
+            selectedSize = 1;
             resetColor();
             btnS.BackColor = Color.DarkGray;
             size("Small");
@@ -232,11 +247,12 @@ namespace BuzzCafe
         }
         private void btnM_Click(object sender, EventArgs e)
         {
+            selectedSize = 2;
             resetColor();
             btnM.BackColor = Color.DarkGray;
             size("Medium");
 
-               
+
             sizePrice = getSizePrice("Medium");
 
             lbtoAddPrice.Visible = true;
@@ -246,6 +262,7 @@ namespace BuzzCafe
         }
         private void btnL_Click(object sender, EventArgs e)
         {
+            selectedSize = 3;
             resetColor();
             btnL.BackColor = Color.DarkGray;
             size("Large");
@@ -268,16 +285,19 @@ namespace BuzzCafe
         {
             this.drinkSize = size;
         }
+        //for button(sizes, color)
 
 
 
         //for price
         void updateTotalPrice()
         {
+
+            total_perItem = (productPrice + sizePrice) * quan;
+            lbTotalPrice.Text = "₱" + total_perItem.ToString();
             
-            double total = (productPrice + sizePrice) * quan;
-            lbTotalPrice.Text = "₱" + total.ToString();
         }
+        //will get data from db
         double getSizePrice(string size)
         {
             using (SqlConnection con = DBConnection.GetConnection())
@@ -292,8 +312,52 @@ namespace BuzzCafe
                 return Convert.ToDouble(cmd.ExecuteScalar());
             }
         }
-    
-        
+        //for prices
+
+
+        // add to cart
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = DBConnection.GetConnection())
+            {
+
+                con.Open();
+                string query = "INSERT INTO Order_Items(order_Id, Product_id, quantity, size_id, total_price_perItem ) VALUES ( @order_Id, @Product_id, @quantity, @size_id, @total_price_perItem)";
+                string getOrder = "SELECT MAX(order_Id) FROM Orders";
+
+                SqlCommand getCmd = new SqlCommand(getOrder, con);
+
+                int orderId = Convert.ToInt32(getCmd.ExecuteScalar());
+                SqlCommand cmd = new SqlCommand(query, con);
+              
+                cmd.Parameters.AddWithValue("@order_Id", orderId );
+                cmd.Parameters.AddWithValue("@Product_id", selectedProductId);
+                cmd.Parameters.AddWithValue("@quantity", quan );
+                cmd.Parameters.AddWithValue("@size_id", selectedSize);
+                cmd.Parameters.AddWithValue("@total_price_perItem", total_perItem);
+
+
+
+                MessageBox.Show(orderId + "\n" +selectedProductId + "\n" +quan + "\n" +selectedSize + "\n" +total_perItem);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                resetOrder();
+
+            }
+            void resetOrder()
+            {
+                selectedProductId = 0;
+                selectedSize = 0;
+                quan = 0;
+                total_perItem = 0;
+                lbquanCount.Text = "0";
+                lbTotalPrice.Text = "₱0";
+                sizePrice = 0;
+
+                panelPopup.Visible = false;
+            }
+        }
     }
 }
 
