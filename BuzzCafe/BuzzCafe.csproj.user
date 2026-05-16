@@ -8,6 +8,9 @@
     <Compile Update="DineTake.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Homemenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
