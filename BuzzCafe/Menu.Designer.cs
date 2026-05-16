@@ -41,16 +41,17 @@
             btnAddOrder = new Button();
             lbTotalPrice = new Label();
             label3 = new Label();
-            panel3 = new Panel();
+            panelQuantity = new Panel();
             button1 = new Button();
-            lbquantityCount = new Label();
             btnAdd = new Button();
+            lbquanCount = new Label();
             label2 = new Label();
             panelSizes = new Panel();
-            button6 = new Button();
+            btnL = new Button();
             btnM = new Button();
             btnS = new Button();
             lblSize = new Label();
+            lbtoAddPrice = new Label();
             label1 = new Label();
             lblPrices = new Label();
             lblProductname = new Label();
@@ -62,7 +63,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelPopup.SuspendLayout();
-            panel3.SuspendLayout();
+            panelQuantity.SuspendLayout();
             panelSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbProduct).BeginInit();
             panel2.SuspendLayout();
@@ -156,7 +157,7 @@
             panelPopup.Controls.Add(btnAddOrder);
             panelPopup.Controls.Add(lbTotalPrice);
             panelPopup.Controls.Add(label3);
-            panelPopup.Controls.Add(panel3);
+            panelPopup.Controls.Add(panelQuantity);
             panelPopup.Controls.Add(panelSizes);
             panelPopup.Controls.Add(label1);
             panelPopup.Controls.Add(lblPrices);
@@ -190,7 +191,7 @@
             btnAddOrder.FlatStyle = FlatStyle.Flat;
             btnAddOrder.Font = new Font("Constantia", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddOrder.ForeColor = Color.Transparent;
-            btnAddOrder.Location = new Point(355, 219);
+            btnAddOrder.Location = new Point(448, 220);
             btnAddOrder.Margin = new Padding(3, 4, 3, 4);
             btnAddOrder.Name = "btnAddOrder";
             btnAddOrder.Size = new Size(179, 65);
@@ -217,24 +218,24 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Constantia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Transparent;
-            label3.Location = new Point(29, 230);
+            label3.Location = new Point(20, 230);
             label3.Name = "label3";
             label3.Size = new Size(197, 41);
             label3.TabIndex = 14;
             label3.Text = "Total Price:";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // panel3
+            // panelQuantity
             // 
-            panel3.BackColor = Color.Transparent;
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(lbquantityCount);
-            panel3.Controls.Add(btnAdd);
-            panel3.Controls.Add(label2);
-            panel3.Location = new Point(448, 111);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(173, 70);
-            panel3.TabIndex = 12;
+            panelQuantity.BackColor = Color.Transparent;
+            panelQuantity.Controls.Add(button1);
+            panelQuantity.Controls.Add(btnAdd);
+            panelQuantity.Controls.Add(lbquanCount);
+            panelQuantity.Controls.Add(label2);
+            panelQuantity.Location = new Point(448, 111);
+            panelQuantity.Name = "panelQuantity";
+            panelQuantity.Size = new Size(173, 70);
+            panelQuantity.TabIndex = 12;
             // 
             // button1
             // 
@@ -248,18 +249,7 @@
             button1.TabIndex = 14;
             button1.Text = "-";
             button1.UseVisualStyleBackColor = true;
-            // 
-            // lbquantityCount
-            // 
-            lbquantityCount.BackColor = Color.Transparent;
-            lbquantityCount.Font = new Font("Microsoft Himalaya", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbquantityCount.ForeColor = Color.Transparent;
-            lbquantityCount.Location = new Point(70, 20);
-            lbquantityCount.Name = "lbquantityCount";
-            lbquantityCount.Size = new Size(33, 45);
-            lbquantityCount.TabIndex = 13;
-            lbquantityCount.Text = "A";
-            lbquantityCount.TextAlign = ContentAlignment.MiddleCenter;
+            button1.Click += button1_Click_1;
             // 
             // btnAdd
             // 
@@ -273,6 +263,19 @@
             btnAdd.TabIndex = 12;
             btnAdd.Text = "+";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click_1;
+            // 
+            // lbquanCount
+            // 
+            lbquanCount.BackColor = Color.Transparent;
+            lbquanCount.Font = new Font("Microsoft Himalaya", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbquanCount.ForeColor = Color.Transparent;
+            lbquanCount.Location = new Point(58, 25);
+            lbquanCount.Name = "lbquanCount";
+            lbquanCount.Size = new Size(52, 45);
+            lbquanCount.TabIndex = 13;
+            lbquanCount.Text = "A";
+            lbquanCount.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -287,28 +290,31 @@
             // 
             // panelSizes
             // 
+            panelSizes.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelSizes.BackColor = Color.Transparent;
-            panelSizes.Controls.Add(button6);
+            panelSizes.Controls.Add(btnL);
             panelSizes.Controls.Add(btnM);
             panelSizes.Controls.Add(btnS);
             panelSizes.Controls.Add(lblSize);
+            panelSizes.Controls.Add(lbtoAddPrice);
             panelSizes.Location = new Point(192, 111);
             panelSizes.Name = "panelSizes";
             panelSizes.Size = new Size(250, 72);
             panelSizes.TabIndex = 11;
             // 
-            // button6
+            // btnL
             // 
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Constantia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(163, 34);
-            button6.Margin = new Padding(3, 4, 3, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(74, 31);
-            button6.TabIndex = 12;
-            button6.Text = "Large";
-            button6.UseVisualStyleBackColor = true;
+            btnL.FlatStyle = FlatStyle.Flat;
+            btnL.Font = new Font("Constantia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnL.ForeColor = Color.White;
+            btnL.Location = new Point(163, 34);
+            btnL.Margin = new Padding(3, 4, 3, 4);
+            btnL.Name = "btnL";
+            btnL.Size = new Size(74, 31);
+            btnL.TabIndex = 12;
+            btnL.Text = "Large";
+            btnL.UseVisualStyleBackColor = true;
+            btnL.Click += btnL_Click;
             // 
             // btnM
             // 
@@ -322,6 +328,7 @@
             btnM.TabIndex = 11;
             btnM.Text = "Medium";
             btnM.UseVisualStyleBackColor = true;
+            btnM.Click += btnM_Click;
             // 
             // btnS
             // 
@@ -335,17 +342,30 @@
             btnS.TabIndex = 10;
             btnS.Text = "Small";
             btnS.UseVisualStyleBackColor = true;
+            btnS.Click += btnS_Click;
             // 
             // lblSize
             // 
             lblSize.BackColor = Color.Transparent;
-            lblSize.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSize.Font = new Font("Microsoft Himalaya", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSize.ForeColor = Color.Transparent;
-            lblSize.Location = new Point(3, 0);
+            lblSize.Location = new Point(3, 9);
             lblSize.Name = "lblSize";
-            lblSize.Size = new Size(88, 30);
+            lblSize.Size = new Size(53, 30);
             lblSize.TabIndex = 8;
             lblSize.Text = "Size:";
+            // 
+            // lbtoAddPrice
+            // 
+            lbtoAddPrice.BackColor = Color.Transparent;
+            lbtoAddPrice.Font = new Font("Microsoft Himalaya", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbtoAddPrice.ForeColor = Color.Transparent;
+            lbtoAddPrice.Location = new Point(47, 6);
+            lbtoAddPrice.Name = "lbtoAddPrice";
+            lbtoAddPrice.Size = new Size(70, 34);
+            lbtoAddPrice.TabIndex = 13;
+            lbtoAddPrice.Text = "add";
+            lbtoAddPrice.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -439,7 +459,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelPopup.ResumeLayout(false);
             panelPopup.PerformLayout();
-            panel3.ResumeLayout(false);
+            panelQuantity.ResumeLayout(false);
             panelSizes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbProduct).EndInit();
             panel2.ResumeLayout(false);
@@ -467,18 +487,19 @@
         public Label lblProductname;
         public PictureBox pbProduct;
         private Panel panelSizes;
-        private Button button6;
+        private Button btnL;
         private Button btnM;
         private Button btnS;
-        private Panel panel3;
         public Label label2;
         public Label lblSize;
-        public Label lbquantityCount;
+        public Label lbquanCount;
         private Button btnAdd;
         private Button button1;
         private Button btnAddOrder;
         public Label lbTotalPrice;
         public Label label3;
         private Button button2;
+        public Panel panelQuantity;
+        public Label lbtoAddPrice;
     }
 }

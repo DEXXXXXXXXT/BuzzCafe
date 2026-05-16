@@ -60,7 +60,7 @@
             btnStart.FlatStyle = FlatStyle.Flat;
             btnStart.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStart.ForeColor = Color.White;
-            btnStart.Location = new Point(69, 733);
+            btnStart.Location = new Point(61, 733);
             btnStart.Margin = new Padding(3, 4, 3, 4);
             btnStart.Name = "btnStart";
             btnStart.Size = new Size(549, 93);
@@ -87,7 +87,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Georgia", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(124, 103);
+            label2.Location = new Point(101, 103);
             label2.Name = "label2";
             label2.Size = new Size(468, 138);
             label2.TabIndex = 8;
@@ -100,7 +100,7 @@
             lblwelcome.BackColor = Color.Transparent;
             lblwelcome.Font = new Font("Georgia", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblwelcome.ForeColor = Color.Linen;
-            lblwelcome.Location = new Point(151, 13);
+            lblwelcome.Location = new Point(122, 13);
             lblwelcome.Name = "lblwelcome";
             lblwelcome.Size = new Size(427, 109);
             lblwelcome.TabIndex = 1;
@@ -112,7 +112,7 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = Properties.Resources.coffeeIntro;
-            pictureBox1.Location = new Point(95, 147);
+            pictureBox1.Location = new Point(81, 147);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(508, 599);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;

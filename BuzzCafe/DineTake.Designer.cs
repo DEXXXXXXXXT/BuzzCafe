@@ -100,14 +100,14 @@
             // 
             // lbType
             // 
-            lbType.AutoSize = true;
             lbType.Font = new Font("Georgia", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbType.ForeColor = Color.White;
-            lbType.Location = new Point(191, 141);
+            lbType.Location = new Point(160, 119);
             lbType.Name = "lbType";
-            lbType.Size = new Size(100, 39);
+            lbType.Size = new Size(178, 85);
             lbType.TabIndex = 3;
             lbType.Text = "Type";
+            lbType.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnYes
             // 
@@ -188,7 +188,7 @@
             lblBuzz.BackColor = Color.Transparent;
             lblBuzz.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBuzz.ForeColor = Color.White;
-            lblBuzz.Location = new Point(91, 38);
+            lblBuzz.Location = new Point(102, 38);
             lblBuzz.Name = "lblBuzz";
             lblBuzz.Size = new Size(462, 88);
             lblBuzz.TabIndex = 9;
@@ -200,7 +200,7 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = Properties.Resources.dinetakecoffee;
-            pictureBox1.Location = new Point(107, 52);
+            pictureBox1.Location = new Point(110, 52);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(446, 536);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;

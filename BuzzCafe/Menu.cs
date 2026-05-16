@@ -14,41 +14,69 @@ namespace BuzzCafe
 {
     public partial class Menu : UserControl
     {
+
+        int quan = 1;
+        string drinkSize = "";
+        double productPrice;
+        double sizePrice;
+
         public Menu()
         {
             InitializeComponent();
             ShowCoffee();
+
+
+
+           
+        }
+        void resetQuan()
+        {
+            quan = 1;
+            lbquanCount.Text = quan.ToString();
         }
 
         private void btnDrinks_Click_1(object sender, EventArgs e)
         {
             lbTopText.Text = "Drinks";
+            panelSizes.Visible = true;
+            panelPopup.Visible = false;
+            resetQuan();
             LoadProduct(1);
         }
 
         private void btnPaste_Click_1(object sender, EventArgs e)
         {
             lbTopText.Text = "Pastries";
+            panelSizes.Visible = false;
+            panelPopup.Visible = false;
+            resetQuan();
             LoadProduct(2);
         }
 
         private void btnSnacks_Click_1(object sender, EventArgs e)
         {
             lbTopText.Text = "Snacks";
+            panelSizes.Visible = false;
+            panelPopup.Visible = false;
+            resetQuan();
             LoadProduct(3);
         }
 
         private void btnRicemeal_Click_1(object sender, EventArgs e)
         {
             lbTopText.Text = "Rice Meals";
+            panelSizes.Visible = false;
+            panelPopup.Visible = false;
+            resetQuan();
             LoadProduct(4);
         }
 
 
 
-
+        //to display first product
         void ShowCoffee() { lbTopText.Text = "Drinks"; LoadProduct(1); }
 
+        //to get data from db
         void LoadProduct(int category_id)
         {
             flPanel.Controls.Clear();
@@ -75,6 +103,7 @@ namespace BuzzCafe
             catch (Exception ex) { MessageBox.Show("Database Error: " + ex.Message); }
         }
 
+        //creating cards for each product
         Panel CreateCard(string name, string price, string imageFile)
         {
             Panel card = new Panel();
@@ -128,17 +157,32 @@ namespace BuzzCafe
 
             btnAdd.Click += (s, e) =>
             {
-
+                resetColor();
+                resetQuan();
                 lblPrices.Top = lblProductname.Bottom + 10;
                 panelPopup.Visible = true;
 
+                //button color
+                drinkSize = "Small";
+                btnS.BackColor = Color.DarkGray;
+                
+
                 lblProductname.Text = name;
                 lblPrices.Text = "₱" + price;
+                
 
+                //pic
                 if (File.Exists(imageFile))
                 {
                     pbProduct.Image = Image.FromFile(imageFile);
                 }
+
+
+                //price
+                productPrice = Convert.ToDouble(price) * quan;
+                lbtoAddPrice.Visible = false;
+                lbTotalPrice.Text = "₱" + productPrice.ToString();
+
 
 
             };
@@ -148,16 +192,108 @@ namespace BuzzCafe
         }
 
 
-
-
-
-
-  
-
+        //cancel
         private void button2_Click(object sender, EventArgs e)
         {
             panelPopup.Visible = false;
         }
+
+
+
+        //for quanti
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            quan++;
+            lbquanCount.Text = quan.ToString();
+            updateTotalPrice();
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (quan > 1)
+            {
+                quan--;
+            }
+            lbquanCount.Text = quan.ToString();
+            updateTotalPrice();
+        }
+
+
+        //for sizes(button color)
+        private void btnS_Click(object sender, EventArgs e)
+        {
+            resetColor();
+            btnS.BackColor = Color.DarkGray;
+            size("Small");
+
+            sizePrice = getSizePrice("Small");
+            lbtoAddPrice.Visible = false;
+            updateTotalPrice();
+
+        }
+        private void btnM_Click(object sender, EventArgs e)
+        {
+            resetColor();
+            btnM.BackColor = Color.DarkGray;
+            size("Medium");
+
+               
+            sizePrice = getSizePrice("Medium");
+
+            lbtoAddPrice.Visible = true;
+            lbtoAddPrice.Text = "+₱" + Convert.ToString(sizePrice);
+
+            updateTotalPrice();
+        }
+        private void btnL_Click(object sender, EventArgs e)
+        {
+            resetColor();
+            btnL.BackColor = Color.DarkGray;
+            size("Large");
+
+            sizePrice = getSizePrice("Large");
+
+            lbtoAddPrice.Visible = true;
+            lbtoAddPrice.Text = "+₱" + Convert.ToString(sizePrice);
+
+            updateTotalPrice();
+        }
+        void resetColor()
+        {
+            btnS.BackColor = Color.Transparent;
+            btnM.BackColor = Color.Transparent;
+            btnL.BackColor = Color.Transparent;
+
+        }
+        void size(string size)
+        {
+            this.drinkSize = size;
+        }
+
+
+
+        //for price
+        void updateTotalPrice()
+        {
+            
+            double total = (productPrice + sizePrice) * quan;
+            lbTotalPrice.Text = "₱" + total.ToString();
+        }
+        double getSizePrice(string size)
+        {
+            using (SqlConnection con = DBConnection.GetConnection())
+            {
+                string query = "SELECT price_to_add  FROM Sizes WHERE size_name = @size";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                cmd.Parameters.AddWithValue("@size", drinkSize);
+
+                con.Open();
+
+                return Convert.ToDouble(cmd.ExecuteScalar());
+            }
+        }
+    
+        
     }
 }
 
