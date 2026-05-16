@@ -361,6 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/BuzzCafe/BuzzCafe.csproj
 /BuzzCafe/Homemenu.cs
 /.gitignore
