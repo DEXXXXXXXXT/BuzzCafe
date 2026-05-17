@@ -31,25 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cart));
             lblcart = new Label();
             panelmenus = new Panel();
-            panelfortotals = new Panel();
+            button1 = new Button();
             panelorders = new Panel();
-            pictureBox1 = new PictureBox();
-            lblPrices = new Label();
-            lblProductname = new Label();
-            lblSize = new Label();
+            label3 = new Label();
+            btnremove = new Button();
+            lblCupSize = new Label();
             btnminus = new Button();
             btnadd = new Button();
-            lblCupSize = new Label();
-            btnremove = new Button();
-            lbltotals = new Label();
-            lbltotal = new Label();
+            lblSize = new Label();
+            lblPrices = new Label();
+            lblProductname = new Label();
+            pictureBox1 = new PictureBox();
+            panelfortotals = new Panel();
             btnpay = new Button();
-            label3 = new Label();
-            button1 = new Button();
+            lbltotal = new Label();
+            lbltotals = new Label();
             panelmenus.SuspendLayout();
-            panelfortotals.SuspendLayout();
             panelorders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelfortotals.SuspendLayout();
             SuspendLayout();
             // 
             // lblcart
@@ -58,9 +58,9 @@
             lblcart.BackColor = Color.Transparent;
             lblcart.Font = new Font("Constantia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblcart.ForeColor = Color.White;
-            lblcart.Location = new Point(33, 0);
+            lblcart.Location = new Point(38, 0);
             lblcart.Name = "lblcart";
-            lblcart.Size = new Size(449, 59);
+            lblcart.Size = new Size(559, 73);
             lblcart.TabIndex = 0;
             lblcart.Text = "Your Order Details";
             // 
@@ -70,23 +70,23 @@
             panelmenus.Controls.Add(button1);
             panelmenus.Controls.Add(panelorders);
             panelmenus.Controls.Add(lblcart);
-            panelmenus.Location = new Point(12, 12);
+            panelmenus.Location = new Point(14, 16);
+            panelmenus.Margin = new Padding(3, 4, 3, 4);
             panelmenus.Name = "panelmenus";
-            panelmenus.Size = new Size(510, 621);
+            panelmenus.Size = new Size(515, 828);
             panelmenus.TabIndex = 1;
             // 
-            // panelfortotals
+            // button1
             // 
-            panelfortotals.BackColor = Color.Transparent;
-            panelfortotals.BackgroundImage = Properties.Resources.bg;
-            panelfortotals.BackgroundImageLayout = ImageLayout.Center;
-            panelfortotals.Controls.Add(btnpay);
-            panelfortotals.Controls.Add(lbltotal);
-            panelfortotals.Controls.Add(lbltotals);
-            panelfortotals.Location = new Point(-1, 639);
-            panelfortotals.Name = "panelfortotals";
-            panelfortotals.Size = new Size(535, 87);
-            panelfortotals.TabIndex = 2;
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Location = new Point(0, 0);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(31, 36);
+            button1.TabIndex = 2;
+            button1.UseVisualStyleBackColor = false;
             // 
             // panelorders
             // 
@@ -99,57 +99,52 @@
             panelorders.Controls.Add(lblPrices);
             panelorders.Controls.Add(lblProductname);
             panelorders.Controls.Add(pictureBox1);
-            panelorders.Location = new Point(16, 62);
+            panelorders.Location = new Point(18, 83);
+            panelorders.Margin = new Padding(3, 4, 3, 4);
             panelorders.Name = "panelorders";
-            panelorders.Size = new Size(476, 90);
+            panelorders.Size = new Size(544, 120);
             panelorders.TabIndex = 1;
             // 
-            // pictureBox1
+            // label3
             // 
-            pictureBox1.BackColor = Color.Silver;
-            pictureBox1.Location = new Point(6, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(86, 80);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(449, 79);
+            label3.Name = "label3";
+            label3.Size = new Size(37, 23);
+            label3.TabIndex = 14;
+            label3.Text = "Qty";
             // 
-            // lblPrices
+            // btnremove
             // 
-            lblPrices.AutoSize = true;
-            lblPrices.BackColor = Color.Transparent;
-            lblPrices.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrices.ForeColor = Color.Transparent;
-            lblPrices.Location = new Point(367, 19);
-            lblPrices.Name = "lblPrices";
-            lblPrices.Size = new Size(82, 27);
-            lblPrices.TabIndex = 4;
-            lblPrices.Text = "₱149.50";
+            btnremove.BackColor = Color.Gray;
+            btnremove.BackgroundImage = (Image)resources.GetObject("btnremove.BackgroundImage");
+            btnremove.BackgroundImageLayout = ImageLayout.Stretch;
+            btnremove.FlatStyle = FlatStyle.Flat;
+            btnremove.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnremove.ForeColor = Color.Black;
+            btnremove.ImageAlign = ContentAlignment.MiddleLeft;
+            btnremove.Location = new Point(526, 1);
+            btnremove.Margin = new Padding(3, 4, 3, 4);
+            btnremove.Name = "btnremove";
+            btnremove.RightToLeft = RightToLeft.Yes;
+            btnremove.Size = new Size(17, 20);
+            btnremove.TabIndex = 12;
+            btnremove.UseVisualStyleBackColor = false;
+            btnremove.Click += button1_Click;
             // 
-            // lblProductname
+            // lblCupSize
             // 
-            lblProductname.AutoEllipsis = true;
-            lblProductname.AutoSize = true;
-            lblProductname.BackColor = Color.Transparent;
-            lblProductname.Font = new Font("Constantia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblProductname.ForeColor = Color.Transparent;
-            lblProductname.Location = new Point(95, 13);
-            lblProductname.Name = "lblProductname";
-            lblProductname.Size = new Size(154, 33);
-            lblProductname.TabIndex = 3;
-            lblProductname.Text = "Americano";
-            lblProductname.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // lblSize
-            // 
-            lblSize.AutoSize = true;
-            lblSize.BackColor = Color.Transparent;
-            lblSize.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSize.ForeColor = Color.Transparent;
-            lblSize.Location = new Point(95, 49);
-            lblSize.Name = "lblSize";
-            lblSize.Size = new Size(53, 27);
-            lblSize.TabIndex = 10;
-            lblSize.Text = "Size:";
+            lblCupSize.AutoSize = true;
+            lblCupSize.BackColor = Color.Transparent;
+            lblCupSize.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCupSize.ForeColor = Color.Transparent;
+            lblCupSize.Location = new Point(163, 65);
+            lblCupSize.Name = "lblCupSize";
+            lblCupSize.Size = new Size(97, 34);
+            lblCupSize.TabIndex = 13;
+            lblCupSize.Text = "SMALL";
             // 
             // btnminus
             // 
@@ -160,10 +155,11 @@
             btnminus.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnminus.ForeColor = Color.Black;
             btnminus.ImageAlign = ContentAlignment.MiddleLeft;
-            btnminus.Location = new Point(367, 56);
+            btnminus.Location = new Point(419, 75);
+            btnminus.Margin = new Padding(3, 4, 3, 4);
             btnminus.Name = "btnminus";
             btnminus.RightToLeft = RightToLeft.Yes;
-            btnminus.Size = new Size(20, 20);
+            btnminus.Size = new Size(23, 27);
             btnminus.TabIndex = 12;
             btnminus.UseVisualStyleBackColor = false;
             // 
@@ -176,53 +172,86 @@
             btnadd.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnadd.ForeColor = Color.Black;
             btnadd.ImageAlign = ContentAlignment.MiddleLeft;
-            btnadd.Location = new Point(425, 56);
+            btnadd.Location = new Point(486, 75);
+            btnadd.Margin = new Padding(3, 4, 3, 4);
             btnadd.Name = "btnadd";
             btnadd.RightToLeft = RightToLeft.Yes;
-            btnadd.Size = new Size(20, 20);
+            btnadd.Size = new Size(23, 27);
             btnadd.TabIndex = 11;
             btnadd.UseVisualStyleBackColor = false;
             // 
-            // lblCupSize
+            // lblSize
             // 
-            lblCupSize.AutoSize = true;
-            lblCupSize.BackColor = Color.Transparent;
-            lblCupSize.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCupSize.ForeColor = Color.Transparent;
-            lblCupSize.Location = new Point(143, 49);
-            lblCupSize.Name = "lblCupSize";
-            lblCupSize.Size = new Size(78, 27);
-            lblCupSize.TabIndex = 13;
-            lblCupSize.Text = "SMALL";
+            lblSize.AutoSize = true;
+            lblSize.BackColor = Color.Transparent;
+            lblSize.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSize.ForeColor = Color.Transparent;
+            lblSize.Location = new Point(109, 65);
+            lblSize.Name = "lblSize";
+            lblSize.Size = new Size(65, 34);
+            lblSize.TabIndex = 10;
+            lblSize.Text = "Size:";
             // 
-            // btnremove
+            // lblPrices
             // 
-            btnremove.BackColor = Color.Gray;
-            btnremove.BackgroundImage = (Image)resources.GetObject("btnremove.BackgroundImage");
-            btnremove.BackgroundImageLayout = ImageLayout.Stretch;
-            btnremove.FlatStyle = FlatStyle.Flat;
-            btnremove.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnremove.ForeColor = Color.Black;
-            btnremove.ImageAlign = ContentAlignment.MiddleLeft;
-            btnremove.Location = new Point(460, 1);
-            btnremove.Name = "btnremove";
-            btnremove.RightToLeft = RightToLeft.Yes;
-            btnremove.Size = new Size(15, 15);
-            btnremove.TabIndex = 12;
-            btnremove.UseVisualStyleBackColor = false;
-            btnremove.Click += button1_Click;
+            lblPrices.AutoSize = true;
+            lblPrices.BackColor = Color.Transparent;
+            lblPrices.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrices.ForeColor = Color.Transparent;
+            lblPrices.Location = new Point(419, 25);
+            lblPrices.Name = "lblPrices";
+            lblPrices.Size = new Size(100, 34);
+            lblPrices.TabIndex = 4;
+            lblPrices.Text = "₱149.50";
             // 
-            // lbltotals
+            // lblProductname
             // 
-            lbltotals.AutoSize = true;
-            lbltotals.BackColor = Color.Transparent;
-            lbltotals.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbltotals.ForeColor = Color.White;
-            lbltotals.Location = new Point(23, 20);
-            lbltotals.Name = "lbltotals";
-            lbltotals.Size = new Size(62, 26);
-            lbltotals.TabIndex = 1;
-            lbltotals.Text = "Total";
+            lblProductname.AutoEllipsis = true;
+            lblProductname.AutoSize = true;
+            lblProductname.BackColor = Color.Transparent;
+            lblProductname.Font = new Font("Constantia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProductname.ForeColor = Color.Transparent;
+            lblProductname.Location = new Point(109, 17);
+            lblProductname.Name = "lblProductname";
+            lblProductname.Size = new Size(193, 41);
+            lblProductname.TabIndex = 3;
+            lblProductname.Text = "Americano";
+            lblProductname.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Silver;
+            pictureBox1.Location = new Point(7, 5);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(98, 107);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // panelfortotals
+            // 
+            panelfortotals.BackColor = Color.Transparent;
+            panelfortotals.BackgroundImage = Properties.Resources.bg;
+            panelfortotals.BackgroundImageLayout = ImageLayout.Center;
+            panelfortotals.Controls.Add(btnpay);
+            panelfortotals.Controls.Add(lbltotal);
+            panelfortotals.Controls.Add(lbltotals);
+            panelfortotals.Location = new Point(-1, 852);
+            panelfortotals.Margin = new Padding(3, 4, 3, 4);
+            panelfortotals.Name = "panelfortotals";
+            panelfortotals.Size = new Size(611, 116);
+            panelfortotals.TabIndex = 2;
+            // 
+            // btnpay
+            // 
+            btnpay.Font = new Font("Arial Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnpay.Location = new Point(421, 36);
+            btnpay.Margin = new Padding(3, 4, 3, 4);
+            btnpay.Name = "btnpay";
+            btnpay.Size = new Size(177, 60);
+            btnpay.TabIndex = 6;
+            btnpay.Text = "Continue to pay";
+            btnpay.UseVisualStyleBackColor = true;
             // 
             // lbltotal
             // 
@@ -231,63 +260,44 @@
             lbltotal.FlatStyle = FlatStyle.Flat;
             lbltotal.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbltotal.ForeColor = Color.Transparent;
-            lbltotal.Location = new Point(29, 46);
+            lbltotal.Location = new Point(33, 61);
             lbltotal.Name = "lbltotal";
-            lbltotal.Size = new Size(108, 20);
+            lbltotal.Size = new Size(130, 24);
             lbltotal.TabIndex = 5;
             lbltotal.Text = "Php ₱149.50";
             lbltotal.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnpay
+            // lbltotals
             // 
-            btnpay.Font = new Font("Arial Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnpay.Location = new Point(368, 27);
-            btnpay.Name = "btnpay";
-            btnpay.Size = new Size(155, 45);
-            btnpay.TabIndex = 6;
-            btnpay.Text = "Continue to pay";
-            btnpay.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(393, 59);
-            label3.Name = "label3";
-            label3.Size = new Size(28, 17);
-            label3.TabIndex = 14;
-            label3.Text = "Qty";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(27, 27);
-            button1.TabIndex = 2;
-            button1.UseVisualStyleBackColor = false;
+            lbltotals.AutoSize = true;
+            lbltotals.BackColor = Color.Transparent;
+            lbltotals.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbltotals.ForeColor = Color.White;
+            lbltotals.Location = new Point(26, 27);
+            lbltotals.Name = "lbltotals";
+            lbltotals.Size = new Size(80, 33);
+            lbltotals.TabIndex = 1;
+            lbltotals.Text = "Total";
             // 
             // Cart
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.download__1_;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(534, 728);
+            ClientSize = new Size(610, 971);
             Controls.Add(panelfortotals);
             Controls.Add(panelmenus);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Cart";
             Text = "Cart";
             panelmenus.ResumeLayout(false);
             panelmenus.PerformLayout();
-            panelfortotals.ResumeLayout(false);
-            panelfortotals.PerformLayout();
             panelorders.ResumeLayout(false);
             panelorders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelfortotals.ResumeLayout(false);
+            panelfortotals.PerformLayout();
             ResumeLayout(false);
         }
 

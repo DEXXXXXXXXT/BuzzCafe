@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
+            button5 = new Button();
             btnRicemeal = new Button();
             btnSnacks = new Button();
             btnPaste = new Button();
@@ -61,6 +63,7 @@
             flPanel = new FlowLayoutPanel();
             bindingSource1 = new BindingSource(components);
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelPopup.SuspendLayout();
             panelQuantity.SuspendLayout();
@@ -73,6 +76,8 @@
             // panel1
             // 
             panel1.BackColor = Color.DarkGray;
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(button5);
             panel1.Controls.Add(btnRicemeal);
             panel1.Controls.Add(btnSnacks);
             panel1.Controls.Add(btnPaste);
@@ -83,6 +88,29 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(184, 878);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.cartDesign;
+            pictureBox2.Location = new Point(12, 772);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(85, 83);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
+            // 
+            // button5
+            // 
+            button5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Georgia", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Location = new Point(0, 762);
+            button5.Name = "button5";
+            button5.Size = new Size(184, 102);
+            button5.TabIndex = 21;
+            button5.Text = "             Cart";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // btnRicemeal
             // 
@@ -457,6 +485,7 @@
             Name = "Menu";
             Size = new Size(707, 878);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelPopup.ResumeLayout(false);
             panelPopup.PerformLayout();
@@ -477,7 +506,6 @@
         private PictureBox pictureBox1;
         private BindingSource bindingSource1;
         public Button button4;
-        public Button button3;
         public Button btnPaste;
         public Button btnDrinks;
         public Button btnSnacks;
@@ -502,5 +530,7 @@
         private Button button2;
         public Panel panelQuantity;
         public Label lbtoAddPrice;
+        private PictureBox pictureBox2;
+        public Button button5;
     }
 }

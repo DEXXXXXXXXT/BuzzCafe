@@ -13,13 +13,14 @@ namespace BuzzCafe
 {
     public partial class DineTake : UserControl
     {
+        string order_type = "";
         public DineTake()
         {
             InitializeComponent();
             panelValidation.Visible = false;
         }
 
-        string order_type = "";
+       
 
 
         private void btnDine_Click(object sender, EventArgs e)

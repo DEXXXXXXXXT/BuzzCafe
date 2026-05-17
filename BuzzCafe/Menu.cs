@@ -28,6 +28,7 @@ namespace BuzzCafe
 
         public Menu()
         {
+          
             InitializeComponent();
             ShowCoffee();
 
@@ -108,7 +109,7 @@ namespace BuzzCafe
         }
 
         //creating cards for each product
-        Panel CreateCard(int product_id , string name, string price, string imageFile)
+        Panel CreateCard(int product_id, string name, string price, string imageFile)
         {
             Panel card = new Panel();
             card.Width = 190; card.Height = 280;
@@ -157,22 +158,35 @@ namespace BuzzCafe
             btnAdd.BackColor = Color.SaddleBrown; btnAdd.ForeColor = Color.White;
             btnAdd.FlatStyle = FlatStyle.Flat; btnAdd.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 
+
             //when clicking cart
             btnAdd.Click += (s, e) =>
             {
 
+                panelPopup.BringToFront();
                 selectedProductId = product_id;
                 resetColor();
-                resetQuan();
-                lblPrices.Top = lblProductname.Bottom + 10;
+                resetQuan();    
+                //lblPrices.Top = lblProductname.Bottom + 10;
                 panelPopup.Visible = true;
 
-                //button color
-              
-                drinkSize = "Small";
-                btnS.BackColor = Color.DarkGray;
 
-                selectedSize = 1;
+                if (lbTopText.Text == "Drinks")
+                {
+                    drinkSize = "Small";
+
+                    selectedSize = 1;
+                    sizePrice = getSizePrice("Small");
+
+                    btnS.BackColor = Color.DarkGray;
+
+                    panelSizes.Visible = true;
+                }
+                else
+                {
+                    selectedSize = 4;
+                    panelSizes.Visible = false;
+                }
 
 
                 lblProductname.Text = name;
@@ -189,7 +203,9 @@ namespace BuzzCafe
                 //price
                 productPrice = Convert.ToDouble(price) * quan;
                 lbtoAddPrice.Visible = false;
-                lbTotalPrice.Text = "₱" + productPrice.ToString();
+                updateTotalPrice();
+
+
 
 
 
@@ -205,8 +221,6 @@ namespace BuzzCafe
         {
             panelPopup.Visible = false;
         }
-
-
 
         //for quanti
         void resetQuan()
@@ -295,7 +309,7 @@ namespace BuzzCafe
 
             total_perItem = (productPrice + sizePrice) * quan;
             lbTotalPrice.Text = "₱" + total_perItem.ToString();
-            
+
         }
         //will get data from db
         double getSizePrice(string size)
@@ -329,16 +343,17 @@ namespace BuzzCafe
 
                 int orderId = Convert.ToInt32(getCmd.ExecuteScalar());
                 SqlCommand cmd = new SqlCommand(query, con);
-              
-                cmd.Parameters.AddWithValue("@order_Id", orderId );
+
+                MainForm.CurrentOrderId = orderId;
+                cmd.Parameters.AddWithValue("@order_Id", orderId);
                 cmd.Parameters.AddWithValue("@Product_id", selectedProductId);
-                cmd.Parameters.AddWithValue("@quantity", quan );
+                cmd.Parameters.AddWithValue("@quantity", quan);
                 cmd.Parameters.AddWithValue("@size_id", selectedSize);
                 cmd.Parameters.AddWithValue("@total_price_perItem", total_perItem);
 
 
 
-                MessageBox.Show(orderId + "\n" +selectedProductId + "\n" +quan + "\n" +selectedSize + "\n" +total_perItem);
+                MessageBox.Show("order id: " + orderId + "\nProduct id: " + selectedProductId + "\nQuantity: " + quan + "\nSize: " + selectedSize + "\nItem Price: " + total_perItem);
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -357,6 +372,19 @@ namespace BuzzCafe
 
                 panelPopup.Visible = false;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MainForm main = (MainForm)this.ParentForm;
+            Cartt cart = new Cartt();
+
+            main.mainPanel.Controls.Clear();
+            main.mainPanel.Controls.Add(cart);
+
+            cart.Dock = DockStyle.Fill;
+            cart.BringToFront();
+
         }
     }
 }

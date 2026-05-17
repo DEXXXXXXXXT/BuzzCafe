@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <Compile Remove="CakesMenu.Designer.cs" />
+    <Compile Remove="Cart.cs" />
+    <Compile Remove="Cart.Designer.cs" />
     <Compile Remove="Coffeemenu.Designer.cs" />
     <Compile Remove="Details.cs" />
     <Compile Remove="Details.Designer.cs" />
@@ -39,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Cart.resx" />
     <EmbeddedResource Remove="Coffeemenu.resx" />
     <EmbeddedResource Remove="Details.resx" />
     <EmbeddedResource Remove="DineTakeout.resx" />

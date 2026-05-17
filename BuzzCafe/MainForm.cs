@@ -12,6 +12,8 @@ namespace BuzzCafe
 {
     public partial class MainForm : Form
     {
+        public static int CurrentOrderId;
+
         public MainForm()
         {
             InitializeComponent();
@@ -22,7 +24,8 @@ namespace BuzzCafe
             home.Dock = DockStyle.Fill;
             home.BringToFront();
 
-        }
+            
+    }
 
         
     }
