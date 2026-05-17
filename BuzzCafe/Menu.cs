@@ -28,6 +28,7 @@ namespace BuzzCafe
 
         public Menu()
         {
+          
             InitializeComponent();
             ShowCoffee();
 
@@ -157,14 +158,16 @@ namespace BuzzCafe
             btnAdd.BackColor = Color.SaddleBrown; btnAdd.ForeColor = Color.White;
             btnAdd.FlatStyle = FlatStyle.Flat; btnAdd.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 
+
             //when clicking cart
             btnAdd.Click += (s, e) =>
             {
 
+                panelPopup.BringToFront();
                 selectedProductId = product_id;
                 resetColor();
-                resetQuan();
-                lblPrices.Top = lblProductname.Bottom + 10;
+                resetQuan();    
+                //lblPrices.Top = lblProductname.Bottom + 10;
                 panelPopup.Visible = true;
 
                 //button color
@@ -172,7 +175,18 @@ namespace BuzzCafe
                 drinkSize = "Small";
                 btnS.BackColor = Color.DarkGray;
 
-                selectedSize = 1;
+                    selectedSize = 1;
+                    sizePrice = getSizePrice("Small");
+
+                    btnS.BackColor = Color.DarkGray;
+
+                    panelSizes.Visible = true;
+                }
+                else
+                {
+                    selectedSize = 4;
+                    panelSizes.Visible = false;
+                }
 
 
                 lblProductname.Text = name;
@@ -189,7 +203,9 @@ namespace BuzzCafe
                 //price
                 productPrice = Convert.ToDouble(price) * quan;
                 lbtoAddPrice.Visible = false;
-                lbTotalPrice.Text = "₱" + productPrice.ToString();
+                updateTotalPrice();
+
+
 
 
 
@@ -205,8 +221,6 @@ namespace BuzzCafe
         {
             panelPopup.Visible = false;
         }
-
-
 
         //for quanti
         void resetQuan()

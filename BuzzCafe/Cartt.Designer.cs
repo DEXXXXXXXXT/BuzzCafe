@@ -1,0 +1,213 @@
+﻿namespace BuzzCafe
+{
+    partial class Cartt
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            panel1 = new Panel();
+            flCart = new FlowLayoutPanel();
+            panelfortotals = new Panel();
+            btnPlace = new Button();
+            lbltotal = new Label();
+            lbltotals = new Label();
+            panel2 = new Panel();
+            pictureBox2 = new PictureBox();
+            lblcart = new Label();
+            pictureBox1 = new PictureBox();
+            panel1.SuspendLayout();
+            panelfortotals.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(flCart);
+            panel1.Controls.Add(panelfortotals);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(733, 888);
+            panel1.TabIndex = 0;
+            // 
+            // flCart
+            // 
+            flCart.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            flCart.AutoScroll = true;
+            flCart.BorderStyle = BorderStyle.Fixed3D;
+            flCart.FlowDirection = FlowDirection.TopDown;
+            flCart.Location = new Point(3, 98);
+            flCart.Name = "flCart";
+            flCart.Padding = new Padding(30);
+            flCart.Size = new Size(724, 672);
+            flCart.TabIndex = 4;
+            flCart.WrapContents = false;
+            // 
+            // panelfortotals
+            // 
+            panelfortotals.Anchor = AnchorStyles.Bottom;
+            panelfortotals.BackColor = Color.Transparent;
+            panelfortotals.BackgroundImage = Properties.Resources.bg;
+            panelfortotals.BackgroundImageLayout = ImageLayout.Center;
+            panelfortotals.Controls.Add(btnPlace);
+            panelfortotals.Controls.Add(lbltotal);
+            panelfortotals.Controls.Add(lbltotals);
+            panelfortotals.Location = new Point(3, 764);
+            panelfortotals.Margin = new Padding(3, 4, 3, 4);
+            panelfortotals.Name = "panelfortotals";
+            panelfortotals.Size = new Size(727, 120);
+            panelfortotals.TabIndex = 3;
+            // 
+            // btnPlace
+            // 
+            btnPlace.Anchor = AnchorStyles.None;
+            btnPlace.Font = new Font("Arial Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPlace.Location = new Point(492, 27);
+            btnPlace.Margin = new Padding(3, 4, 3, 4);
+            btnPlace.Name = "btnPlace";
+            btnPlace.Size = new Size(177, 60);
+            btnPlace.TabIndex = 6;
+            btnPlace.Text = "Place Order";
+            btnPlace.UseVisualStyleBackColor = true;
+            // 
+            // lbltotal
+            // 
+            lbltotal.Anchor = AnchorStyles.None;
+            lbltotal.AutoSize = true;
+            lbltotal.BackColor = Color.Transparent;
+            lbltotal.FlatStyle = FlatStyle.Flat;
+            lbltotal.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbltotal.ForeColor = Color.Transparent;
+            lbltotal.Location = new Point(33, 61);
+            lbltotal.Name = "lbltotal";
+            lbltotal.Size = new Size(130, 24);
+            lbltotal.TabIndex = 5;
+            lbltotal.Text = "Php ₱149.50";
+            lbltotal.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbltotals
+            // 
+            lbltotals.Anchor = AnchorStyles.None;
+            lbltotals.AutoSize = true;
+            lbltotals.BackColor = Color.Transparent;
+            lbltotals.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbltotals.ForeColor = Color.White;
+            lbltotals.Location = new Point(26, 27);
+            lbltotals.Name = "lbltotals";
+            lbltotals.Size = new Size(80, 33);
+            lbltotals.TabIndex = 1;
+            lbltotals.Text = "Total";
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top;
+            panel2.BackColor = Color.FromArgb(32, 20, 15);
+            panel2.Controls.Add(pictureBox2);
+            panel2.Controls.Add(lblcart);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(733, 104);
+            panel2.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top;
+            pictureBox2.Image = Properties.Resources.LogoCafe;
+            pictureBox2.Location = new Point(541, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(189, 98);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 17;
+            pictureBox2.TabStop = false;
+            // 
+            // lblcart
+            // 
+            lblcart.Anchor = AnchorStyles.Top;
+            lblcart.BackColor = Color.Transparent;
+            lblcart.Font = new Font("Constantia", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblcart.ForeColor = Color.Transparent;
+            lblcart.Location = new Point(81, 19);
+            lblcart.Name = "lblcart";
+            lblcart.Size = new Size(348, 65);
+            lblcart.TabIndex = 1;
+            lblcart.Text = "Your Order Details";
+            lblcart.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top;
+            pictureBox1.Image = Properties.Resources.back;
+            pictureBox1.Location = new Point(26, 28);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(49, 47);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // Cartt
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.download__1_;
+            Controls.Add(panel1);
+            Name = "Cartt";
+            Size = new Size(733, 888);
+            panel1.ResumeLayout(false);
+            panelfortotals.ResumeLayout(false);
+            panelfortotals.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+        private Panel panel1;
+        private Panel panelfortotals;
+        public Label lbltotal;
+        private Label lbltotals;
+        public Label label3;
+        private Panel panel2;
+        private PictureBox pictureBox2;
+        private Label lblcart;
+        private PictureBox pictureBox1;
+        private Panel panel4;
+        private PictureBox pictureBox3;
+        public Label label8;
+        public Label label4;
+        private Panel panel5;
+        private Button button1;
+        private Button button6;
+        public FlowLayoutPanel flCart;
+        public Button btnPlace;
+    }
+}
