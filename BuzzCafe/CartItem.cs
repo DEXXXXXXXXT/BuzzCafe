@@ -12,6 +12,9 @@ namespace BuzzCafe
 {
     public partial class CartItem : UserControl
     {
+
+        public event EventHandler AddClicked;
+        public event EventHandler RemoveClicked;
         public CartItem()
         {
             InitializeComponent();
@@ -19,7 +22,12 @@ namespace BuzzCafe
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            AddClicked?.Invoke(this, EventArgs.Empty);
+        }
 
+        private void btnReduce_Click(object sender, EventArgs e)
+        {
+            RemoveClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

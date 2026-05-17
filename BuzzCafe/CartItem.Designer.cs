@@ -153,6 +153,7 @@
             btnReduce.TabIndex = 14;
             btnReduce.Text = "-";
             btnReduce.UseVisualStyleBackColor = true;
+            btnReduce.Click += btnReduce_Click;
             // 
             // btnAdd
             // 
@@ -221,8 +222,6 @@
         }
 
         #endregion
-
-        private Panel ItemCart;
         public Label lbItemPrice;
         public Panel panelQuantity;
         public Button btnReduce;
@@ -235,5 +234,6 @@
         public Label lbProductPrice;
         public Panel panelCartsize;
         public Label toAddPrice;
+        public Panel ItemCart;
     }
 }
