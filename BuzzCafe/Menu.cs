@@ -108,7 +108,7 @@ namespace BuzzCafe
         }
 
         //creating cards for each product
-        Panel CreateCard(int product_id , string name, string price, string imageFile)
+        Panel CreateCard(int product_id, string name, string price, string imageFile)
         {
             Panel card = new Panel();
             card.Width = 190; card.Height = 280;
@@ -168,7 +168,7 @@ namespace BuzzCafe
                 panelPopup.Visible = true;
 
                 //button color
-              
+
                 drinkSize = "Small";
                 btnS.BackColor = Color.DarkGray;
 
@@ -295,7 +295,7 @@ namespace BuzzCafe
 
             total_perItem = (productPrice + sizePrice) * quan;
             lbTotalPrice.Text = "₱" + total_perItem.ToString();
-            
+
         }
         //will get data from db
         double getSizePrice(string size)
@@ -329,16 +329,16 @@ namespace BuzzCafe
 
                 int orderId = Convert.ToInt32(getCmd.ExecuteScalar());
                 SqlCommand cmd = new SqlCommand(query, con);
-              
-                cmd.Parameters.AddWithValue("@order_Id", orderId );
+
+                cmd.Parameters.AddWithValue("@order_Id", orderId);
                 cmd.Parameters.AddWithValue("@Product_id", selectedProductId);
-                cmd.Parameters.AddWithValue("@quantity", quan );
+                cmd.Parameters.AddWithValue("@quantity", quan);
                 cmd.Parameters.AddWithValue("@size_id", selectedSize);
                 cmd.Parameters.AddWithValue("@total_price_perItem", total_perItem);
 
 
 
-                MessageBox.Show(orderId + "\n" +selectedProductId + "\n" +quan + "\n" +selectedSize + "\n" +total_perItem);
+                MessageBox.Show(orderId + "\n" + selectedProductId + "\n" + quan + "\n" + selectedSize + "\n" + total_perItem);
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -357,6 +357,11 @@ namespace BuzzCafe
 
                 panelPopup.Visible = false;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

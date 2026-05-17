@@ -150,7 +150,7 @@
             // panelPopup
             // 
             panelPopup.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            panelPopup.BackColor = Color.LightSlateGray;
+            panelPopup.BackColor = Color.LightSteelBlue;
             panelPopup.BackgroundImage = (Image)resources.GetObject("panelPopup.BackgroundImage");
             panelPopup.BackgroundImageLayout = ImageLayout.Stretch;
             panelPopup.Controls.Add(button2);
@@ -172,10 +172,12 @@
             // button2
             // 
             button2.BackColor = Color.Transparent;
+            button2.FlatAppearance.BorderColor = Color.White;
+            button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Constantia", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(595, 25);
+            button2.Location = new Point(604, 0);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(49, 46);
@@ -189,7 +191,7 @@
             btnAddOrder.BackColor = Color.Transparent;
             btnAddOrder.FlatAppearance.BorderSize = 5;
             btnAddOrder.FlatStyle = FlatStyle.Flat;
-            btnAddOrder.Font = new Font("Constantia", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddOrder.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
             btnAddOrder.ForeColor = Color.Transparent;
             btnAddOrder.Location = new Point(448, 220);
             btnAddOrder.Margin = new Padding(3, 4, 3, 4);
@@ -205,7 +207,7 @@
             lbTotalPrice.AutoSize = true;
             lbTotalPrice.BackColor = Color.Transparent;
             lbTotalPrice.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTotalPrice.ForeColor = Color.Transparent;
+            lbTotalPrice.ForeColor = Color.Orange;
             lbTotalPrice.Location = new Point(232, 237);
             lbTotalPrice.Name = "lbTotalPrice";
             lbTotalPrice.Size = new Size(65, 34);
@@ -217,11 +219,11 @@
             label3.AutoEllipsis = true;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Constantia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Transparent;
             label3.Location = new Point(20, 230);
             label3.Name = "label3";
-            label3.Size = new Size(197, 41);
+            label3.Size = new Size(196, 46);
             label3.TabIndex = 14;
             label3.Text = "Total Price:";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -233,17 +235,17 @@
             panelQuantity.Controls.Add(btnAdd);
             panelQuantity.Controls.Add(lbquanCount);
             panelQuantity.Controls.Add(label2);
-            panelQuantity.Location = new Point(448, 111);
+            panelQuantity.Location = new Point(448, 101);
             panelQuantity.Name = "panelQuantity";
-            panelQuantity.Size = new Size(173, 70);
+            panelQuantity.Size = new Size(173, 80);
             panelQuantity.TabIndex = 12;
             // 
             // button1
             // 
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Gill Sans Ultra Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Gill Sans Ultra Bold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(19, 25);
+            button1.Location = new Point(19, 35);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(45, 31);
@@ -255,9 +257,9 @@
             // btnAdd
             // 
             btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Gill Sans Ultra Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdd.Font = new Font("Gill Sans Ultra Bold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(109, 25);
+            btnAdd.Location = new Point(113, 35);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(45, 31);
@@ -271,9 +273,9 @@
             lbquanCount.BackColor = Color.Transparent;
             lbquanCount.Font = new Font("Microsoft Himalaya", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbquanCount.ForeColor = Color.Transparent;
-            lbquanCount.Location = new Point(58, 25);
+            lbquanCount.Location = new Point(75, 37);
             lbquanCount.Name = "lbquanCount";
-            lbquanCount.Size = new Size(52, 45);
+            lbquanCount.Size = new Size(32, 31);
             lbquanCount.TabIndex = 13;
             lbquanCount.Text = "A";
             lbquanCount.TextAlign = ContentAlignment.MiddleCenter;
@@ -283,11 +285,13 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft Himalaya", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(19, 0);
+            label2.Location = new Point(19, 6);
             label2.Name = "label2";
             label2.Size = new Size(88, 30);
             label2.TabIndex = 9;
             label2.Text = "Quantity";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            label2.Click += label2_Click;
             // 
             // panelSizes
             // 
@@ -298,15 +302,16 @@
             panelSizes.Controls.Add(btnS);
             panelSizes.Controls.Add(lblSize);
             panelSizes.Controls.Add(lbtoAddPrice);
-            panelSizes.Location = new Point(192, 111);
+            panelSizes.Location = new Point(192, 101);
             panelSizes.Name = "panelSizes";
-            panelSizes.Size = new Size(250, 72);
+            panelSizes.Size = new Size(250, 82);
             panelSizes.TabIndex = 11;
             // 
             // btnL
             // 
+            btnL.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
             btnL.FlatStyle = FlatStyle.Flat;
-            btnL.Font = new Font("Constantia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnL.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnL.ForeColor = Color.White;
             btnL.Location = new Point(163, 34);
             btnL.Margin = new Padding(3, 4, 3, 4);
@@ -319,8 +324,9 @@
             // 
             // btnM
             // 
+            btnM.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
             btnM.FlatStyle = FlatStyle.Flat;
-            btnM.Font = new Font("Constantia", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnM.Font = new Font("Segoe UI", 8.3F, FontStyle.Bold);
             btnM.ForeColor = Color.White;
             btnM.Location = new Point(83, 34);
             btnM.Margin = new Padding(3, 4, 3, 4);
@@ -333,8 +339,9 @@
             // 
             // btnS
             // 
+            btnS.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
             btnS.FlatStyle = FlatStyle.Flat;
-            btnS.Font = new Font("Constantia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnS.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnS.ForeColor = Color.White;
             btnS.Location = new Point(3, 34);
             btnS.Margin = new Padding(3, 4, 3, 4);
@@ -348,7 +355,7 @@
             // lblSize
             // 
             lblSize.BackColor = Color.Transparent;
-            lblSize.Font = new Font("Microsoft Himalaya", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSize.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblSize.ForeColor = Color.Transparent;
             lblSize.Location = new Point(3, 9);
             lblSize.Name = "lblSize";
@@ -359,9 +366,9 @@
             // lbtoAddPrice
             // 
             lbtoAddPrice.BackColor = Color.Transparent;
-            lbtoAddPrice.Font = new Font("Microsoft Himalaya", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbtoAddPrice.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lbtoAddPrice.ForeColor = Color.Transparent;
-            lbtoAddPrice.Location = new Point(47, 6);
+            lbtoAddPrice.Location = new Point(62, 3);
             lbtoAddPrice.Name = "lbtoAddPrice";
             lbtoAddPrice.Size = new Size(70, 34);
             lbtoAddPrice.TabIndex = 13;
