@@ -41,16 +41,19 @@
             lbqCount = new Label();
             lbProdName = new Label();
             pbImage = new PictureBox();
+            pbDelete = new PictureBox();
             ItemCart.SuspendLayout();
             panelCartsize.SuspendLayout();
             panelQuantity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbDelete).BeginInit();
             SuspendLayout();
             // 
             // ItemCart
             // 
             ItemCart.BackColor = Color.FromArgb(64, 64, 64);
             ItemCart.BorderStyle = BorderStyle.FixedSingle;
+            ItemCart.Controls.Add(pbDelete);
             ItemCart.Controls.Add(toAddPrice);
             ItemCart.Controls.Add(panelCartsize);
             ItemCart.Controls.Add(lbProductPrice);
@@ -123,7 +126,7 @@
             lbItemPrice.BackColor = Color.Transparent;
             lbItemPrice.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbItemPrice.ForeColor = Color.Transparent;
-            lbItemPrice.Location = new Point(472, 30);
+            lbItemPrice.Location = new Point(447, 30);
             lbItemPrice.Name = "lbItemPrice";
             lbItemPrice.Size = new Size(115, 34);
             lbItemPrice.TabIndex = 14;
@@ -207,6 +210,17 @@
             pbImage.TabIndex = 0;
             pbImage.TabStop = false;
             // 
+            // pbDelete
+            // 
+            pbDelete.Image = Properties.Resources.delete;
+            pbDelete.Location = new Point(573, 2);
+            pbDelete.Name = "pbDelete";
+            pbDelete.Size = new Size(36, 40);
+            pbDelete.SizeMode = PictureBoxSizeMode.Zoom;
+            pbDelete.TabIndex = 18;
+            pbDelete.TabStop = false;
+            pbDelete.Click += pbDelete_Click;
+            // 
             // CartItem
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -218,6 +232,7 @@
             panelCartsize.ResumeLayout(false);
             panelQuantity.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbDelete).EndInit();
             ResumeLayout(false);
         }
 
@@ -235,5 +250,6 @@
         public Panel panelCartsize;
         public Label toAddPrice;
         public Panel ItemCart;
+        private PictureBox pbDelete;
     }
 }
