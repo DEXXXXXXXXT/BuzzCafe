@@ -14,6 +14,11 @@ namespace BuzzCafe
 {
     public partial class Cartt : UserControl
     {
+
+        double totalPrice = 0.00;
+        double pricePerItem = 0.00;
+        
+        
         public Cartt()
         {
             InitializeComponent();
@@ -37,6 +42,7 @@ namespace BuzzCafe
         }
         void LoadCart()
         {
+            totalPrice = 0;
             flCart.Controls.Clear();
             using (SqlConnection con = DBConnection.GetConnection())
             {
@@ -62,6 +68,76 @@ namespace BuzzCafe
                     string imagePath = reader["product_image"].ToString();
                     cart.toAddPrice.Text = " +₱" + reader["price_to_add"].ToString();
 
+
+                    int orderItemId = Convert.ToInt32(reader["order_item_id"]);
+                    double basePrice = Convert.ToDouble(reader["price"]);
+                    double addPrice = Convert.ToDouble(reader["price_to_add"]);
+
+                    cart.AddClicked += (s, e) =>
+                    {
+                         int quantity = Convert.ToInt32(cart.lbqCount.Text);
+                         quantity++;
+
+                        cart.lbqCount.Text = quantity.ToString();
+
+
+                        using (SqlConnection con = DBConnection.GetConnection())
+                        {
+                            string query = "UPDATE Order_Items SET quantity = @quantity , total_price_perItem = @total_price_perItem WHERE order_item_id = @order_item_id ";
+                          
+
+                            SqlCommand cmd = new SqlCommand(query, con);
+
+                            double itemTotal = (basePrice + addPrice) * quantity;
+                            cmd.Parameters.AddWithValue("@quantity", quantity);
+                            //cmd.Parameters.AddWithValue("@total_price_perItem", totalPrice);
+                            cmd.Parameters.AddWithValue("@order_item_id",orderItemId );
+                            cmd.Parameters.AddWithValue("@total_price_perItem", itemTotal);
+
+                            
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+
+                        }
+                        LoadCart();
+                    };
+                    
+
+                    cart.RemoveClicked += (s, e) =>
+                    {
+                        int quantity = Convert.ToInt32(cart.lbqCount.Text);
+
+                        if (quantity > 1)
+                        {
+                            quantity--;
+
+                            cart.lbqCount.Text = quantity.ToString();
+
+                        }
+
+
+                        // update database here
+                        using (SqlConnection con = DBConnection.GetConnection())
+                        {
+                            string query = "UPDATE Order_Items SET quantity = @quantity , total_price_perItem = @total_price_perItem WHERE order_item_id = @order_item_id ";
+                           
+
+                            SqlCommand cmd = new SqlCommand(query, con);
+
+                            double itemTotal = (basePrice + addPrice) * quantity;
+                            cmd.Parameters.AddWithValue("@quantity", quantity);
+                            //cmd.Parameters.AddWithValue("@total_price_perItem", totalPrice);
+                            cmd.Parameters.AddWithValue("@order_item_id",orderItemId);
+                            cmd.Parameters.AddWithValue("@total_price_perItem", itemTotal);
+
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+
+                        }
+                        LoadCart();
+
+                    };
+
                     if (File.Exists(imagePath))
                     {
                         cart.pbImage.Image = Image.FromFile(imagePath);
@@ -78,25 +154,40 @@ namespace BuzzCafe
                         cart.panelCartsize.Visible = true;
                     }
 
-                    //for add size
+                    //for add size display
                     int priceAdd = Convert.ToInt32(reader["price_to_add"]);
-                    if (sizeId == 1 || sizeId == 4)
+                   
+                    if (priceAdd > 0)
                     {
-                        cart.toAddPrice.Visible = false;
+                        cart.toAddPrice.Text = "+₱" + priceAdd.ToString();
+                        cart.toAddPrice.Visible = true;
                     }
                     else
                     {
-                        cart.toAddPrice.Visible = true;
+                        cart.toAddPrice.Visible = false;
                     }
 
 
                     flCart.Controls.Add(cart);
+
+                    computeTotalPrice();
+                }
+
+                void computeTotalPrice()
+                {
+                    pricePerItem = Convert.ToDouble(reader["total_price_perItem"]);
+                    totalPrice = totalPrice + pricePerItem;
+                    lbTotalPrice.Text = "₱"+ totalPrice.ToString("0.00");
+
                 }
                 
             }
         
         }
 
-        
+        private void Cart_AddClicked(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

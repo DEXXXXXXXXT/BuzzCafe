@@ -28,7 +28,7 @@ namespace BuzzCafe
 
         public Menu()
         {
-          
+
             InitializeComponent();
             ShowCoffee();
 
@@ -166,15 +166,16 @@ namespace BuzzCafe
                 panelPopup.BringToFront();
                 selectedProductId = product_id;
                 resetColor();
-                resetQuan();    
+                resetQuan();
                 //lblPrices.Top = lblProductname.Bottom + 10;
                 panelPopup.Visible = true;
 
+                //button color
 
-                if (lbTopText.Text == "Drinks")
+                //drinkSize = "Small";
+                //btnS.BackColor = Color.DarkGray;
+                if (selectedProductId == 0)
                 {
-                    drinkSize = "Small";
-
                     selectedSize = 1;
                     sizePrice = getSizePrice("Small");
 
@@ -344,7 +345,6 @@ namespace BuzzCafe
                 int orderId = Convert.ToInt32(getCmd.ExecuteScalar());
                 SqlCommand cmd = new SqlCommand(query, con);
 
-                MainForm.CurrentOrderId = orderId;
                 cmd.Parameters.AddWithValue("@order_Id", orderId);
                 cmd.Parameters.AddWithValue("@Product_id", selectedProductId);
                 cmd.Parameters.AddWithValue("@quantity", quan);
@@ -353,7 +353,7 @@ namespace BuzzCafe
 
 
 
-                MessageBox.Show("order id: " + orderId + "\nProduct id: " + selectedProductId + "\nQuantity: " + quan + "\nSize: " + selectedSize + "\nItem Price: " + total_perItem);
+                MessageBox.Show(orderId + "\n" + selectedProductId + "\n" + quan + "\n" + selectedSize + "\n" + total_perItem);
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -374,7 +374,7 @@ namespace BuzzCafe
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnCart_Click(object sender, EventArgs e)
         {
             MainForm main = (MainForm)this.ParentForm;
             Cartt cart = new Cartt();
@@ -384,7 +384,6 @@ namespace BuzzCafe
 
             cart.Dock = DockStyle.Fill;
             cart.BringToFront();
-
         }
     }
 }

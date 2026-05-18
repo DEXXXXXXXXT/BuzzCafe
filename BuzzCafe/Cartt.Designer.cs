@@ -31,8 +31,8 @@
             panel1 = new Panel();
             flCart = new FlowLayoutPanel();
             panelfortotals = new Panel();
+            lbTotalPrice = new Label();
             btnPlace = new Button();
-            lbltotal = new Label();
             lbltotals = new Label();
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
@@ -76,14 +76,28 @@
             panelfortotals.BackColor = Color.Transparent;
             panelfortotals.BackgroundImage = Properties.Resources.bg;
             panelfortotals.BackgroundImageLayout = ImageLayout.Center;
+            panelfortotals.Controls.Add(lbTotalPrice);
             panelfortotals.Controls.Add(btnPlace);
-            panelfortotals.Controls.Add(lbltotal);
             panelfortotals.Controls.Add(lbltotals);
             panelfortotals.Location = new Point(3, 764);
             panelfortotals.Margin = new Padding(3, 4, 3, 4);
             panelfortotals.Name = "panelfortotals";
             panelfortotals.Size = new Size(727, 120);
             panelfortotals.TabIndex = 3;
+            // 
+            // lbTotalPrice
+            // 
+            lbTotalPrice.Anchor = AnchorStyles.None;
+            lbTotalPrice.BackColor = Color.Transparent;
+            lbTotalPrice.FlatStyle = FlatStyle.Flat;
+            lbTotalPrice.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTotalPrice.ForeColor = Color.Transparent;
+            lbTotalPrice.Location = new Point(26, 63);
+            lbTotalPrice.Name = "lbTotalPrice";
+            lbTotalPrice.Size = new Size(195, 35);
+            lbTotalPrice.TabIndex = 7;
+            lbTotalPrice.Text = "₱0.00";
+            lbTotalPrice.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnPlace
             // 
@@ -96,21 +110,6 @@
             btnPlace.TabIndex = 6;
             btnPlace.Text = "Place Order";
             btnPlace.UseVisualStyleBackColor = true;
-            // 
-            // lbltotal
-            // 
-            lbltotal.Anchor = AnchorStyles.None;
-            lbltotal.AutoSize = true;
-            lbltotal.BackColor = Color.Transparent;
-            lbltotal.FlatStyle = FlatStyle.Flat;
-            lbltotal.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbltotal.ForeColor = Color.Transparent;
-            lbltotal.Location = new Point(33, 61);
-            lbltotal.Name = "lbltotal";
-            lbltotal.Size = new Size(130, 24);
-            lbltotal.TabIndex = 5;
-            lbltotal.Text = "Php ₱149.50";
-            lbltotal.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbltotals
             // 
@@ -193,7 +192,6 @@
         #endregion
         private Panel panel1;
         private Panel panelfortotals;
-        public Label lbltotal;
         private Label lbltotals;
         public Label label3;
         private Panel panel2;
@@ -209,5 +207,6 @@
         private Button button6;
         public FlowLayoutPanel flCart;
         public Button btnPlace;
+        public Label lbTotalPrice;
     }
 }
