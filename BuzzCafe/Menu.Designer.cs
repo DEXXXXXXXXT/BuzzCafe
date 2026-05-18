@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
-            btnCart = new Button();
+            btnVewCart = new Button();
             btnRicemeal = new Button();
             btnSnacks = new Button();
             btnPaste = new Button();
@@ -77,7 +77,7 @@
             // 
             panel1.BackColor = Color.DarkGray;
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(btnCart);
+            panel1.Controls.Add(btnVewCart);
             panel1.Controls.Add(btnRicemeal);
             panel1.Controls.Add(btnSnacks);
             panel1.Controls.Add(btnPaste);
@@ -92,14 +92,25 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.cartDesign;
-            pictureBox2.Location = new Point(12, 772);
+            pictureBox2.Location = new Point(3, 695);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(85, 83);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-
+            // btnVewCart
+            // 
+            btnVewCart.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnVewCart.FlatStyle = FlatStyle.Flat;
+            btnVewCart.Font = new Font("Georgia", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVewCart.Location = new Point(0, 685);
+            btnVewCart.Name = "btnVewCart";
+            btnVewCart.Size = new Size(184, 102);
+            btnVewCart.TabIndex = 21;
+            btnVewCart.Text = "          Cart";
+            btnVewCart.UseVisualStyleBackColor = true;
+            btnVewCart.Click += btnVewCart_Click;
             // 
             // btnRicemeal
             // 
@@ -308,9 +319,7 @@
             label2.TabIndex = 9;
             label2.Text = "Quantity";
             label2.TextAlign = ContentAlignment.TopCenter;
-
             label2.Click += label2_Click;
-
             // 
             // panelSizes
             // 
@@ -468,6 +477,7 @@
             flPanel.Dock = DockStyle.Fill;
             flPanel.Location = new Point(184, 141);
             flPanel.Name = "flPanel";
+            flPanel.Padding = new Padding(20);
             flPanel.Size = new Size(523, 737);
             flPanel.TabIndex = 2;
             // 
@@ -476,10 +486,10 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            Controls.Add(panelPopup);
             Controls.Add(flPanel);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panelPopup);
             Name = "Menu";
             Size = new Size(707, 878);
             panel1.ResumeLayout(false);
@@ -530,5 +540,6 @@
         public Label lbtoAddPrice;
         private PictureBox pictureBox2;
         public Button btnCart;
+        public Button btnVewCart;
     }
 }

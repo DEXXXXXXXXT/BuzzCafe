@@ -36,14 +36,14 @@
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(0, 0);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(696, 989);
+            mainPanel.Size = new Size(722, 989);
             mainPanel.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(696, 989);
+            ClientSize = new Size(722, 989);
             Controls.Add(mainPanel);
             Name = "MainForm";
             Text = "MainForm";

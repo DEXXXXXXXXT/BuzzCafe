@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Xml.Linq;
 
 namespace BuzzCafe
 {
@@ -25,10 +27,11 @@ namespace BuzzCafe
         int selectedSize;
         double total_perItem;
         int orderId;
+        Boolean isDrink;
 
         public Menu()
         {
-          
+
             InitializeComponent();
             ShowCoffee();
 
@@ -38,15 +41,12 @@ namespace BuzzCafe
 
         private void btnDrinks_Click_1(object sender, EventArgs e)
         {
-            lbTopText.Text = "Drinks";
-            panelSizes.Visible = true;
-            panelPopup.Visible = false;
-            resetQuan();
-            LoadProduct(1);
+            ShowCoffee();
         }
 
         private void btnPaste_Click_1(object sender, EventArgs e)
         {
+            isDrink = false;
             selectedSize = 4;
             lbTopText.Text = "Pastries";
             panelSizes.Visible = false;
@@ -57,6 +57,7 @@ namespace BuzzCafe
 
         private void btnSnacks_Click_1(object sender, EventArgs e)
         {
+            isDrink = false;
             selectedSize = 4;
             lbTopText.Text = "Snacks";
             panelSizes.Visible = false;
@@ -67,6 +68,7 @@ namespace BuzzCafe
 
         private void btnRicemeal_Click_1(object sender, EventArgs e)
         {
+            isDrink = false;
             selectedSize = 4;
             lbTopText.Text = "Rice Meals";
             panelSizes.Visible = false;
@@ -78,130 +80,98 @@ namespace BuzzCafe
 
 
         //to display first product
-        void ShowCoffee() { lbTopText.Text = "Drinks"; LoadProduct(1); }
+        void ShowCoffee() 
+        {
+            isDrink = true;
+            lbTopText.Text = "Drinks";
+            panelSizes.Visible = true;
+            panelPopup.Visible = false;
+            resetQuan();
+            LoadProduct(1);
+        }
 
         //to get data from db
         void LoadProduct(int category_id)
         {
             flPanel.Controls.Clear();
-            try
+
+            using (SqlConnection con = DBConnection.GetConnection())
             {
-                using (SqlConnection con = DBConnection.GetConnection())
+                string query = "SELECT * FROM Products WHERE category_id = @id";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                cmd.Parameters.AddWithValue("@id", category_id);
+
+                con.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    string query = "SELECT * FROM Products WHERE category_id = @id";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@id", category_id);
-                    con.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    int product_id = Convert.ToInt32(reader["Product_id"]);
+                    string name = reader["name"].ToString();
+                    string price = reader["price"].ToString();
+                    string imageFile = reader["product_image"].ToString();
+
+                    ItemLayout productItem = new ItemLayout();
+
+                    productItem.SetData(product_id, name, price, imageFile);
+
+                    productItem.AddToCartClicked += (s, e) =>
                     {
-                        flPanel.Controls.Add(CreateCard(
-                            Convert.ToInt32(reader["Product_id"]),
-                            reader["name"].ToString(),
-                            reader["price"].ToString(),
-                            reader["product_image"].ToString()
-                        ));
-                    }
-                    con.Close();
+                        panelPopup.BringToFront();
+
+                        selectedProductId = product_id;
+
+                        resetColor();
+                        resetQuan();
+
+                        panelPopup.Visible = true;
+
+                        if (isDrink)
+                        {
+                            drinkSize = "Small";
+
+                            btnS.BackColor = Color.DarkGray;
+
+                            selectedSize = 1;
+
+                            sizePrice = getSizePrice("Small");
+
+                            panelSizes.Visible = true;
+                        }
+                        else
+                        {
+                            selectedSize = 4;
+
+                            panelSizes.Visible = false;
+                        }
+
+                        lblProductname.Text = name;
+
+                        lblPrices.Text = "₱" + price;
+
+                        if (File.Exists(imageFile))
+                        {
+                            pbProduct.Image = Image.FromFile(imageFile);
+                        }
+
+                        productPrice = Convert.ToDouble(price);
+
+                        lbtoAddPrice.Visible = false;
+
+                        updateTotalPrice();
+                    };
+
+                    flPanel.Controls.Add(productItem);
                 }
+
+                con.Close();
+
             }
-            catch (Exception ex) { MessageBox.Show("Database Error: " + ex.Message); }
         }
 
-        //creating cards for each product
-        Panel CreateCard(int product_id, string name, string price, string imageFile)
-        {
-            Panel card = new Panel();
-            card.Width = 190; card.Height = 280;
-            card.Margin = new Padding(15); card.BackColor = Color.White;
-
-            //Rounded Corners
-            GraphicsPath pathCard = new GraphicsPath();
-            pathCard.AddArc(0, 0, 20, 20, 180, 90);
-            pathCard.AddArc(card.Width - 20, 0, 20, 20, 270, 90);
-            pathCard.AddArc(card.Width - 20, card.Height - 20, 20, 20, 0, 90);
-            pathCard.AddArc(0, card.Height - 20, 20, 20, 90, 90);
-            pathCard.CloseAllFigures();
-            card.Region = new Region(pathCard);
-
-            PictureBox pic = new PictureBox();
-            pic.Width = 150; pic.Height = 150; pic.Top = 10; pic.Left = 20;
-            pic.SizeMode = PictureBoxSizeMode.Zoom;
-            pic.BackColor = Color.FromArgb(245, 245, 245);
-
-            // image checker
-            if (!string.IsNullOrEmpty(imageFile))
-            {
-                string cleanPath = imageFile.Replace("\"", "").Trim();
-                if (File.Exists(cleanPath))
-                {
-                    pic.Image = Image.FromFile(cleanPath);
-                }
-                else
-                {
-                    pic.BackColor = Color.LightGray;
-                }
-            }
-
-            Label lblName = new Label();
-            lblName.Text = name; lblName.Top = 170; lblName.Left = 15; lblName.Width = 160;
-            lblName.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-
-            Label lblPrice = new Label();
-            lblPrice.Text = "₱" + price; lblPrice.Top = 200; lblPrice.Left = 15;
-            lblPrice.Font = new Font("Segoe UI", 10); lblPrice.ForeColor = Color.SaddleBrown;
-
-            Button btnAdd = new Button();
-            btnAdd.Text = "Add to Cart"; btnAdd.Width = 140; btnAdd.Height = 35; btnAdd.Top = 230; btnAdd.Left = 20;
-            btnAdd.BackColor = Color.SaddleBrown; btnAdd.ForeColor = Color.White;
-            btnAdd.FlatStyle = FlatStyle.Flat; btnAdd.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-
-            //When clicking Add to Cart
-            btnAdd.Click += (s, e) =>
-            {
-                panelPopup.BringToFront();
-                selectedProductId = product_id;
-                resetColor();
-                resetQuan();
-                panelPopup.Visible = true;
-
-                
-                if (lbTopText.Text == "Drinks")
-                {
-                    drinkSize = "Small";
-                    btnS.BackColor = Color.DarkGray;
-                    selectedSize = 1;
-                    sizePrice = getSizePrice("Small");
-                    panelSizes.Visible = true;
-                }
-                else
-                {
-                    selectedSize = 4;
-                    panelSizes.Visible = false;
-                    sizePrice = 0; // No extra price for non-drinks
-                }
-
-                lblProductname.Text = name;
-                lblPrices.Text = "₱" + price;
-
-                // Set image in popup
-                if (File.Exists(imageFile))
-                {
-                    pbProduct.Image = Image.FromFile(imageFile);
-                }
-
-                productPrice = Convert.ToDouble(price);
-                lbtoAddPrice.Visible = false;
-                updateTotalPrice();
-            };
-
-            card.Controls.Add(pic);
-            card.Controls.Add(lblName);
-            card.Controls.Add(lblPrice);
-            card.Controls.Add(btnAdd);
-
-            return card;
-        }
 
 
         //cancel
@@ -330,6 +300,7 @@ namespace BuzzCafe
                 SqlCommand getCmd = new SqlCommand(getOrder, con);
 
                 int orderId = Convert.ToInt32(getCmd.ExecuteScalar());
+                MainForm.CurrentOrderId = orderId;
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 cmd.Parameters.AddWithValue("@order_Id", orderId);
@@ -363,6 +334,19 @@ namespace BuzzCafe
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnVewCart_Click(object sender, EventArgs e)
+        {
+            MainForm main = (MainForm)this.ParentForm;
+            Cartt cart = new Cartt();
+
+            main.mainPanel.Controls.Clear();
+            main.mainPanel.Controls.Add(cart);
+
+            cart.Dock = DockStyle.Fill;
+            cart.BringToFront();
 
         }
     }
