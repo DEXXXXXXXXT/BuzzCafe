@@ -133,7 +133,6 @@ namespace BuzzCafe
             if (!string.IsNullOrEmpty(imageFile))
             {
                 string cleanPath = imageFile.Replace("\"", "").Trim();
-
                 if (File.Exists(cleanPath))
                 {
                     pic.Image = Image.FromFile(cleanPath);
@@ -141,7 +140,6 @@ namespace BuzzCafe
                 else
                 {
                     pic.BackColor = Color.LightGray;
-                    System.Diagnostics.Debug.WriteLine("MISSING FILE: " + cleanPath);
                 }
             }
 
@@ -158,60 +156,50 @@ namespace BuzzCafe
             btnAdd.BackColor = Color.SaddleBrown; btnAdd.ForeColor = Color.White;
             btnAdd.FlatStyle = FlatStyle.Flat; btnAdd.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 
-
-            //when clicking cart
+            //When clicking Add to Cart
             btnAdd.Click += (s, e) =>
             {
-
                 panelPopup.BringToFront();
                 selectedProductId = product_id;
                 resetColor();
-                resetQuan();    
-                //lblPrices.Top = lblProductname.Bottom + 10;
+                resetQuan();
                 panelPopup.Visible = true;
 
-                //button color
-
-                drinkSize = "Small";
-                btnS.BackColor = Color.DarkGray;
-
+                
+                if (lbTopText.Text == "Drinks")
+                {
+                    drinkSize = "Small";
+                    btnS.BackColor = Color.DarkGray;
                     selectedSize = 1;
                     sizePrice = getSizePrice("Small");
-
-                    btnS.BackColor = Color.DarkGray;
-
                     panelSizes.Visible = true;
                 }
                 else
                 {
                     selectedSize = 4;
                     panelSizes.Visible = false;
+                    sizePrice = 0; // No extra price for non-drinks
                 }
-
 
                 lblProductname.Text = name;
                 lblPrices.Text = "₱" + price;
 
-
-                //pic
+                // Set image in popup
                 if (File.Exists(imageFile))
                 {
                     pbProduct.Image = Image.FromFile(imageFile);
                 }
 
-
-                //price
-                productPrice = Convert.ToDouble(price) * quan;
+                productPrice = Convert.ToDouble(price);
                 lbtoAddPrice.Visible = false;
                 updateTotalPrice();
-
-
-
-
-
             };
 
-            card.Controls.Add(pic); card.Controls.Add(lblName); card.Controls.Add(lblPrice); card.Controls.Add(btnAdd);
+            card.Controls.Add(pic);
+            card.Controls.Add(lblName);
+            card.Controls.Add(lblPrice);
+            card.Controls.Add(btnAdd);
+
             return card;
         }
 
