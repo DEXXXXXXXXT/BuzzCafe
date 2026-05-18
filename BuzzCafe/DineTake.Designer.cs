@@ -62,7 +62,7 @@
             // 
             // panelValidation
             // 
-            panelValidation.BackColor = Color.Chocolate;
+            panelValidation.BackColor = Color.FromArgb(245, 235, 220);
             panelValidation.Controls.Add(btnNo);
             panelValidation.Controls.Add(label2);
             panelValidation.Controls.Add(lbType);
@@ -74,11 +74,12 @@
             // 
             // btnNo
             // 
-            btnNo.BackColor = Color.Red;
+            btnNo.BackColor = Color.Tan;
             btnNo.FlatAppearance.BorderSize = 0;
             btnNo.FlatStyle = FlatStyle.Flat;
             btnNo.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNo.Location = new Point(85, 208);
+            btnNo.ForeColor = Color.Black;
+            btnNo.Location = new Point(49, 207);
             btnNo.Name = "btnNo";
             btnNo.Size = new Size(138, 55);
             btnNo.TabIndex = 0;
@@ -90,8 +91,8 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(98, 73);
+            label2.ForeColor = Color.FromArgb(54, 38, 27);
+            label2.Location = new Point(98, 97);
             label2.Name = "label2";
             label2.Size = new Size(302, 46);
             label2.TabIndex = 2;
@@ -101,7 +102,7 @@
             // lbType
             // 
             lbType.Font = new Font("Georgia", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbType.ForeColor = Color.White;
+            lbType.ForeColor = Color.FromArgb(54, 38, 27);
             lbType.Location = new Point(160, 119);
             lbType.Name = "lbType";
             lbType.Size = new Size(178, 85);
@@ -111,11 +112,12 @@
             // 
             // btnYes
             // 
-            btnYes.BackColor = Color.Lime;
+            btnYes.BackColor = Color.FromArgb(101, 67, 33);
             btnYes.FlatAppearance.BorderSize = 0;
             btnYes.FlatStyle = FlatStyle.Flat;
             btnYes.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnYes.Location = new Point(262, 208);
+            btnYes.ForeColor = Color.White;
+            btnYes.Location = new Point(277, 207);
             btnYes.Name = "btnYes";
             btnYes.Size = new Size(138, 55);
             btnYes.TabIndex = 4;
