@@ -16,7 +16,7 @@ namespace BuzzCafe
 
         // public static string con = "Data Source=.\\SQLEXPRESS;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True"; //Dex server
 
-        //public static string con = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";//Kurt Server
+        public static string con = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";//Kurt Server
 
         public static SqlConnection GetConnection()
         {
