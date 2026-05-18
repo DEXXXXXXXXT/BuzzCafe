@@ -99,17 +99,7 @@
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-            // btnCart
-            // 
-            button5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Georgia", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(0, 762);
-            button5.Name = "button5";
-            button5.Size = new Size(184, 102);
-            button5.TabIndex = 21;
-            button5.Text = "             Cart";
-            button5.UseVisualStyleBackColor = true;
+
             // 
             // btnRicemeal
             // 

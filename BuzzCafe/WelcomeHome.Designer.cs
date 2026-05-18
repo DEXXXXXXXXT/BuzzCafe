@@ -40,30 +40,32 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Transparent;
+            panel1.BackColor = Color.FromArgb(45, 30, 20);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(btnStart);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(lblwelcome);
             panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(lblwelcome);
             panel1.Dock = DockStyle.Fill;
+            panel1.ForeColor = Color.White;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(704, 862);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // btnStart
             // 
             btnStart.Anchor = AnchorStyles.Bottom;
-            btnStart.BackColor = Color.Gray;
+            btnStart.BackColor = Color.SaddleBrown;
             btnStart.FlatAppearance.BorderColor = Color.Black;
             btnStart.FlatStyle = FlatStyle.Flat;
             btnStart.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStart.ForeColor = Color.White;
-            btnStart.Location = new Point(61, 733);
+            btnStart.Location = new Point(60, 762);
             btnStart.Margin = new Padding(3, 4, 3, 4);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(549, 93);
+            btnStart.Size = new Size(549, 76);
             btnStart.TabIndex = 11;
             btnStart.Text = "Touch to start";
             btnStart.UseVisualStyleBackColor = false;
@@ -73,10 +75,10 @@
             // 
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(52, 650);
+            label3.ForeColor = Color.FromArgb(180, 160, 140);
+            label3.Location = new Point(60, 641);
             label3.Name = "label3";
-            label3.Size = new Size(566, 117);
+            label3.Size = new Size(543, 117);
             label3.TabIndex = 10;
             label3.Text = "    Buzz Coffee Shop—where every cup gives you a boost. \r\nBold brews, smooth vibes, and the perfect place to recharge.";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -86,10 +88,10 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Georgia", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(101, 103);
+            label2.ForeColor = Color.FromArgb(245, 240, 230);
+            label2.Location = new Point(100, 124);
             label2.Name = "label2";
-            label2.Size = new Size(468, 138);
+            label2.Size = new Size(468, 114);
             label2.TabIndex = 8;
             label2.Text = "Start your day\r\n  with coffee";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -98,9 +100,9 @@
             // 
             lblwelcome.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblwelcome.BackColor = Color.Transparent;
-            lblwelcome.Font = new Font("Georgia", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblwelcome.ForeColor = Color.Linen;
-            lblwelcome.Location = new Point(122, 13);
+            lblwelcome.Font = new Font("Georgia", 30F, FontStyle.Bold);
+            lblwelcome.ForeColor = Color.FromArgb(200, 160, 100);
+            lblwelcome.Location = new Point(120, 25);
             lblwelcome.Name = "lblwelcome";
             lblwelcome.Size = new Size(427, 109);
             lblwelcome.TabIndex = 1;
@@ -112,12 +114,13 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = Properties.Resources.coffeeIntro;
-            pictureBox1.Location = new Point(81, 147);
+            pictureBox1.Location = new Point(35, 184);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(508, 599);
+            pictureBox1.Size = new Size(595, 529);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // WelcomeHome
             // 
