@@ -25,6 +25,7 @@ namespace BuzzCafe
         int selectedSize;
         double total_perItem;
         int orderId;
+        Boolean isDrink;
 
         public Menu()
         {
@@ -38,15 +39,12 @@ namespace BuzzCafe
 
         private void btnDrinks_Click_1(object sender, EventArgs e)
         {
-            lbTopText.Text = "Drinks";
-            panelSizes.Visible = true;
-            panelPopup.Visible = false;
-            resetQuan();
-            LoadProduct(1);
+            ShowCoffee();
         }
 
         private void btnPaste_Click_1(object sender, EventArgs e)
         {
+            isDrink = false;
             selectedSize = 4;
             lbTopText.Text = "Pastries";
             panelSizes.Visible = false;
@@ -57,6 +55,7 @@ namespace BuzzCafe
 
         private void btnSnacks_Click_1(object sender, EventArgs e)
         {
+            isDrink = false;
             selectedSize = 4;
             lbTopText.Text = "Snacks";
             panelSizes.Visible = false;
@@ -67,6 +66,7 @@ namespace BuzzCafe
 
         private void btnRicemeal_Click_1(object sender, EventArgs e)
         {
+            isDrink = false;
             selectedSize = 4;
             lbTopText.Text = "Rice Meals";
             panelSizes.Visible = false;
@@ -78,7 +78,16 @@ namespace BuzzCafe
 
 
         //to display first product
-        void ShowCoffee() { lbTopText.Text = "Drinks"; LoadProduct(1); }
+        void ShowCoffee() 
+        {
+            isDrink = true;
+            selectedSize = 1;
+            lbTopText.Text = "Drinks";
+            panelSizes.Visible = true;
+            panelPopup.Visible = false;
+            resetQuan();
+            LoadProduct(1);
+        }
 
         //to get data from db
         void LoadProduct(int category_id)
@@ -167,14 +176,12 @@ namespace BuzzCafe
                 selectedProductId = product_id;
                 resetColor();
                 resetQuan();
-                //lblPrices.Top = lblProductname.Bottom + 10;
                 panelPopup.Visible = true;
 
-                //button color
-
+               
                 //drinkSize = "Small";
                 //btnS.BackColor = Color.DarkGray;
-                if (selectedProductId == 0)
+                if (isDrink)
                 {
                     selectedSize = 1;
                     sizePrice = getSizePrice("Small");
@@ -205,9 +212,6 @@ namespace BuzzCafe
                 productPrice = Convert.ToDouble(price) * quan;
                 lbtoAddPrice.Visible = false;
                 updateTotalPrice();
-
-
-
 
 
             };
@@ -343,6 +347,7 @@ namespace BuzzCafe
                 SqlCommand getCmd = new SqlCommand(getOrder, con);
 
                 int orderId = Convert.ToInt32(getCmd.ExecuteScalar());
+                MainForm.CurrentOrderId = orderId;
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 cmd.Parameters.AddWithValue("@order_Id", orderId);

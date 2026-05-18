@@ -43,16 +43,17 @@ namespace BuzzCafe
         void LoadCart()
         {
             totalPrice = 0;
+
             flCart.Controls.Clear();
+
             using (SqlConnection con = DBConnection.GetConnection())
             {
                 string query = "SELECT oi.order_item_id, oi.order_Id, p.Product_id, p.name, p.price, p.product_image, oi.quantity, s.size_id, s.size_name, s.price_to_add, oi.total_price_perItem FROM Order_Items oi INNER JOIN Products p ON oi.Product_id = p.Product_id INNER JOIN Sizes s ON oi.size_id = s.size_id WHERE oi.order_Id = @order_Id";
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@order_Id", MainForm.CurrentOrderId);
-
+                
                 con.Open();
-
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -90,7 +91,6 @@ namespace BuzzCafe
 
                             double itemTotal = (basePrice + addPrice) * quantity;
                             cmd.Parameters.AddWithValue("@quantity", quantity);
-                            //cmd.Parameters.AddWithValue("@total_price_perItem", totalPrice);
                             cmd.Parameters.AddWithValue("@order_item_id",orderItemId );
                             cmd.Parameters.AddWithValue("@total_price_perItem", itemTotal);
 
