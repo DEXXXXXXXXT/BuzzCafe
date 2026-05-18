@@ -83,7 +83,6 @@ namespace BuzzCafe
         void ShowCoffee() 
         {
             isDrink = true;
-            selectedSize = 1;
             lbTopText.Text = "Drinks";
             panelSizes.Visible = true;
             panelPopup.Visible = false;
@@ -95,88 +94,84 @@ namespace BuzzCafe
         void LoadProduct(int category_id)
         {
             flPanel.Controls.Clear();
-          
-                using (SqlConnection con = DBConnection.GetConnection())
+
+            using (SqlConnection con = DBConnection.GetConnection())
+            {
+                string query = "SELECT * FROM Products WHERE category_id = @id";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                cmd.Parameters.AddWithValue("@id", category_id);
+
+                con.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    string query = "SELECT * FROM Products WHERE category_id = @id";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@id", category_id);
-                    con.Open();
-
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-
-                    {
-                       ItemLayout productItem = new ItemLayout();
-                       productItem.SetData(Convert.ToInt32(reader["Product_id"]),
-                                    reader["name"].ToString(),
-                                    reader["price"].ToString(),
-                                    reader["product_image"].ToString()
-                       );
-
                     int product_id = Convert.ToInt32(reader["Product_id"]);
                     string name = reader["name"].ToString();
                     string price = reader["price"].ToString();
                     string imageFile = reader["product_image"].ToString();
 
+                    ItemLayout productItem = new ItemLayout();
+
+                    productItem.SetData(product_id, name, price, imageFile);
+
                     productItem.AddToCartClicked += (s, e) =>
                     {
                         panelPopup.BringToFront();
+
                         selectedProductId = product_id;
+
                         resetColor();
                         resetQuan();
+
                         panelPopup.Visible = true;
 
                         if (isDrink)
                         {
-
-
                             drinkSize = "Small";
-                            btnS.BackColor = Color.DarkGray;
 
+                            btnS.BackColor = Color.DarkGray;
 
                             selectedSize = 1;
-                            sizePrice = getSizePrice("Small");
 
-                            btnS.BackColor = Color.DarkGray;
+                            sizePrice = getSizePrice("Small");
 
                             panelSizes.Visible = true;
                         }
                         else
                         {
                             selectedSize = 4;
+
                             panelSizes.Visible = false;
                         }
 
-
                         lblProductname.Text = name;
+
                         lblPrices.Text = "₱" + price;
 
-
-                        //pic
                         if (File.Exists(imageFile))
                         {
                             pbProduct.Image = Image.FromFile(imageFile);
                         }
 
+                        productPrice = Convert.ToDouble(price);
 
-                        //price
-                        productPrice = Convert.ToDouble(price) * quan;
                         lbtoAddPrice.Visible = false;
+
                         updateTotalPrice();
                     };
 
                     flPanel.Controls.Add(productItem);
                 }
-               
-                    con.Close();
-                }
-            
+
+                con.Close();
+
+            }
         }
 
-    
-        
 
 
         //cancel
@@ -337,8 +332,12 @@ namespace BuzzCafe
             }
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
-        private void btnCart_Click(object sender, EventArgs e)
+        }
+
+        private void btnVewCart_Click(object sender, EventArgs e)
         {
             MainForm main = (MainForm)this.ParentForm;
             Cartt cart = new Cartt();
@@ -348,11 +347,6 @@ namespace BuzzCafe
 
             cart.Dock = DockStyle.Fill;
             cart.BringToFront();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
 
         }
     }

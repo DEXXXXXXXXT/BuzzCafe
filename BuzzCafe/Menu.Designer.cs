@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
-            btnCart = new Button();
+            btnVewCart = new Button();
             btnRicemeal = new Button();
             btnSnacks = new Button();
             btnPaste = new Button();
@@ -77,7 +77,7 @@
             // 
             panel1.BackColor = Color.DarkGray;
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(btnCart);
+            panel1.Controls.Add(btnVewCart);
             panel1.Controls.Add(btnRicemeal);
             panel1.Controls.Add(btnSnacks);
             panel1.Controls.Add(btnPaste);
@@ -92,24 +92,25 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.cartDesign;
-            pictureBox2.Location = new Point(12, 772);
+            pictureBox2.Location = new Point(3, 695);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(85, 83);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-            // btnCart
+            // btnVewCart
             // 
-            button5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Georgia", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(0, 762);
-            button5.Name = "button5";
-            button5.Size = new Size(184, 102);
-            button5.TabIndex = 21;
-            button5.Text = "             Cart";
-            button5.UseVisualStyleBackColor = true;
+            btnVewCart.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnVewCart.FlatStyle = FlatStyle.Flat;
+            btnVewCart.Font = new Font("Georgia", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVewCart.Location = new Point(0, 685);
+            btnVewCart.Name = "btnVewCart";
+            btnVewCart.Size = new Size(184, 102);
+            btnVewCart.TabIndex = 21;
+            btnVewCart.Text = "          Cart";
+            btnVewCart.UseVisualStyleBackColor = true;
+            btnVewCart.Click += btnVewCart_Click;
             // 
             // btnRicemeal
             // 
@@ -485,10 +486,10 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            Controls.Add(panelPopup);
             Controls.Add(flPanel);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panelPopup);
             Name = "Menu";
             Size = new Size(707, 878);
             panel1.ResumeLayout(false);
@@ -539,5 +540,6 @@
         public Label lbtoAddPrice;
         private PictureBox pictureBox2;
         public Button btnCart;
+        public Button btnVewCart;
     }
 }

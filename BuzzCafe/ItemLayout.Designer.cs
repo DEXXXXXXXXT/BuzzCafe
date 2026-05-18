@@ -47,7 +47,7 @@
             panelItem.Dock = DockStyle.Fill;
             panelItem.Location = new Point(0, 0);
             panelItem.Name = "panelItem";
-            panelItem.Size = new Size(236, 313);
+            panelItem.Size = new Size(218, 311);
             panelItem.TabIndex = 0;
             // 
             // btnAddTocart
@@ -57,7 +57,7 @@
             btnAddTocart.FlatStyle = FlatStyle.Flat;
             btnAddTocart.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddTocart.ForeColor = Color.White;
-            btnAddTocart.Location = new Point(44, 252);
+            btnAddTocart.Location = new Point(33, 236);
             btnAddTocart.Margin = new Padding(3, 4, 3, 4);
             btnAddTocart.Name = "btnAddTocart";
             btnAddTocart.Size = new Size(147, 44);
@@ -73,9 +73,9 @@
             lbPrice.BackColor = Color.Transparent;
             lbPrice.Font = new Font("Constantia", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbPrice.ForeColor = Color.Black;
-            lbPrice.Location = new Point(33, 213);
+            lbPrice.Location = new Point(33, 194);
             lbPrice.Name = "lbPrice";
-            lbPrice.Size = new Size(203, 26);
+            lbPrice.Size = new Size(185, 26);
             lbPrice.TabIndex = 3;
             lbPrice.Text = "Price";
             lbPrice.TextAlign = ContentAlignment.MiddleLeft;
@@ -85,11 +85,11 @@
             lbItemName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lbItemName.AutoEllipsis = true;
             lbItemName.BackColor = Color.Transparent;
-            lbItemName.Font = new Font("Constantia", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbItemName.Font = new Font("Constantia", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbItemName.ForeColor = Color.Black;
-            lbItemName.Location = new Point(33, 187);
+            lbItemName.Location = new Point(33, 168);
             lbItemName.Name = "lbItemName";
-            lbItemName.Size = new Size(203, 26);
+            lbItemName.Size = new Size(185, 26);
             lbItemName.TabIndex = 2;
             lbItemName.Text = "Prod. Name";
             lbItemName.TextAlign = ContentAlignment.MiddleLeft;
@@ -100,7 +100,7 @@
             pbItem.BackColor = Color.White;
             pbItem.Location = new Point(33, 24);
             pbItem.Name = "pbItem";
-            pbItem.Size = new Size(169, 160);
+            pbItem.Size = new Size(151, 141);
             pbItem.SizeMode = PictureBoxSizeMode.Zoom;
             pbItem.TabIndex = 0;
             pbItem.TabStop = false;
@@ -112,7 +112,7 @@
             BackColor = Color.White;
             Controls.Add(panelItem);
             Name = "ItemLayout";
-            Size = new Size(236, 313);
+            Size = new Size(218, 311);
             panelItem.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbItem).EndInit();
             ResumeLayout(false);
