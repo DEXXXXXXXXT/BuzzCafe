@@ -319,9 +319,7 @@
             label2.TabIndex = 9;
             label2.Text = "Quantity";
             label2.TextAlign = ContentAlignment.TopCenter;
-
             label2.Click += label2_Click;
-
             // 
             // panelSizes
             // 
@@ -479,6 +477,7 @@
             flPanel.Dock = DockStyle.Fill;
             flPanel.Location = new Point(184, 141);
             flPanel.Name = "flPanel";
+            flPanel.Padding = new Padding(20);
             flPanel.Size = new Size(523, 737);
             flPanel.TabIndex = 2;
             // 
