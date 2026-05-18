@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
-            button5 = new Button();
+            btnCart = new Button();
             btnRicemeal = new Button();
             btnSnacks = new Button();
             btnPaste = new Button();
@@ -77,7 +77,7 @@
             // 
             panel1.BackColor = Color.DarkGray;
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(button5);
+            panel1.Controls.Add(btnCart);
             panel1.Controls.Add(btnRicemeal);
             panel1.Controls.Add(btnSnacks);
             panel1.Controls.Add(btnPaste);
@@ -99,7 +99,7 @@
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-            // button5
+            // btnCart
             // 
             button5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             button5.FlatStyle = FlatStyle.Flat;
@@ -318,7 +318,9 @@
             label2.TabIndex = 9;
             label2.Text = "Quantity";
             label2.TextAlign = ContentAlignment.TopCenter;
+
             label2.Click += label2_Click;
+
             // 
             // panelSizes
             // 
@@ -537,6 +539,6 @@
         public Panel panelQuantity;
         public Label lbtoAddPrice;
         private PictureBox pictureBox2;
-        public Button button5;
+        public Button btnCart;
     }
 }
