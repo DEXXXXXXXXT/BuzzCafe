@@ -319,6 +319,10 @@
             label2.TabIndex = 9;
             label2.Text = "Quantity";
             label2.TextAlign = ContentAlignment.TopCenter;
+<<<<<<< HEAD
+=======
+            label2.Click += label2_Click;
+>>>>>>> 72f4110980fc962f918c70167d4cf935b6e777da
             // 
             // panelSizes
             // 

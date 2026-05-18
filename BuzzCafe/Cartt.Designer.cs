@@ -38,6 +38,7 @@
             pictureBox2 = new PictureBox();
             lblcart = new Label();
             pictureBox1 = new PictureBox();
+            lbTotalPrice = new Label();
             panel1.SuspendLayout();
             panelfortotals.SuspendLayout();
             panel2.SuspendLayout();
@@ -171,6 +172,20 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // lbTotalPrice
+            // 
+            lbTotalPrice.Anchor = AnchorStyles.None;
+            lbTotalPrice.BackColor = Color.Transparent;
+            lbTotalPrice.FlatStyle = FlatStyle.Flat;
+            lbTotalPrice.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTotalPrice.ForeColor = Color.Transparent;
+            lbTotalPrice.Location = new Point(26, 63);
+            lbTotalPrice.Name = "lbTotalPrice";
+            lbTotalPrice.Size = new Size(195, 35);
+            lbTotalPrice.TabIndex = 7;
+            lbTotalPrice.Text = "price";
+            lbTotalPrice.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Cartt
             // 

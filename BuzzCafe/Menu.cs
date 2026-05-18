@@ -178,11 +178,19 @@ namespace BuzzCafe
                 resetQuan();
                 panelPopup.Visible = true;
 
+<<<<<<< HEAD
                
                 //drinkSize = "Small";
                 //btnS.BackColor = Color.DarkGray;
                 if (isDrink)
                 {
+=======
+                //button color
+
+                drinkSize = "Small";
+                btnS.BackColor = Color.DarkGray;
+
+>>>>>>> 72f4110980fc962f918c70167d4cf935b6e777da
                     selectedSize = 1;
                     sizePrice = getSizePrice("Small");
 
@@ -379,6 +387,7 @@ namespace BuzzCafe
             }
         }
 
+<<<<<<< HEAD
         private void btnCart_Click(object sender, EventArgs e)
         {
             MainForm main = (MainForm)this.ParentForm;
@@ -389,6 +398,11 @@ namespace BuzzCafe
 
             cart.Dock = DockStyle.Fill;
             cart.BringToFront();
+=======
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> 72f4110980fc962f918c70167d4cf935b6e777da
         }
     }
 }

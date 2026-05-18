@@ -43,7 +43,10 @@ namespace BuzzCafe
         void LoadCart()
         {
             totalPrice = 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 72f4110980fc962f918c70167d4cf935b6e777da
             flCart.Controls.Clear();
 
             using (SqlConnection con = DBConnection.GetConnection())
@@ -91,6 +94,10 @@ namespace BuzzCafe
 
                             double itemTotal = (basePrice + addPrice) * quantity;
                             cmd.Parameters.AddWithValue("@quantity", quantity);
+<<<<<<< HEAD
+=======
+                            //cmd.Parameters.AddWithValue("@total_price_perItem", totalPrice);
+>>>>>>> 72f4110980fc962f918c70167d4cf935b6e777da
                             cmd.Parameters.AddWithValue("@order_item_id",orderItemId );
                             cmd.Parameters.AddWithValue("@total_price_perItem", itemTotal);
 
