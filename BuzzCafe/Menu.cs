@@ -33,6 +33,7 @@ namespace BuzzCafe
         {
 
             InitializeComponent();
+            this.DoubleBuffered = true;
             ShowCoffee();
 
 

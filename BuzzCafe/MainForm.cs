@@ -17,12 +17,14 @@ namespace BuzzCafe
         public MainForm()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
 
             WelcomeHome home = new WelcomeHome();
             mainPanel.Controls.Add(home);
 
             home.Dock = DockStyle.Fill;
             home.BringToFront();
+
 
             
     }
