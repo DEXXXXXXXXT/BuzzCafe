@@ -138,7 +138,7 @@
             flReceipt.Location = new Point(0, 193);
             flReceipt.Margin = new Padding(10);
             flReceipt.Name = "flReceipt";
-            flReceipt.Size = new Size(562, 541);
+            flReceipt.Size = new Size(562, 536);
             flReceipt.TabIndex = 19;
             flReceipt.WrapContents = false;
             // 

@@ -47,26 +47,30 @@ namespace BuzzCafe
         {
             using (SqlConnection con = DBConnection.GetConnection())
             {
-                string query = "INSERT INTO Orders(order_type, order_date) VALUES (@order_type, @order_date)";
+
+                con.Open();
+
+                string query = "INSERT INTO Orders(order_type, order_date) OUTPUT INSERTED.order_Id VALUES (@order_type, @order_date)";
 
                 SqlCommand cmd = new SqlCommand(query, con);
+
                 cmd.Parameters.AddWithValue("@order_type", order_type);
                 cmd.Parameters.AddWithValue("@order_date", DateTime.Now);
 
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
+                MainForm.CurrentOrderId = Convert.ToInt32(cmd.ExecuteScalar());
 
-                Menu menu = new Menu();
-                MainForm main = (MainForm)this.ParentForm;
+                MessageBox.Show(MainForm.CurrentOrderId.ToString());
 
-                main.mainPanel.Controls.Clear();
-                main.mainPanel.Controls.Add(menu);
-
-                menu.Dock = DockStyle.Fill;
-                menu.BringToFront(); 
 
             }
+            Menu menu = new Menu();
+            MainForm main = (MainForm)this.ParentForm;
+
+            main.mainPanel.Controls.Clear();
+            main.mainPanel.Controls.Add(menu);
+
+            menu.Dock = DockStyle.Fill;
+            menu.BringToFront();
         }
 
         private void btnNo_Click(object sender, EventArgs e)

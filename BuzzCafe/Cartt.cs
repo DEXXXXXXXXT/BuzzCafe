@@ -18,6 +18,7 @@ namespace BuzzCafe
 
         double totalPrice = 0.00;
         double pricePerItem = 0.00;
+        int orderId;
 
 
         public Cartt()
@@ -219,6 +220,8 @@ namespace BuzzCafe
         private void btnPlace_Click(object sender, EventArgs e)
         {
 
+          
+
             if (totalPrice <= 0)
             {
                 MessageBoxCustom vb = new MessageBoxCustom();
@@ -237,69 +240,79 @@ namespace BuzzCafe
                 return;
             }
 
-            Reciept rec = new Reciept();
-         
             MainForm main = (MainForm)this.ParentForm;
+            Reciept rec = new Reciept();
 
             main.mainPanel.Controls.Clear();
             main.mainPanel.Controls.Add(rec);
-            int orderId = MainForm.CurrentOrderId;
+
             string orderType = MainForm.CurrentOrderType;
-           
 
             double subTotal = totalPrice;
             double taxRate = 0.12;
             double tax = subTotal * taxRate;
             double total = tax + subTotal;
 
+         
+
+            using (SqlConnection con = DBConnection.GetConnection())
+            {
+                string query = "UPDATE Orders SET total_price = @total_price WHERE order_Id = @order_Id";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                orderId = MainForm.CurrentOrderId;
+
+                cmd.Parameters.AddWithValue("@total_price", total);
+                cmd.Parameters.AddWithValue("@order_Id", orderId);
+              
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+
+            }
+
+
+            foreach (Control control in flCart.Controls)
+            {
+                CartItem cart = (CartItem)control;
+                ReceiptItem item = new ReceiptItem();
+                
+
+                item.lbItemName.Text =  cart.lbProdName.Text;
+                item.lbQuantity.Text = cart.lbqCount.Text;
+                item.lbItemPrice.Text = cart.lbProductPrice.Text;
+                item.lbItemTotalPrice.Text = cart.lbItemPrice.Text;
+                item.lbSize.Text = cart.lbSize.Text;
+                item.lbPricetoadd.Text = cart.toAddPrice.Text;
+
+                if (item.lbSize.Text == "None")
+                {
+                    item.lbSize.Visible = false;
+                    item.lbPricetoadd.Visible = false;
+
+                }else if (item.lbSize.Text == "Small")
+                {
+                    item.lbSize.Visible = true;
+                    item.lbPricetoadd.Visible = false;
+                }
+
+                rec.flReceipt.Controls.Add(item);
+            }
 
             rec.lborderNum.Text = orderId.ToString();
             rec.lbDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
             rec.lbSubtotal.Text = subTotal.ToString("0.00");
             rec.lbVat.Text = tax.ToString("0.00");
             rec.lbTotal.Text = total.ToString("0.00");
-            rec.lbOrderType.Text = orderType.ToString();
-
-
-            //loop each cart for display
-            foreach (Control control in flCart.Controls)
-            {
-                CartItem cartItem = (CartItem)control;
-                ReceiptItem item = new ReceiptItem();
-
-
-
-                item.lbItemName.Text = cartItem.lbProdName.Text;
-                item.lbQuantity.Text = cartItem.lbqCount.Text;
-                item.lbItemPrice.Text = cartItem.lbProductPrice.Text;
-                item.lbSize.Text = cartItem.lbSize.Text;
-                item.lbItemTotalPrice.Text = cartItem.lbItemPrice.Text;
-                item.lbPricetoadd.Text = cartItem.toAddPrice.Text;
-               
-                
-
-                if (item.lbSize.Text == "None" )
-                {
-                    item.lbSize.Visible = false;
-                    item.lbPricetoadd.Visible = false;
-                }
-                else if (item.lbSize.Text == "Small")
-                {
-                    item.lbPricetoadd.Visible = false;
-                }
-
-
-
-                rec.flReceipt.Controls.Add(item);
-              
-
-
-            }
-
-            rec.Show();
+            rec.lbOrderType.Text = orderType;
+            
 
             rec.Dock = DockStyle.Fill;
             rec.BringToFront();
+
+
+
         }
     }
 }

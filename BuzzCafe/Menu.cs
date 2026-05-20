@@ -297,11 +297,9 @@ namespace BuzzCafe
                 con.Open();
                 string query = "INSERT INTO Order_Items(order_Id, Product_id, quantity, size_id, total_price_perItem ) VALUES ( @order_Id, @Product_id, @quantity, @size_id, @total_price_perItem)";
                 string getOrder = "SELECT MAX(order_Id) FROM Orders";
+                orderId = MainForm.CurrentOrderId;
+                
 
-                SqlCommand getCmd = new SqlCommand(getOrder, con);
-
-                int orderId = Convert.ToInt32(getCmd.ExecuteScalar());
-                MainForm.CurrentOrderId = orderId;
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 cmd.Parameters.AddWithValue("@order_Id", orderId);
