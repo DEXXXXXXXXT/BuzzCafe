@@ -1,6 +1,6 @@
 ﻿namespace BuzzCafe
 {
-    partial class Form1
+    partial class OrderSuccessForm
     {
         /// <summary>
         /// Required designer variable.
