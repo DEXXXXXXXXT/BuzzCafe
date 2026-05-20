@@ -54,7 +54,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(523, 380);
             panel1.TabIndex = 0;
-            panel1.Paint += this.panel1_Paint;
+            
             // 
             // lblHeader
             // 
@@ -65,7 +65,7 @@
             lblHeader.TabIndex = 0;
             lblHeader.Text = "ORDER SUCCESS";
             lblHeader.TextAlign = ContentAlignment.TopCenter;
-            lblHeader.Click += this.lblHeader_Click;
+           
             // 
             // lblStatus
             // 
@@ -77,7 +77,7 @@
             lblStatus.TabIndex = 1;
             lblStatus.Text = "✔ Order Placed Successfully!";
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
-            lblStatus.Click += this.lblStatus_Click;
+            
             // 
             // lblThanks
             // 
@@ -89,7 +89,7 @@
             lblThanks.TabIndex = 2;
             lblThanks.Text = "Thank you for ordering";
             lblThanks.TextAlign = ContentAlignment.MiddleCenter;
-            lblThanks.Click += this.lblThanks_Click;
+           
             // 
             // lblOrderNum
             // 
