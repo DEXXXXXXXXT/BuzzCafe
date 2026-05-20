@@ -214,17 +214,22 @@ namespace BuzzCafe
 
 
         //nag auto 
-        private void Cart_AddClicked(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void Cart_AddClicked(object? sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private void btnPlace_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = DBConnection.GetConnection())
-            {
-                string query = "";
-            }
+            Reciept rec = new Reciept();
+            MainForm main = (MainForm)this.ParentForm;
+
+            main.mainPanel.Controls.Clear();
+            main.mainPanel.Controls.Add(rec);
+
+            rec.Dock = DockStyle.Fill;
+            rec.BringToFront();
+            
         }
     }
 }
