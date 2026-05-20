@@ -111,6 +111,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(panelItem);
+            DoubleBuffered = true;
             Name = "ItemLayout";
             Size = new Size(218, 311);
             panelItem.ResumeLayout(false);

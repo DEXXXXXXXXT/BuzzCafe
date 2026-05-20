@@ -28,110 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            lbItemName = new Label();
-            lbQuantity = new Label();
-            lbItemPrice = new Label();
-            label3 = new Label();
-            lbItemTotalPrice = new Label();
-            lbSize = new Label();
+            panelReceiptItem = new Panel();
+            lbPricetoadd = new Label();
             panel2 = new Panel();
-            panel1.SuspendLayout();
+            lbSize = new Label();
+            lbItemTotalPrice = new Label();
+            label3 = new Label();
+            lbItemPrice = new Label();
+            lbQuantity = new Label();
+            lbItemName = new Label();
+            panelReceiptItem.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelReceiptItem
             // 
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(lbSize);
-            panel1.Controls.Add(lbItemTotalPrice);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(lbItemPrice);
-            panel1.Controls.Add(lbQuantity);
-            panel1.Controls.Add(lbItemName);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(382, 85);
-            panel1.TabIndex = 0;
+            panelReceiptItem.Controls.Add(lbPricetoadd);
+            panelReceiptItem.Controls.Add(panel2);
+            panelReceiptItem.Controls.Add(lbSize);
+            panelReceiptItem.Controls.Add(lbItemTotalPrice);
+            panelReceiptItem.Controls.Add(label3);
+            panelReceiptItem.Controls.Add(lbItemPrice);
+            panelReceiptItem.Controls.Add(lbQuantity);
+            panelReceiptItem.Controls.Add(lbItemName);
+            panelReceiptItem.Dock = DockStyle.Fill;
+            panelReceiptItem.Location = new Point(0, 0);
+            panelReceiptItem.Name = "panelReceiptItem";
+            panelReceiptItem.Size = new Size(542, 78);
+            panelReceiptItem.TabIndex = 0;
             // 
-            // lbItemName
+            // lbPricetoadd
             // 
-            lbItemName.Anchor = AnchorStyles.Top;
-            lbItemName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbItemName.Location = new Point(20, 12);
-            lbItemName.Name = "lbItemName";
-            lbItemName.Size = new Size(266, 21);
-            lbItemName.TabIndex = 4;
-            lbItemName.Text = "Item name";
-            // 
-            // lbQuantity
-            // 
-            lbQuantity.Anchor = AnchorStyles.Top;
-            lbQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbQuantity.Location = new Point(20, 42);
-            lbQuantity.Name = "lbQuantity";
-            lbQuantity.Size = new Size(46, 22);
-            lbQuantity.TabIndex = 5;
-            lbQuantity.Text = "Quan";
-            // 
-            // lbItemPrice
-            // 
-            lbItemPrice.Anchor = AnchorStyles.Top;
-            lbItemPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbItemPrice.Location = new Point(101, 42);
-            lbItemPrice.Name = "lbItemPrice";
-            lbItemPrice.Size = new Size(81, 22);
-            lbItemPrice.TabIndex = 6;
-            lbItemPrice.Text = "Price";
-            lbItemPrice.Click += label2_Click;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(72, 42);
-            label3.Name = "label3";
-            label3.Size = new Size(18, 22);
-            label3.TabIndex = 7;
-            label3.Text = "x";
-            // 
-            // lbItemTotalPrice
-            // 
-            lbItemTotalPrice.Anchor = AnchorStyles.Top;
-            lbItemTotalPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbItemTotalPrice.Location = new Point(288, 42);
-            lbItemTotalPrice.Name = "lbItemTotalPrice";
-            lbItemTotalPrice.Size = new Size(94, 22);
-            lbItemTotalPrice.TabIndex = 8;
-            lbItemTotalPrice.Text = "TotalPrice";
-            // 
-            // lbSize
-            // 
-            lbSize.Anchor = AnchorStyles.Top;
-            lbSize.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbSize.Location = new Point(288, 12);
-            lbSize.Name = "lbSize";
-            lbSize.Size = new Size(81, 22);
-            lbSize.TabIndex = 9;
-            lbSize.Text = "Size";
+            lbPricetoadd.Anchor = AnchorStyles.Top;
+            lbPricetoadd.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbPricetoadd.Location = new Point(201, 42);
+            lbPricetoadd.Name = "lbPricetoadd";
+            lbPricetoadd.Size = new Size(60, 22);
+            lbPricetoadd.TabIndex = 11;
+            lbPricetoadd.Text = "add";
             // 
             // panel2
             // 
             panel2.BackColor = Color.Black;
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 82);
+            panel2.Location = new Point(0, 77);
             panel2.Name = "panel2";
-            panel2.Size = new Size(382, 3);
+            panel2.Size = new Size(542, 1);
             panel2.TabIndex = 10;
+            // 
+            // lbSize
+            // 
+            lbSize.Anchor = AnchorStyles.Top;
+            lbSize.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbSize.Location = new Point(368, 12);
+            lbSize.Name = "lbSize";
+            lbSize.Size = new Size(81, 22);
+            lbSize.TabIndex = 9;
+            lbSize.Text = "Size";
+            // 
+            // lbItemTotalPrice
+            // 
+            lbItemTotalPrice.Anchor = AnchorStyles.Top;
+            lbItemTotalPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbItemTotalPrice.Location = new Point(368, 42);
+            lbItemTotalPrice.Margin = new Padding(0, 0, 0, 5);
+            lbItemTotalPrice.Name = "lbItemTotalPrice";
+            lbItemTotalPrice.Size = new Size(94, 22);
+            lbItemTotalPrice.TabIndex = 8;
+            lbItemTotalPrice.Text = "TotalPrice";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(131, 42);
+            label3.Name = "label3";
+            label3.Size = new Size(18, 22);
+            label3.TabIndex = 7;
+            label3.Text = "x";
+            // 
+            // lbItemPrice
+            // 
+            lbItemPrice.Anchor = AnchorStyles.Top;
+            lbItemPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbItemPrice.Location = new Point(148, 42);
+            lbItemPrice.Name = "lbItemPrice";
+            lbItemPrice.Size = new Size(60, 22);
+            lbItemPrice.TabIndex = 6;
+            lbItemPrice.Text = "Price";
+            lbItemPrice.Click += label2_Click;
+            // 
+            // lbQuantity
+            // 
+            lbQuantity.Anchor = AnchorStyles.Top;
+            lbQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbQuantity.Location = new Point(100, 42);
+            lbQuantity.Name = "lbQuantity";
+            lbQuantity.Size = new Size(34, 22);
+            lbQuantity.TabIndex = 5;
+            lbQuantity.Text = "Quan";
+            // 
+            // lbItemName
+            // 
+            lbItemName.Anchor = AnchorStyles.Top;
+            lbItemName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbItemName.Location = new Point(100, 12);
+            lbItemName.Name = "lbItemName";
+            lbItemName.Size = new Size(266, 21);
+            lbItemName.TabIndex = 4;
+            lbItemName.Text = "Item name";
             // 
             // ReceiptItem
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
+            Controls.Add(panelReceiptItem);
+            DoubleBuffered = true;
             Name = "ReceiptItem";
-            Size = new Size(382, 85);
-            panel1.ResumeLayout(false);
+            Size = new Size(542, 78);
+            panelReceiptItem.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -146,5 +160,7 @@
         public Label lbItemTotalPrice;
         private Panel panel2;
         private Label label2;
+        public Panel panelReceiptItem;
+        public Label lbPricetoadd;
     }
 }

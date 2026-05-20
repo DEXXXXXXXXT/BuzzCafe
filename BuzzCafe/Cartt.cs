@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace BuzzCafe
 {
@@ -213,23 +214,92 @@ namespace BuzzCafe
         }
 
 
-        //nag auto 
-        //private void Cart_AddClicked(object? sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
+      
 
         private void btnPlace_Click(object sender, EventArgs e)
         {
+
+            if (totalPrice <= 0)
+            {
+                MessageBoxCustom vb = new MessageBoxCustom();
+
+                vb.lbMessageBox.Text = "Your Cart is empty.";
+
+                MainForm mainn = (MainForm)this.ParentForm;
+
+                mainn.mainPanel.Controls.Add(vb);
+
+                vb.Left = (mainn.mainPanel.Width - vb.Width) / 2;
+                vb.Top = (mainn.mainPanel.Height - vb.Height) / 2;
+
+                vb.BringToFront();
+
+                return;
+            }
+
             Reciept rec = new Reciept();
+         
             MainForm main = (MainForm)this.ParentForm;
 
             main.mainPanel.Controls.Clear();
             main.mainPanel.Controls.Add(rec);
+            int orderId = MainForm.CurrentOrderId;
+            string orderType = MainForm.CurrentOrderType;
+           
+
+            double subTotal = totalPrice;
+            double taxRate = 0.12;
+            double tax = subTotal * taxRate;
+            double total = tax + subTotal;
+
+
+            rec.lborderNum.Text = orderId.ToString();
+            rec.lbDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+            rec.lbSubtotal.Text = subTotal.ToString("0.00");
+            rec.lbVat.Text = tax.ToString("0.00");
+            rec.lbTotal.Text = total.ToString("0.00");
+            rec.lbOrderType.Text = orderType.ToString();
+
+
+            //loop each cart for display
+            foreach (Control control in flCart.Controls)
+            {
+                CartItem cartItem = (CartItem)control;
+                ReceiptItem item = new ReceiptItem();
+
+
+
+                item.lbItemName.Text = cartItem.lbProdName.Text;
+                item.lbQuantity.Text = cartItem.lbqCount.Text;
+                item.lbItemPrice.Text = cartItem.lbProductPrice.Text;
+                item.lbSize.Text = cartItem.lbSize.Text;
+                item.lbItemTotalPrice.Text = cartItem.lbItemPrice.Text;
+                item.lbPricetoadd.Text = cartItem.toAddPrice.Text;
+               
+                
+
+                if (item.lbSize.Text == "None" )
+                {
+                    item.lbSize.Visible = false;
+                    item.lbPricetoadd.Visible = false;
+                }
+                else if (item.lbSize.Text == "Small")
+                {
+                    item.lbPricetoadd.Visible = false;
+                }
+
+
+
+                rec.flReceipt.Controls.Add(item);
+              
+
+
+            }
+
+            rec.Show();
 
             rec.Dock = DockStyle.Fill;
             rec.BringToFront();
-            
         }
     }
 }

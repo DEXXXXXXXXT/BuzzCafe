@@ -13,6 +13,7 @@ namespace BuzzCafe
 {
     public partial class DineTake : UserControl
     {
+
         string order_type = "";
         public DineTake()
         {
@@ -28,6 +29,7 @@ namespace BuzzCafe
 
             lbType.Text = "Dine In";
             order_type = "Dine In";
+            MainForm.CurrentOrderType = order_type;
             panelValidation.Visible = true;
            
         }
@@ -36,6 +38,7 @@ namespace BuzzCafe
         {
             lbType.Text = "Take out";
             order_type = "Take out";
+            MainForm.CurrentOrderType = order_type;
             panelValidation.Visible = true;
 
         }
@@ -61,7 +64,7 @@ namespace BuzzCafe
                 main.mainPanel.Controls.Add(menu);
 
                 menu.Dock = DockStyle.Fill;
-                menu.BringToFront();
+                menu.BringToFront(); 
 
             }
         }

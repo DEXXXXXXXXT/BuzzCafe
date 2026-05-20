@@ -1,13 +1,13 @@
 ﻿namespace BuzzCafe
 {
-    partial class MainForm
+    partial class OrderSuccess
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,38 +20,38 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            mainPanel = new Panel();
+            panelOrderSucess = new Panel();
             SuspendLayout();
             // 
-            // mainPanel
+            // panelOrderSucess
             // 
-            mainPanel.Dock = DockStyle.Fill;
-            mainPanel.Location = new Point(0, 0);
-            mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(722, 971);
-            mainPanel.TabIndex = 0;
+            panelOrderSucess.BackColor = Color.Transparent;
+            panelOrderSucess.Dock = DockStyle.Fill;
+            panelOrderSucess.Location = new Point(0, 0);
+            panelOrderSucess.Name = "panelOrderSucess";
+            panelOrderSucess.Size = new Size(605, 818);
+            panelOrderSucess.TabIndex = 0;
             // 
-            // MainForm
+            // OrderSuccess
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(722, 971);
-            Controls.Add(mainPanel);
-            Name = "MainForm";
-            Text = "MainForm";
+            Controls.Add(panelOrderSucess);
+            Name = "OrderSuccess";
+            Size = new Size(605, 818);
             ResumeLayout(false);
         }
 
         #endregion
 
-        public Panel mainPanel;
+        private Panel panelOrderSucess;
     }
 }

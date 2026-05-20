@@ -34,27 +34,33 @@
             lborderNum = new Label();
             label3 = new Label();
             lbDate = new Label();
-            flReceipt = new FlowLayoutPanel();
-            panel3 = new Panel();
-            label4 = new Label();
-            label7 = new Label();
-            lbVat = new Label();
             panelReciept = new Panel();
+            flReceipt = new FlowLayoutPanel();
+            panel6 = new Panel();
+            lbOrderType = new Label();
+            label6 = new Label();
             panel2 = new Panel();
-            panel5 = new Panel();
-            panel4 = new Panel();
+            panel7 = new Panel();
             label5 = new Label();
-            lbTotal = new Label();
-            label9 = new Label();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
             lbSubtotal = new Label();
+            label4 = new Label();
+            lbVat = new Label();
+            label7 = new Label();
+            label9 = new Label();
+            lbTotal = new Label();
             panelReciept.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label1.Anchor = AnchorStyles.None;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(190, 17);
+            label1.Location = new Point(203, 17);
             label1.Name = "label1";
             label1.Size = new Size(188, 50);
             label1.TabIndex = 0;
@@ -64,7 +70,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = SystemColors.ActiveCaptionText;
-            panel1.Location = new Point(1, 70);
+            panel1.Location = new Point(-2, 70);
             panel1.Name = "panel1";
             panel1.Size = new Size(567, 2);
             panel1.TabIndex = 1;
@@ -74,7 +80,7 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(50, 87);
+            label2.Location = new Point(39, 87);
             label2.Name = "label2";
             label2.Size = new Size(135, 29);
             label2.TabIndex = 2;
@@ -84,7 +90,7 @@
             // 
             lborderNum.Anchor = AnchorStyles.Top;
             lborderNum.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lborderNum.Location = new Point(206, 87);
+            lborderNum.Location = new Point(203, 87);
             lborderNum.Name = "lborderNum";
             lborderNum.Size = new Size(181, 29);
             lborderNum.TabIndex = 3;
@@ -94,7 +100,7 @@
             // 
             label3.Anchor = AnchorStyles.Top;
             label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(50, 116);
+            label3.Location = new Point(39, 116);
             label3.Name = "label3";
             label3.Size = new Size(55, 29);
             label3.TabIndex = 4;
@@ -105,156 +111,198 @@
             // 
             lbDate.Anchor = AnchorStyles.Top;
             lbDate.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbDate.Location = new Point(111, 116);
+            lbDate.Location = new Point(108, 116);
             lbDate.Name = "lbDate";
             lbDate.Size = new Size(159, 29);
             lbDate.TabIndex = 5;
             lbDate.Text = "data";
             // 
-            // flReceipt
-            // 
-            flReceipt.AutoScroll = true;
-            flReceipt.FlowDirection = FlowDirection.TopDown;
-            flReceipt.Location = new Point(3, 172);
-            flReceipt.Name = "flReceipt";
-            flReceipt.Padding = new Padding(30, 10, 0, 0);
-            flReceipt.Size = new Size(558, 461);
-            flReceipt.TabIndex = 6;
-            flReceipt.WrapContents = false;
-            // 
-            // panel3
-            // 
-            panel3.Anchor = AnchorStyles.Top;
-            panel3.BackColor = SystemColors.ActiveCaptionText;
-            panel3.Location = new Point(4, 639);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(567, 2);
-            panel3.TabIndex = 2;
-            panel3.Paint += panel3_Paint;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top;
-            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(50, 660);
-            label4.Name = "label4";
-            label4.Size = new Size(91, 29);
-            label4.TabIndex = 7;
-            label4.Text = "Subtotal:";
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top;
-            label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(50, 689);
-            label7.Name = "label7";
-            label7.Size = new Size(55, 29);
-            label7.TabIndex = 7;
-            label7.Text = "VAT:";
-            // 
-            // lbVat
-            // 
-            lbVat.Anchor = AnchorStyles.Top;
-            lbVat.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbVat.Location = new Point(158, 689);
-            lbVat.Name = "lbVat";
-            lbVat.Size = new Size(159, 29);
-            lbVat.TabIndex = 8;
-            lbVat.Text = "data";
-            // 
             // panelReciept
             // 
-            panelReciept.Controls.Add(panel2);
-            panelReciept.Controls.Add(panel5);
-            panelReciept.Controls.Add(panel4);
-            panelReciept.Controls.Add(label5);
-            panelReciept.Controls.Add(lbTotal);
-            panelReciept.Controls.Add(label9);
-            panelReciept.Controls.Add(lbSubtotal);
-            panelReciept.Controls.Add(lbVat);
-            panelReciept.Controls.Add(label7);
-            panelReciept.Controls.Add(label4);
-            panelReciept.Controls.Add(panel3);
+            panelReciept.BackColor = Color.Transparent;
             panelReciept.Controls.Add(flReceipt);
-            panelReciept.Controls.Add(lbDate);
-            panelReciept.Controls.Add(label3);
-            panelReciept.Controls.Add(lborderNum);
-            panelReciept.Controls.Add(label2);
-            panelReciept.Controls.Add(panel1);
-            panelReciept.Controls.Add(label1);
+            panelReciept.Controls.Add(panel6);
+            panelReciept.Controls.Add(panel7);
             panelReciept.Dock = DockStyle.Fill;
             panelReciept.Location = new Point(0, 0);
             panelReciept.Name = "panelReciept";
-            panelReciept.Size = new Size(568, 903);
+            panelReciept.Size = new Size(562, 993);
             panelReciept.TabIndex = 0;
             panelReciept.Paint += panelReciept_Paint;
+            // 
+            // flReceipt
+            // 
+            flReceipt.Anchor = AnchorStyles.Top;
+            flReceipt.AutoScroll = true;
+            flReceipt.FlowDirection = FlowDirection.TopDown;
+            flReceipt.Location = new Point(0, 193);
+            flReceipt.Margin = new Padding(10);
+            flReceipt.Name = "flReceipt";
+            flReceipt.Size = new Size(562, 541);
+            flReceipt.TabIndex = 19;
+            flReceipt.WrapContents = false;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(lbOrderType);
+            panel6.Controls.Add(label6);
+            panel6.Controls.Add(panel2);
+            panel6.Controls.Add(lbDate);
+            panel6.Controls.Add(label3);
+            panel6.Controls.Add(lborderNum);
+            panel6.Controls.Add(label2);
+            panel6.Controls.Add(panel1);
+            panel6.Controls.Add(label1);
+            panel6.Dock = DockStyle.Top;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(562, 188);
+            panel6.TabIndex = 16;
+            panel6.Paint += panel6_Paint;
+            // 
+            // lbOrderType
+            // 
+            lbOrderType.Anchor = AnchorStyles.Top;
+            lbOrderType.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbOrderType.Location = new Point(159, 145);
+            lbOrderType.Name = "lbOrderType";
+            lbOrderType.Size = new Size(159, 29);
+            lbOrderType.TabIndex = 7;
+            lbOrderType.Text = "data";
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top;
+            label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(39, 145);
+            label6.Name = "label6";
+            label6.Size = new Size(106, 29);
+            label6.TabIndex = 6;
+            label6.Text = "Order Type:";
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top;
             panel2.BackColor = SystemColors.ActiveCaptionText;
-            panel2.Location = new Point(3, 164);
+            panel2.Location = new Point(3, 183);
             panel2.Name = "panel2";
             panel2.Size = new Size(567, 2);
             panel2.TabIndex = 2;
             // 
-            // panel5
+            // panel7
             // 
-            panel5.Anchor = AnchorStyles.Top;
-            panel5.BackColor = SystemColors.ActiveCaptionText;
-            panel5.Location = new Point(7, 816);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(567, 2);
-            panel5.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.Top;
-            panel4.BackColor = SystemColors.ActiveCaptionText;
-            panel4.Location = new Point(5, 740);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(567, 2);
-            panel4.TabIndex = 2;
+            panel7.Controls.Add(label5);
+            panel7.Controls.Add(panel3);
+            panel7.Controls.Add(panel4);
+            panel7.Controls.Add(panel5);
+            panel7.Controls.Add(lbSubtotal);
+            panel7.Controls.Add(label4);
+            panel7.Controls.Add(lbVat);
+            panel7.Controls.Add(label7);
+            panel7.Controls.Add(label9);
+            panel7.Controls.Add(lbTotal);
+            panel7.Dock = DockStyle.Bottom;
+            panel7.Location = new Point(0, 732);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(562, 261);
+            panel7.TabIndex = 17;
             // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Top;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(173, 847);
+            label5.Location = new Point(192, 201);
             label5.Name = "label5";
             label5.Size = new Size(211, 29);
-            label5.TabIndex = 15;
+            label5.TabIndex = 24;
             label5.Text = "Thank you for visiting!";
             // 
-            // lbTotal
+            // panel3
             // 
-            lbTotal.Anchor = AnchorStyles.Top;
-            lbTotal.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbTotal.Location = new Point(147, 765);
-            lbTotal.Name = "lbTotal";
-            lbTotal.Size = new Size(159, 29);
-            lbTotal.TabIndex = 14;
-            lbTotal.Text = "data";
+            panel3.Anchor = AnchorStyles.Top;
+            panel3.BackColor = SystemColors.ActiveCaptionText;
+            panel3.Location = new Point(0, 10);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(567, 2);
+            panel3.TabIndex = 23;
             // 
-            // label9
+            // panel4
             // 
-            label9.Anchor = AnchorStyles.Top;
-            label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(50, 765);
-            label9.Name = "label9";
-            label9.Size = new Size(63, 29);
-            label9.TabIndex = 12;
-            label9.Text = "Total:";
+            panel4.Anchor = AnchorStyles.Top;
+            panel4.BackColor = SystemColors.ActiveCaptionText;
+            panel4.Location = new Point(0, 100);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(567, 2);
+            panel4.TabIndex = 22;
+            // 
+            // panel5
+            // 
+            panel5.Anchor = AnchorStyles.Top;
+            panel5.BackColor = SystemColors.ActiveCaptionText;
+            panel5.Location = new Point(-2, 175);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(567, 2);
+            panel5.TabIndex = 21;
             // 
             // lbSubtotal
             // 
             lbSubtotal.Anchor = AnchorStyles.Top;
             lbSubtotal.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbSubtotal.Location = new Point(147, 660);
+            lbSubtotal.Location = new Point(136, 30);
             lbSubtotal.Name = "lbSubtotal";
             lbSubtotal.Size = new Size(159, 29);
-            lbSubtotal.TabIndex = 9;
+            lbSubtotal.TabIndex = 20;
             lbSubtotal.Text = "data";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top;
+            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(39, 30);
+            label4.Name = "label4";
+            label4.Size = new Size(91, 29);
+            label4.TabIndex = 19;
+            label4.Text = "Subtotal:";
+            // 
+            // lbVat
+            // 
+            lbVat.Anchor = AnchorStyles.Top;
+            lbVat.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbVat.Location = new Point(108, 59);
+            lbVat.Name = "lbVat";
+            lbVat.Size = new Size(159, 29);
+            lbVat.TabIndex = 18;
+            lbVat.Text = "data";
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top;
+            label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(39, 59);
+            label7.Name = "label7";
+            label7.Size = new Size(55, 29);
+            label7.TabIndex = 17;
+            label7.Text = "VAT:";
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Top;
+            label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(39, 121);
+            label9.Name = "label9";
+            label9.Size = new Size(63, 29);
+            label9.TabIndex = 16;
+            label9.Text = "Total:";
+            // 
+            // lbTotal
+            // 
+            lbTotal.Anchor = AnchorStyles.Top;
+            lbTotal.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbTotal.Location = new Point(108, 121);
+            lbTotal.Name = "lbTotal";
+            lbTotal.Size = new Size(159, 29);
+            lbTotal.TabIndex = 15;
+            lbTotal.Text = "data";
             // 
             // Reciept
             // 
@@ -262,8 +310,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelReciept);
             Name = "Reciept";
-            Size = new Size(568, 903);
+            Size = new Size(562, 993);
             panelReciept.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -272,22 +322,25 @@
         private Label label1;
         private Panel panel1;
         private Label label2;
-        private Label lborderNum;
         private Label label3;
-        private Label lbDate;
         private Panel panel2;
-        private FlowLayoutPanel flowLayoutPanel1;
+        public Panel panelReciept;
+        public Panel panel6;
+        public Panel panel7;
+        private Label label5;
         private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
         private Label label4;
         private Label label7;
-        private Label lbVat;
-        public Panel panelReciept;
-        private Label lbTotal;
         private Label label9;
-        private Label lbSubtotal;
-        private Label label5;
         public FlowLayoutPanel flReceipt;
-        private Panel panel5;
-        private Panel panel4;
+        public Label lborderNum;
+        public Label lbDate;
+        public Label lbSubtotal;
+        public Label lbVat;
+        public Label lbTotal;
+        private Label label6;
+        public Label lbOrderType;
     }
 }

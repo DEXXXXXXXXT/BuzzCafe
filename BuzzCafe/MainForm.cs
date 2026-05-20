@@ -13,6 +13,7 @@ namespace BuzzCafe
     public partial class MainForm : Form
     {
         public static int CurrentOrderId;
+        public static string CurrentOrderType;
 
         public MainForm()
         {

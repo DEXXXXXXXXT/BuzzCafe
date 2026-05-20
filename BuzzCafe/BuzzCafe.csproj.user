@@ -23,6 +23,12 @@
     <Compile Update="Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="MessageBoxCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="OrderSuccess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ReceiptItem.cs">
       <SubType>UserControl</SubType>
     </Compile>

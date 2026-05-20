@@ -486,10 +486,10 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
+            Controls.Add(panelPopup);
             Controls.Add(flPanel);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(panelPopup);
             Name = "Menu";
             Size = new Size(707, 878);
             panel1.ResumeLayout(false);

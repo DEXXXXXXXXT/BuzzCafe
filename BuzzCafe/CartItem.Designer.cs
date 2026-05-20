@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             ItemCart = new Panel();
+            pbDelete = new PictureBox();
             toAddPrice = new Label();
             panelCartsize = new Panel();
             lbSize = new Label();
@@ -41,12 +42,11 @@
             lbqCount = new Label();
             lbProdName = new Label();
             pbImage = new PictureBox();
-            pbDelete = new PictureBox();
             ItemCart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbDelete).BeginInit();
             panelCartsize.SuspendLayout();
             panelQuantity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbDelete).BeginInit();
             SuspendLayout();
             // 
             // ItemCart
@@ -66,6 +66,17 @@
             ItemCart.Name = "ItemCart";
             ItemCart.Size = new Size(610, 168);
             ItemCart.TabIndex = 1;
+            // 
+            // pbDelete
+            // 
+            pbDelete.Image = Properties.Resources.delete;
+            pbDelete.Location = new Point(573, 2);
+            pbDelete.Name = "pbDelete";
+            pbDelete.Size = new Size(36, 40);
+            pbDelete.SizeMode = PictureBoxSizeMode.Zoom;
+            pbDelete.TabIndex = 18;
+            pbDelete.TabStop = false;
+            pbDelete.Click += pbDelete_Click;
             // 
             // toAddPrice
             // 
@@ -210,29 +221,19 @@
             pbImage.TabIndex = 0;
             pbImage.TabStop = false;
             // 
-            // pbDelete
-            // 
-            pbDelete.Image = Properties.Resources.delete;
-            pbDelete.Location = new Point(573, 2);
-            pbDelete.Name = "pbDelete";
-            pbDelete.Size = new Size(36, 40);
-            pbDelete.SizeMode = PictureBoxSizeMode.Zoom;
-            pbDelete.TabIndex = 18;
-            pbDelete.TabStop = false;
-            pbDelete.Click += pbDelete_Click;
-            // 
             // CartItem
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(ItemCart);
+            DoubleBuffered = true;
             Name = "CartItem";
             Size = new Size(610, 168);
             ItemCart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbDelete).EndInit();
             panelCartsize.ResumeLayout(false);
             panelQuantity.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbDelete).EndInit();
             ResumeLayout(false);
         }
 
