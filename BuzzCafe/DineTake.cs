@@ -20,7 +20,7 @@ namespace BuzzCafe
             panelValidation.Visible = false;
         }
 
-       
+
 
 
         private void btnDine_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace BuzzCafe
             lbType.Text = "Dine In";
             order_type = "Dine In";
             panelValidation.Visible = true;
-           
+
         }
 
         private void btnTake_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace BuzzCafe
                 string query = "INSERT INTO Orders(order_type, order_date) VALUES (@order_type, @order_date)";
 
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@order_type",order_type);
+                cmd.Parameters.AddWithValue("@order_type", order_type);
                 cmd.Parameters.AddWithValue("@order_date", DateTime.Now);
 
                 con.Open();
@@ -69,6 +69,11 @@ namespace BuzzCafe
         private void btnNo_Click(object sender, EventArgs e)
         {
             panelValidation.Visible = false;
+        }
+
+        private void dineTakepanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

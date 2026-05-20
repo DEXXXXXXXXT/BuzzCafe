@@ -48,7 +48,7 @@
             // 
             // dineTakepanel
             // 
-            dineTakepanel.BackColor = Color.Transparent;
+            dineTakepanel.BackColor = Color.FromArgb(43, 31, 24);
             dineTakepanel.Controls.Add(panelValidation);
             dineTakepanel.Controls.Add(panel1);
             dineTakepanel.Controls.Add(label1);
@@ -59,6 +59,7 @@
             dineTakepanel.Name = "dineTakepanel";
             dineTakepanel.Size = new Size(648, 899);
             dineTakepanel.TabIndex = 0;
+            dineTakepanel.Paint += dineTakepanel_Paint;
             // 
             // panelValidation
             // 
@@ -142,14 +143,15 @@
             btnDine.BackgroundImage = Properties.Resources.background2;
             btnDine.BackgroundImageLayout = ImageLayout.Stretch;
             btnDine.FlatAppearance.BorderSize = 0;
-            btnDine.FlatStyle = FlatStyle.Popup;
+            btnDine.FlatStyle = FlatStyle.Flat;
             btnDine.Font = new Font("Georgia", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDine.ForeColor = SystemColors.ActiveCaptionText;
+            btnDine.ForeColor = Color.Brown;
             btnDine.Location = new Point(39, 4);
             btnDine.Margin = new Padding(3, 4, 3, 4);
             btnDine.Name = "btnDine";
             btnDine.Size = new Size(139, 136);
             btnDine.TabIndex = 11;
+            btnDine.TextImageRelation = TextImageRelation.ImageAboveText;
             btnDine.UseVisualStyleBackColor = false;
             btnDine.Click += btnDine_Click;
             // 
@@ -162,12 +164,13 @@
             btnTake.FlatAppearance.BorderSize = 0;
             btnTake.FlatStyle = FlatStyle.Flat;
             btnTake.Font = new Font("Georgia", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTake.ForeColor = SystemColors.ActiveCaptionText;
+            btnTake.ForeColor = Color.Brown;
             btnTake.Location = new Point(203, 4);
             btnTake.Margin = new Padding(3, 4, 3, 4);
             btnTake.Name = "btnTake";
             btnTake.Size = new Size(137, 136);
             btnTake.TabIndex = 12;
+            btnTake.TextImageRelation = TextImageRelation.ImageAboveText;
             btnTake.UseVisualStyleBackColor = false;
             btnTake.Click += btnTake_Click;
             // 
@@ -176,7 +179,7 @@
             label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Georgia", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Ivory;
             label1.Location = new Point(21, 487);
             label1.Name = "label1";
             label1.Size = new Size(624, 184);
@@ -189,8 +192,8 @@
             lblBuzz.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblBuzz.BackColor = Color.Transparent;
             lblBuzz.Font = new Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBuzz.ForeColor = Color.White;
-            lblBuzz.Location = new Point(102, 38);
+            lblBuzz.ForeColor = Color.FromArgb(210, 163, 108);
+            lblBuzz.Location = new Point(94, 39);
             lblBuzz.Name = "lblBuzz";
             lblBuzz.Size = new Size(462, 88);
             lblBuzz.TabIndex = 9;
@@ -200,6 +203,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = Properties.Resources.dinetakecoffee;
             pictureBox1.Location = new Point(110, 52);
