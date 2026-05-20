@@ -14,6 +14,9 @@
     <Compile Update="DineTake.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="OrderSuccessForm..cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ItemLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -24,9 +27,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="MessageBoxCustom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="OrderSuccess.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ReceiptItem.cs">
