@@ -35,7 +35,7 @@
     <Compile Update="ReceiptItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Reciept.cs">
+    <Compile Update="Receipt.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Resources\Toolbox\ButtonPic.cs">

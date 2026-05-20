@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BuzzCafe
 {
-    public partial class Reciept : UserControl
+    public partial class Receipt : UserControl
     {
-        public Reciept()
+        public Receipt()
         {
             InitializeComponent();
         }

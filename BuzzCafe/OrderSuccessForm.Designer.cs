@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            lblHeader = new Label();
-            lblStatus = new Label();
-            lblThanks = new Label();
-            lblOrderNum = new Label();
-            button1 = new Button();
             button2 = new Button();
+            button1 = new Button();
+            lblOrderNum = new Label();
+            lblThanks = new Label();
+            lblStatus = new Label();
+            lblHeader = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,50 +56,19 @@
             panel1.TabIndex = 0;
             
             // 
-            // lblHeader
+            // button2
             // 
-            lblHeader.Font = new Font("Georgia", 24F, FontStyle.Bold);
-            lblHeader.Location = new Point(54, 28);
-            lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(415, 51);
-            lblHeader.TabIndex = 0;
-            lblHeader.Text = "ORDER SUCCESS";
-            lblHeader.TextAlign = ContentAlignment.TopCenter;
-           
-            // 
-            // lblStatus
-            // 
-            lblStatus.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblStatus.ForeColor = Color.DimGray;
-            lblStatus.Location = new Point(70, 99);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(364, 40);
-            lblStatus.TabIndex = 1;
-            lblStatus.Text = "✔ Order Placed Successfully!";
-            lblStatus.TextAlign = ContentAlignment.MiddleCenter;
-            
-            // 
-            // lblThanks
-            // 
-            lblThanks.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblThanks.ForeColor = SystemColors.WindowFrame;
-            lblThanks.Location = new Point(124, 160);
-            lblThanks.Name = "lblThanks";
-            lblThanks.Size = new Size(271, 33);
-            lblThanks.TabIndex = 2;
-            lblThanks.Text = "Thank you for ordering";
-            lblThanks.TextAlign = ContentAlignment.MiddleCenter;
-           
-            // 
-            // lblOrderNum
-            // 
-            lblOrderNum.Font = new Font("Courier New", 18F, FontStyle.Bold);
-            lblOrderNum.ForeColor = Color.FromArgb(184, 98, 48);
-            lblOrderNum.Location = new Point(124, 221);
-            lblOrderNum.Name = "lblOrderNum";
-            lblOrderNum.Size = new Size(271, 43);
-            lblOrderNum.TabIndex = 3;
-            lblOrderNum.Text = "Order #: 00015";
+            button2.BackColor = Color.FromArgb(166, 94, 46);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Arial", 12F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(292, 280);
+            button2.Name = "button2";
+            button2.Size = new Size(160, 45);
+            button2.TabIndex = 5;
+            button2.Text = "View Receipt";
+            button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -115,21 +84,49 @@
             button1.Text = "Order Again";
             button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // lblOrderNum
             // 
-            button2.BackColor = Color.FromArgb(166, 94, 46);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 12F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(292, 280);
-            button2.Name = "button2";
-            button2.Size = new Size(160, 45);
-            button2.TabIndex = 5;
-            button2.Text = "View Receipt";
-            button2.UseVisualStyleBackColor = false;
+            lblOrderNum.Font = new Font("Courier New", 18F, FontStyle.Bold);
+            lblOrderNum.ForeColor = Color.FromArgb(184, 98, 48);
+            lblOrderNum.Location = new Point(124, 221);
+            lblOrderNum.Name = "lblOrderNum";
+            lblOrderNum.Size = new Size(271, 43);
+            lblOrderNum.TabIndex = 3;
+            lblOrderNum.Text = "Order #: 00015";
             // 
-            // Form1
+            // lblThanks
+            // 
+            lblThanks.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblThanks.ForeColor = SystemColors.WindowFrame;
+            lblThanks.Location = new Point(124, 160);
+            lblThanks.Name = "lblThanks";
+            lblThanks.Size = new Size(271, 33);
+            lblThanks.TabIndex = 2;
+            lblThanks.Text = "Thank you for ordering";
+            lblThanks.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblStatus
+            // 
+            lblStatus.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblStatus.ForeColor = Color.DimGray;
+            lblStatus.Location = new Point(70, 99);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(364, 40);
+            lblStatus.TabIndex = 1;
+            lblStatus.Text = "✔ Order Placed Successfully!";
+            lblStatus.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblHeader
+            // 
+            lblHeader.Font = new Font("Georgia", 24F, FontStyle.Bold);
+            lblHeader.Location = new Point(54, 28);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new Size(415, 51);
+            lblHeader.TabIndex = 0;
+            lblHeader.Text = "ORDER SUCCESS";
+            lblHeader.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // OrderSuccessForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -137,7 +134,7 @@
             ClientSize = new Size(529, 386);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "OrderSuccessForm";
             Padding = new Padding(3);
             Text = "Form1";
             Load += Form1_Load;

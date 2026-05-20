@@ -241,7 +241,7 @@ namespace BuzzCafe
             }
 
             MainForm main = (MainForm)this.ParentForm;
-            Reciept rec = new Reciept();
+            Receipt rec = new Receipt();
 
             main.mainPanel.Controls.Clear();
             main.mainPanel.Controls.Add(rec);

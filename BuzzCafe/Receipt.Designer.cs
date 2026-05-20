@@ -1,6 +1,6 @@
 ﻿namespace BuzzCafe
 {
-    partial class Reciept
+    partial class Receipt
     {
         /// <summary> 
         /// Required designer variable.
@@ -134,6 +134,7 @@
             // 
             flReceipt.Anchor = AnchorStyles.Top;
             flReceipt.AutoScroll = true;
+            flReceipt.BackColor = Color.FromArgb(249, 246, 240);
             flReceipt.FlowDirection = FlowDirection.TopDown;
             flReceipt.Location = new Point(0, 193);
             flReceipt.Margin = new Padding(10);
@@ -144,6 +145,7 @@
             // 
             // panel6
             // 
+            panel6.BackColor = Color.FromArgb(249, 246, 240);
             panel6.Controls.Add(lbOrderType);
             panel6.Controls.Add(label6);
             panel6.Controls.Add(panel2);
@@ -191,6 +193,7 @@
             // 
             // panel7
             // 
+            panel7.BackColor = Color.FromArgb(249, 246, 240);
             panel7.Controls.Add(label5);
             panel7.Controls.Add(panel3);
             panel7.Controls.Add(panel4);
@@ -304,12 +307,12 @@
             lbTotal.TabIndex = 15;
             lbTotal.Text = "data";
             // 
-            // Reciept
+            // Receipt
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelReciept);
-            Name = "Reciept";
+            Name = "Receipt";
             Size = new Size(562, 993);
             panelReciept.ResumeLayout(false);
             panel6.ResumeLayout(false);
