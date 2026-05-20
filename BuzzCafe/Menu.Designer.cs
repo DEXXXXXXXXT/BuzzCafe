@@ -191,9 +191,9 @@
             panelPopup.Controls.Add(lblPrices);
             panelPopup.Controls.Add(lblProductname);
             panelPopup.Controls.Add(pbProduct);
-            panelPopup.Location = new Point(25, 516);
+            panelPopup.Location = new Point(25, 453);
             panelPopup.Name = "panelPopup";
-            panelPopup.Size = new Size(656, 337);
+            panelPopup.Size = new Size(666, 404);
             panelPopup.TabIndex = 1;
             panelPopup.Visible = false;
             // 
@@ -202,13 +202,14 @@
             button2.BackColor = Color.Transparent;
             button2.FlatAppearance.BorderColor = Color.White;
             button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 255, 255, 255);
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(604, 0);
+            button2.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            button2.ForeColor = Color.FromArgb(212, 143, 56);
+            button2.Location = new Point(617, 0);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(49, 46);
+            button2.Size = new Size(49, 66);
             button2.TabIndex = 13;
             button2.Text = "x";
             button2.UseVisualStyleBackColor = false;
@@ -216,12 +217,12 @@
             // 
             // btnAddOrder
             // 
-            btnAddOrder.BackColor = Color.Transparent;
-            btnAddOrder.FlatAppearance.BorderSize = 5;
+            btnAddOrder.BackColor = Color.FromArgb(153, 102, 51);
+            btnAddOrder.FlatAppearance.BorderSize = 0;
             btnAddOrder.FlatStyle = FlatStyle.Flat;
             btnAddOrder.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
-            btnAddOrder.ForeColor = Color.Transparent;
-            btnAddOrder.Location = new Point(448, 220);
+            btnAddOrder.ForeColor = Color.White;
+            btnAddOrder.Location = new Point(448, 241);
             btnAddOrder.Margin = new Padding(3, 4, 3, 4);
             btnAddOrder.Name = "btnAddOrder";
             btnAddOrder.Size = new Size(179, 65);
@@ -234,11 +235,11 @@
             // 
             lbTotalPrice.AutoSize = true;
             lbTotalPrice.BackColor = Color.Transparent;
-            lbTotalPrice.Font = new Font("Microsoft Himalaya", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTotalPrice.ForeColor = Color.Orange;
-            lbTotalPrice.Location = new Point(232, 237);
+            lbTotalPrice.Font = new Font("Microsoft Himalaya", 26F, FontStyle.Bold);
+            lbTotalPrice.ForeColor = Color.FromArgb(212, 143, 56);
+            lbTotalPrice.Location = new Point(248, 265);
             lbTotalPrice.Name = "lbTotalPrice";
-            lbTotalPrice.Size = new Size(65, 34);
+            lbTotalPrice.Size = new Size(83, 44);
             lbTotalPrice.TabIndex = 15;
             lbTotalPrice.Text = "price";
             // 
@@ -247,11 +248,11 @@
             label3.AutoEllipsis = true;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Transparent;
-            label3.Location = new Point(20, 230);
+            label3.Font = new Font("Georgia", 19.8000011F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(22, 260);
             label3.Name = "label3";
-            label3.Size = new Size(196, 46);
+            label3.Size = new Size(220, 39);
             label3.TabIndex = 14;
             label3.Text = "Total Price:";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -270,6 +271,7 @@
             // 
             // button1
             // 
+            button1.FlatAppearance.BorderColor = Color.FromArgb(120, 80, 40);
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Gill Sans Ultra Bold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
@@ -284,6 +286,7 @@
             // 
             // btnAdd
             // 
+            btnAdd.FlatAppearance.BorderColor = Color.FromArgb(120, 80, 40);
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Gill Sans Ultra Bold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
@@ -300,12 +303,12 @@
             // 
             lbquanCount.BackColor = Color.Transparent;
             lbquanCount.Font = new Font("Microsoft Himalaya", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbquanCount.ForeColor = Color.Transparent;
+            lbquanCount.ForeColor = Color.FromArgb(212, 143, 56);
             lbquanCount.Location = new Point(75, 37);
             lbquanCount.Name = "lbquanCount";
             lbquanCount.Size = new Size(32, 31);
             lbquanCount.TabIndex = 13;
-            lbquanCount.Text = "A";
+            lbquanCount.Text = "1";
             lbquanCount.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -332,12 +335,13 @@
             panelSizes.Controls.Add(lbtoAddPrice);
             panelSizes.Location = new Point(192, 101);
             panelSizes.Name = "panelSizes";
-            panelSizes.Size = new Size(250, 82);
+            panelSizes.Size = new Size(260, 82);
             panelSizes.TabIndex = 11;
             // 
             // btnL
             // 
-            btnL.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            btnL.BackColor = Color.FromArgb(40, 30, 25);
+            btnL.FlatAppearance.BorderColor = Color.FromArgb(120, 80, 40);
             btnL.FlatStyle = FlatStyle.Flat;
             btnL.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnL.ForeColor = Color.White;
@@ -347,12 +351,13 @@
             btnL.Size = new Size(74, 31);
             btnL.TabIndex = 12;
             btnL.Text = "Large";
-            btnL.UseVisualStyleBackColor = true;
+            btnL.UseVisualStyleBackColor = false;
             btnL.Click += btnL_Click;
             // 
             // btnM
             // 
-            btnM.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            btnM.BackColor = Color.FromArgb(40, 30, 25);
+            btnM.FlatAppearance.BorderColor = Color.FromArgb(120, 80, 40);
             btnM.FlatStyle = FlatStyle.Flat;
             btnM.Font = new Font("Segoe UI", 8.3F, FontStyle.Bold);
             btnM.ForeColor = Color.White;
@@ -362,12 +367,13 @@
             btnM.Size = new Size(74, 31);
             btnM.TabIndex = 11;
             btnM.Text = "Medium";
-            btnM.UseVisualStyleBackColor = true;
+            btnM.UseVisualStyleBackColor = false;
             btnM.Click += btnM_Click;
             // 
             // btnS
             // 
-            btnS.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            btnS.BackColor = Color.FromArgb(40, 30, 25);
+            btnS.FlatAppearance.BorderColor = Color.FromArgb(120, 80, 40);
             btnS.FlatStyle = FlatStyle.Flat;
             btnS.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnS.ForeColor = Color.White;
@@ -377,7 +383,7 @@
             btnS.Size = new Size(74, 31);
             btnS.TabIndex = 10;
             btnS.Text = "Small";
-            btnS.UseVisualStyleBackColor = true;
+            btnS.UseVisualStyleBackColor = false;
             btnS.Click += btnS_Click;
             // 
             // lblSize
@@ -396,7 +402,7 @@
             lbtoAddPrice.BackColor = Color.Transparent;
             lbtoAddPrice.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lbtoAddPrice.ForeColor = Color.Transparent;
-            lbtoAddPrice.Location = new Point(62, 3);
+            lbtoAddPrice.Location = new Point(83, 5);
             lbtoAddPrice.Name = "lbtoAddPrice";
             lbtoAddPrice.Size = new Size(70, 34);
             lbtoAddPrice.TabIndex = 13;
@@ -472,7 +478,7 @@
             // flPanel
             // 
             flPanel.AutoScroll = true;
-            flPanel.BackColor = Color.Transparent;
+            flPanel.BackColor = Color.DimGray;
             flPanel.BackgroundImage = Properties.Resources.dinetakebg;
             flPanel.Dock = DockStyle.Fill;
             flPanel.Location = new Point(184, 141);

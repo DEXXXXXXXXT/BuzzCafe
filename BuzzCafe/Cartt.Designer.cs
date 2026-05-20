@@ -73,8 +73,7 @@
             // panelfortotals
             // 
             panelfortotals.Anchor = AnchorStyles.Bottom;
-            panelfortotals.BackColor = Color.Transparent;
-            panelfortotals.BackgroundImage = Properties.Resources.bg;
+            panelfortotals.BackColor = Color.FromArgb(30, 24, 20);
             panelfortotals.BackgroundImageLayout = ImageLayout.Center;
             panelfortotals.Controls.Add(lbTotalPrice);
             panelfortotals.Controls.Add(btnPlace);
@@ -90,9 +89,9 @@
             lbTotalPrice.Anchor = AnchorStyles.None;
             lbTotalPrice.BackColor = Color.Transparent;
             lbTotalPrice.FlatStyle = FlatStyle.Flat;
-            lbTotalPrice.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTotalPrice.ForeColor = Color.Transparent;
-            lbTotalPrice.Location = new Point(26, 63);
+            lbTotalPrice.Font = new Font("Arial", 18F, FontStyle.Bold);
+            lbTotalPrice.ForeColor = Color.FromArgb(212, 143, 56);
+            lbTotalPrice.Location = new Point(14, 63);
             lbTotalPrice.Name = "lbTotalPrice";
             lbTotalPrice.Size = new Size(195, 35);
             lbTotalPrice.TabIndex = 7;
@@ -102,14 +101,18 @@
             // btnPlace
             // 
             btnPlace.Anchor = AnchorStyles.None;
-            btnPlace.Font = new Font("Arial Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPlace.Location = new Point(492, 27);
+            btnPlace.BackColor = Color.FromArgb(153, 102, 51);
+            btnPlace.FlatAppearance.BorderSize = 0;
+            btnPlace.FlatStyle = FlatStyle.Flat;
+            btnPlace.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            btnPlace.ForeColor = Color.White;
+            btnPlace.Location = new Point(509, 27);
             btnPlace.Margin = new Padding(3, 4, 3, 4);
             btnPlace.Name = "btnPlace";
-            btnPlace.Size = new Size(177, 60);
+            btnPlace.Size = new Size(198, 71);
             btnPlace.TabIndex = 6;
             btnPlace.Text = "Place Order";
-            btnPlace.UseVisualStyleBackColor = true;
+            btnPlace.UseVisualStyleBackColor = false;
             btnPlace.Click += btnPlace_Click;
             // 
             // lbltotals
@@ -117,11 +120,11 @@
             lbltotals.Anchor = AnchorStyles.None;
             lbltotals.AutoSize = true;
             lbltotals.BackColor = Color.Transparent;
-            lbltotals.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbltotals.ForeColor = Color.White;
-            lbltotals.Location = new Point(26, 27);
+            lbltotals.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            lbltotals.ForeColor = Color.FromArgb(210, 205, 200);
+            lbltotals.Location = new Point(14, 26);
             lbltotals.Name = "lbltotals";
-            lbltotals.Size = new Size(80, 33);
+            lbltotals.Size = new Size(82, 37);
             lbltotals.TabIndex = 1;
             lbltotals.Text = "Total";
             // 
