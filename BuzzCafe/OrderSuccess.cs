@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace BuzzCafe
 {
-    public partial class OrderSuccessForm : Form
+    public partial class OrderSuccess : UserControl
     {
-        public OrderSuccessForm()
+        public OrderSuccess()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
