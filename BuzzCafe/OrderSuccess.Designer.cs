@@ -86,7 +86,7 @@
             btnView.FlatStyle = FlatStyle.Flat;
             btnView.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnView.ForeColor = Color.White;
-            btnView.Location = new Point(408, 509);
+            btnView.Location = new Point(385, 509);
             btnView.Name = "btnView";
             btnView.Size = new Size(160, 45);
             btnView.TabIndex = 5;
@@ -107,7 +107,6 @@
             btnOrderAgain.TabIndex = 4;
             btnOrderAgain.Text = "Order Again";
             btnOrderAgain.UseVisualStyleBackColor = false;
-            btnOrderAgain.Click += btnOrderAgain_Click;
             // 
             // lblOrderNum
             // 
