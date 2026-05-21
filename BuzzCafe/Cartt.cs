@@ -219,8 +219,16 @@ namespace BuzzCafe
 
         private void btnPlace_Click(object sender, EventArgs e)
         {
+            string orderType = MainForm.CurrentOrderType;
+            int orderId = MainForm.CurrentOrderId;
 
-          
+            double subTotal = totalPrice;
+            double taxRate = 0.12;
+            double tax = subTotal * taxRate;
+            double total = tax + subTotal;
+
+
+            MainForm main = (MainForm)this.ParentForm;
 
             if (totalPrice <= 0)
             {
@@ -228,43 +236,39 @@ namespace BuzzCafe
 
                 vb.lbMessageBox.Text = "Your Cart is empty.";
 
-                MainForm mainn = (MainForm)this.ParentForm;
+                main.mainPanel.Controls.Add(vb);
 
-                mainn.mainPanel.Controls.Add(vb);
-
-                vb.Left = (mainn.mainPanel.Width - vb.Width) / 2;
-                vb.Top = (mainn.mainPanel.Height - vb.Height) / 2;
+                vb.Left = (main.mainPanel.Width - vb.Width) / 2;
+                vb.Top = (main.mainPanel.Height - vb.Height) / 2;
 
                 vb.BringToFront();
 
                 return;
             }
 
-            MainForm main = (MainForm)this.ParentForm;
+
+            //start new form
+         
             Receipt rec = new Receipt();
+            OrderSuccess os = new OrderSuccess();
 
             main.mainPanel.Controls.Clear();
-            main.mainPanel.Controls.Add(rec);
+            main.mainPanel.Controls.Add(os);
 
-            string orderType = MainForm.CurrentOrderType;
-
-            double subTotal = totalPrice;
-            double taxRate = 0.12;
-            double tax = subTotal * taxRate;
-            double total = tax + subTotal;
-
-         
+            os.Dock = DockStyle.Fill;
+            os.BringToFront();
+            os.lborderData.Text = orderId.ToString();
 
             using (SqlConnection con = DBConnection.GetConnection())
             {
-                string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";
+                string query = "UPDATE Orders SET total_price = @total_price WHERE order_Id = @order_Id";
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 orderId = MainForm.CurrentOrderId;
 
                 cmd.Parameters.AddWithValue("@total_price", total);
                 cmd.Parameters.AddWithValue("@order_Id", orderId);
-              
+
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -272,44 +276,82 @@ namespace BuzzCafe
 
             }
 
-
-            foreach (Control control in flCart.Controls)
+            os.ViewReceiptClicked += (s, e) =>
             {
-                CartItem cart = (CartItem)control;
-                ReceiptItem item = new ReceiptItem();
-                
+                main.mainPanel.Controls.Clear();
+                main.mainPanel.Controls.Add(rec);
+                rec.Dock = DockStyle.Fill;
+                rec.BringToFront();
 
-                item.lbItemName.Text =  cart.lbProdName.Text;
-                item.lbQuantity.Text = cart.lbqCount.Text;
-                item.lbItemPrice.Text = cart.lbProductPrice.Text;
-                item.lbItemTotalPrice.Text = cart.lbItemPrice.Text;
-                item.lbSize.Text = cart.lbSize.Text;
-                item.lbPricetoadd.Text = cart.toAddPrice.Text;
 
-                if (item.lbSize.Text == "None")
+                //loop through cart to displa all in receipt
+                foreach (Control control in flCart.Controls)
                 {
-                    item.lbSize.Visible = false;
-                    item.lbPricetoadd.Visible = false;
+                    CartItem cart = (CartItem)control;
+                    ReceiptItem item = new ReceiptItem();
 
-                }else if (item.lbSize.Text == "Small")
-                {
-                    item.lbSize.Visible = true;
-                    item.lbPricetoadd.Visible = false;
+
+                    item.lbItemName.Text = cart.lbProdName.Text;
+                    item.lbQuantity.Text = cart.lbqCount.Text;
+                    item.lbItemPrice.Text = cart.lbProductPrice.Text;
+                    item.lbItemTotalPrice.Text = cart.lbItemPrice.Text;
+                    item.lbSize.Text = cart.lbSize.Text;
+                    item.lbPricetoadd.Text = cart.toAddPrice.Text;
+
+                    if (item.lbSize.Text == "None")
+                    {
+                        item.lbSize.Visible = false;
+                        item.lbPricetoadd.Visible = false;
+
+                    }
+                    else if (item.lbSize.Text == "Small")
+                    {
+                        item.lbSize.Visible = true;
+                        item.lbPricetoadd.Visible = false;
+                    }
+
+                    rec.flReceipt.Controls.Add(item);
                 }
 
-                rec.flReceipt.Controls.Add(item);
-            }
+                rec.lborderNum.Text = orderId.ToString();
+                rec.lbDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+                rec.lbSubtotal.Text = subTotal.ToString("0.00");
+                rec.lbVat.Text = tax.ToString("0.00");
+                rec.lbTotal.Text = total.ToString("0.00");
+                rec.lbOrderType.Text = orderType;
+            };
 
-            rec.lborderNum.Text = orderId.ToString();
-            rec.lbDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-            rec.lbSubtotal.Text = subTotal.ToString("0.00");
-            rec.lbVat.Text = tax.ToString("0.00");
-            rec.lbTotal.Text = total.ToString("0.00");
-            rec.lbOrderType.Text = orderType;
+            rec.ReceiptBackClicked += (s, e) =>
+            {
+                main.mainPanel.Controls.Clear();
+                main.mainPanel.Controls.Add(os);
+
+                os.Dock = DockStyle.Fill;
+                os.BringToFront();
+            };
+            os.OrderAgainClicked += (s, e) =>{
+
+                flCart.Controls.Clear();
+                totalPrice = 0.00;
+                MainForm.CurrentOrderId = 0;
+
+                WelcomeHome wc = new WelcomeHome();
+                main.mainPanel.Controls.Clear();
+                main.mainPanel.Controls.Add(wc);
+
+                wc.Dock = DockStyle.Fill;
+                wc.BringToFront();
+
+            };          
+
+         
+
+           
+
+           
             
 
-            rec.Dock = DockStyle.Fill;
-            rec.BringToFront();
+            
 
 
 

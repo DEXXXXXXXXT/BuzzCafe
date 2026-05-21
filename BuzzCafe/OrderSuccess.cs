@@ -12,14 +12,22 @@ namespace BuzzCafe
 {
     public partial class OrderSuccess : UserControl
     {
+        public event EventHandler ViewReceiptClicked;
+        public event EventHandler OrderAgainClicked;
         public OrderSuccess()
         {
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            ViewReceiptClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnOrderAgain_Click(object sender, EventArgs e)
+        {
+            OrderAgainClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

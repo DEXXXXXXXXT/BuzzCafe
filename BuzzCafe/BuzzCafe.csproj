@@ -32,6 +32,8 @@
     <Compile Remove="Homemenu.Designer.cs" />
     <Compile Remove="Intro.cs" />
     <Compile Remove="Intro.Designer.cs" />
+    <Compile Remove="OrderSuccessForm..cs" />
+    <Compile Remove="OrderSuccessForm.Designer.cs" />
     <Compile Remove="Pasteries.cs" />
     <Compile Remove="Pasteries.Designer.cs" />
     <Compile Remove="Pop_up.cs" />
@@ -48,6 +50,7 @@
     <EmbeddedResource Remove="Home.resx" />
     <EmbeddedResource Remove="Homemenu.resx" />
     <EmbeddedResource Remove="Intro.resx" />
+    <EmbeddedResource Remove="OrderSuccessForm..resx" />
     <EmbeddedResource Remove="Pasteries.resx" />
     <EmbeddedResource Remove="Pop_up.resx" />
     <EmbeddedResource Remove="YesNo.resx" />

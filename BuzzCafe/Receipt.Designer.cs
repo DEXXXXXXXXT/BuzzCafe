@@ -51,9 +51,11 @@
             label7 = new Label();
             label9 = new Label();
             lbTotal = new Label();
+            pictureBox1 = new PictureBox();
             panelReciept.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -74,7 +76,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(567, 2);
             panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
+           
             // 
             // label2
             // 
@@ -105,7 +107,7 @@
             label3.Size = new Size(55, 29);
             label3.TabIndex = 4;
             label3.Text = "Date:";
-            label3.Click += label3_Click;
+          
             // 
             // lbDate
             // 
@@ -128,7 +130,7 @@
             panelReciept.Name = "panelReciept";
             panelReciept.Size = new Size(562, 993);
             panelReciept.TabIndex = 0;
-            panelReciept.Paint += panelReciept_Paint;
+           
             // 
             // flReceipt
             // 
@@ -146,6 +148,7 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(249, 246, 240);
+            panel6.Controls.Add(pictureBox1);
             panel6.Controls.Add(lbOrderType);
             panel6.Controls.Add(label6);
             panel6.Controls.Add(panel2);
@@ -160,7 +163,7 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(562, 188);
             panel6.TabIndex = 16;
-            panel6.Paint += panel6_Paint;
+            
             // 
             // lbOrderType
             // 
@@ -307,6 +310,17 @@
             lbTotal.TabIndex = 15;
             lbTotal.Text = "data";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.back;
+            pictureBox1.Location = new Point(3, 17);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(42, 33);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // Receipt
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -317,6 +331,7 @@
             panelReciept.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -345,5 +360,6 @@
         public Label lbTotal;
         private Label label6;
         public Label lbOrderType;
+        private PictureBox pictureBox1;
     }
 }

@@ -17,9 +17,6 @@
     <Compile Update="OrderSuccess.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="OrderSuccessForm..cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="ItemLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -12,34 +12,17 @@ namespace BuzzCafe
 {
     public partial class Receipt : UserControl
     {
+        public event EventHandler ReceiptBackClicked;
         public Receipt()
         {
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelReciept_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
+            ReceiptBackClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }
