@@ -59,7 +59,7 @@
             dineTakepanel.Name = "dineTakepanel";
             dineTakepanel.Size = new Size(648, 899);
             dineTakepanel.TabIndex = 0;
-            dineTakepanel.Paint += dineTakepanel_Paint;
+         
             // 
             // panelValidation
             // 

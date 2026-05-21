@@ -26,14 +26,14 @@ namespace BuzzCafe
         int selectedProductId;
         int selectedSize;
         double total_perItem;
-        int orderId;
+        int orderId = MainForm.CurrentOrderId;
         Boolean isDrink;
 
         public Menu()
         {
 
             InitializeComponent();
-            this.DoubleBuffered = true;
+            
             ShowCoffee();
 
 
@@ -285,7 +285,7 @@ namespace BuzzCafe
                 return Convert.ToDouble(cmd.ExecuteScalar());
             }
         }
-        //for prices
+      
 
 
         // add to cart
@@ -293,28 +293,66 @@ namespace BuzzCafe
         {
             using (SqlConnection con = DBConnection.GetConnection())
             {
-
                 con.Open();
-                string query = "INSERT INTO Order_Items(order_Id, Product_id, quantity, size_id, total_price_perItem ) VALUES ( @order_Id, @Product_id, @quantity, @size_id, @total_price_perItem)";
-                string getOrder = "SELECT MAX(order_Id) FROM Orders";
-                orderId = MainForm.CurrentOrderId;
-                
+                string check = "SELECT quantity FROM Order_Items WHERE order_Id = @order_Id AND Product_id = @product_id AND size_id = @size_id AND is_archived = 0";
 
-                SqlCommand cmd = new SqlCommand(query, con);
+                SqlCommand checkCmd = new SqlCommand(check, con);
 
-                cmd.Parameters.AddWithValue("@order_Id", orderId);
-                cmd.Parameters.AddWithValue("@Product_id", selectedProductId);
-                cmd.Parameters.AddWithValue("@quantity", quan);
-                cmd.Parameters.AddWithValue("@size_id", selectedSize);
-                cmd.Parameters.AddWithValue("@total_price_perItem", total_perItem);
+                checkCmd.Parameters.AddWithValue("@order_Id", MainForm.CurrentOrderId);
+                checkCmd.Parameters.AddWithValue("@product_id", selectedProductId);
+                checkCmd.Parameters.AddWithValue("@size_id", selectedSize);
+
+                object result = checkCmd.ExecuteScalar();
 
 
+                // the product is existing
+                if (result != null)
+                {
+                    int quantity = Convert.ToInt32(result);
+                    quantity = quantity + quan;
 
-                MessageBox.Show(orderId + "\n" + selectedProductId + "\n" + quan + "\n" + selectedSize + "\n" + total_perItem);
-                cmd.ExecuteNonQuery();
-                con.Close();
+                    double total = (productPrice + sizePrice) * quantity;
+
+                    string updateQuery = @"UPDATE Order_Items SET quantity = @quantity,total_price_perItem = @total_price_perItem WHERE order_Id = @order_Id AND Product_id = @product_id AND size_id = @size_id";
+
+                    SqlCommand updateCmd = new SqlCommand(updateQuery, con);
+
+                    updateCmd.Parameters.AddWithValue("@quantity", quantity);
+                    updateCmd.Parameters.AddWithValue("@total_price_perItem", total);
+                    updateCmd.Parameters.AddWithValue("@order_Id", MainForm.CurrentOrderId);
+                    updateCmd.Parameters.AddWithValue("@product_id", selectedProductId);
+                    updateCmd.Parameters.AddWithValue("@size_id", selectedSize);
+
+                    MessageBox.Show("Order id: " + orderId +"\nSelected Product Id: " + selectedProductId  + "\nQuantity: "+ quan + "\nSize Id: "+ selectedSize + "\nPrice: " + productPrice + "\nItem total: " + total);
+
+                    updateCmd.ExecuteNonQuery();
+                }
+
+                // if not
+                else
+                {
+                    double total = (productPrice + sizePrice) * quan;
+
+                    string insertQuery = @"INSERT INTO Order_Items (order_Id, Product_id, size_id, quantity, total_price_perItem)VALUES (@order_Id, @product_id, @size_id, @quantity, @total_price_perItem)";
+
+                    SqlCommand insertCmd = new SqlCommand(insertQuery, con);
+
+                    insertCmd.Parameters.AddWithValue("@order_Id", MainForm.CurrentOrderId);
+                    insertCmd.Parameters.AddWithValue("@product_id", selectedProductId);
+                    insertCmd.Parameters.AddWithValue("@size_id", selectedSize);
+                    insertCmd.Parameters.AddWithValue("@total_price_perItem", total);
+                    insertCmd.Parameters.AddWithValue("@quantity", quan);
+
+                    MessageBox.Show("Order id: " + orderId + "\nSelected Product Id: " + selectedProductId + "\nQuantity: "+ quan + "\nSize Id: " + selectedSize + "\nPrice: " + productPrice + "\nItem total: " + total);
+
+                    insertCmd.ExecuteNonQuery();
+                }
+
 
                 resetOrder();
+
+
+               
 
             }
             void resetOrder()
