@@ -64,9 +64,9 @@
             label1.BackColor = Color.FromArgb(166, 94, 46);
             label1.Font = new Font("Georgia", 20F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(54, 43, 36);
-            label1.Location = new Point(1, 0);
+            label1.Location = new Point(-26, 0);
             label1.Name = "label1";
-            label1.Size = new Size(561, 72);
+            label1.Size = new Size(606, 72);
             label1.TabIndex = 0;
             label1.Text = "Buzz Cafe";
             label1.TextAlign = ContentAlignment.MiddleCenter;
