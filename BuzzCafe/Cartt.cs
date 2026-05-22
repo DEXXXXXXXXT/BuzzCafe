@@ -223,7 +223,7 @@ namespace BuzzCafe
             int orderId = MainForm.CurrentOrderId;
 
             double subTotal = totalPrice;
-            double taxRate = 0.12;
+            double taxRate = 0;
             double tax = subTotal * taxRate;
             double total = tax + subTotal;
 
@@ -261,7 +261,8 @@ namespace BuzzCafe
 
             using (SqlConnection con = DBConnection.GetConnection())
             {
-                string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";
+               // string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";
+                string query = "UPDATE Orders SET total_price = @total_price WHERE order_Id = @order_Id";       //dex query
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 orderId = MainForm.CurrentOrderId;
@@ -315,9 +316,9 @@ namespace BuzzCafe
 
                 rec.lborderNum.Text = orderId.ToString();
                 rec.lbDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-                rec.lbSubtotal.Text = subTotal.ToString("0.00");
+                rec.lbSubtotal.Text = "₱" + subTotal.ToString("0.00");
                 rec.lbVat.Text = tax.ToString("0.00");
-                rec.lbTotal.Text = total.ToString("0.00");
+                rec.lbTotal.Text = "₱" + total.ToString("0.00");
                 rec.lbOrderType.Text = orderType;
             };
 

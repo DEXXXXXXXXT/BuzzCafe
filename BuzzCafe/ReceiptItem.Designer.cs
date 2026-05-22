@@ -53,14 +53,14 @@
             panelReceiptItem.Dock = DockStyle.Fill;
             panelReceiptItem.Location = new Point(0, 0);
             panelReceiptItem.Name = "panelReceiptItem";
-            panelReceiptItem.Size = new Size(542, 78);
+            panelReceiptItem.Size = new Size(482, 80);
             panelReceiptItem.TabIndex = 0;
             // 
             // lbPricetoadd
             // 
             lbPricetoadd.Anchor = AnchorStyles.Top;
             lbPricetoadd.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbPricetoadd.Location = new Point(201, 42);
+            lbPricetoadd.Location = new Point(171, 42);
             lbPricetoadd.Name = "lbPricetoadd";
             lbPricetoadd.Size = new Size(60, 22);
             lbPricetoadd.TabIndex = 11;
@@ -70,16 +70,16 @@
             // 
             panel2.BackColor = Color.Black;
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 77);
+            panel2.Location = new Point(0, 79);
             panel2.Name = "panel2";
-            panel2.Size = new Size(542, 1);
+            panel2.Size = new Size(482, 1);
             panel2.TabIndex = 10;
             // 
             // lbSize
             // 
             lbSize.Anchor = AnchorStyles.Top;
             lbSize.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbSize.Location = new Point(368, 12);
+            lbSize.Location = new Point(338, 12);
             lbSize.Name = "lbSize";
             lbSize.Size = new Size(81, 22);
             lbSize.TabIndex = 9;
@@ -89,7 +89,7 @@
             // 
             lbItemTotalPrice.Anchor = AnchorStyles.Top;
             lbItemTotalPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbItemTotalPrice.Location = new Point(368, 42);
+            lbItemTotalPrice.Location = new Point(338, 42);
             lbItemTotalPrice.Margin = new Padding(0, 0, 0, 5);
             lbItemTotalPrice.Name = "lbItemTotalPrice";
             lbItemTotalPrice.Size = new Size(94, 22);
@@ -100,7 +100,7 @@
             // 
             label3.Anchor = AnchorStyles.Top;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(131, 42);
+            label3.Location = new Point(101, 42);
             label3.Name = "label3";
             label3.Size = new Size(18, 22);
             label3.TabIndex = 7;
@@ -110,7 +110,7 @@
             // 
             lbItemPrice.Anchor = AnchorStyles.Top;
             lbItemPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbItemPrice.Location = new Point(148, 42);
+            lbItemPrice.Location = new Point(118, 42);
             lbItemPrice.Name = "lbItemPrice";
             lbItemPrice.Size = new Size(60, 22);
             lbItemPrice.TabIndex = 6;
@@ -121,7 +121,7 @@
             // 
             lbQuantity.Anchor = AnchorStyles.Top;
             lbQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbQuantity.Location = new Point(100, 42);
+            lbQuantity.Location = new Point(70, 42);
             lbQuantity.Name = "lbQuantity";
             lbQuantity.Size = new Size(34, 22);
             lbQuantity.TabIndex = 5;
@@ -131,7 +131,7 @@
             // 
             lbItemName.Anchor = AnchorStyles.Top;
             lbItemName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbItemName.Location = new Point(100, 12);
+            lbItemName.Location = new Point(70, 12);
             lbItemName.Name = "lbItemName";
             lbItemName.Size = new Size(266, 21);
             lbItemName.TabIndex = 4;
@@ -144,7 +144,7 @@
             Controls.Add(panelReceiptItem);
             DoubleBuffered = true;
             Name = "ReceiptItem";
-            Size = new Size(542, 78);
+            Size = new Size(482, 80);
             panelReceiptItem.ResumeLayout(false);
             ResumeLayout(false);
         }

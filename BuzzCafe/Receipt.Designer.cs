@@ -37,6 +37,7 @@
             panelReciept = new Panel();
             flReceipt = new FlowLayoutPanel();
             panel6 = new Panel();
+            pictureBox1 = new PictureBox();
             lbOrderType = new Label();
             label6 = new Label();
             panel2 = new Panel();
@@ -51,11 +52,10 @@
             label7 = new Label();
             label9 = new Label();
             lbTotal = new Label();
-            pictureBox1 = new PictureBox();
             panelReciept.SuspendLayout();
             panel6.SuspendLayout();
-            panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -76,7 +76,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(567, 2);
             panel1.TabIndex = 1;
-           
             // 
             // label2
             // 
@@ -92,9 +91,9 @@
             // 
             lborderNum.Anchor = AnchorStyles.Top;
             lborderNum.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lborderNum.Location = new Point(203, 87);
+            lborderNum.Location = new Point(168, 87);
             lborderNum.Name = "lborderNum";
-            lborderNum.Size = new Size(181, 29);
+            lborderNum.Size = new Size(64, 29);
             lborderNum.TabIndex = 3;
             lborderNum.Text = "data";
             // 
@@ -107,13 +106,12 @@
             label3.Size = new Size(55, 29);
             label3.TabIndex = 4;
             label3.Text = "Date:";
-          
             // 
             // lbDate
             // 
             lbDate.Anchor = AnchorStyles.Top;
             lbDate.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbDate.Location = new Point(108, 116);
+            lbDate.Location = new Point(88, 116);
             lbDate.Name = "lbDate";
             lbDate.Size = new Size(159, 29);
             lbDate.TabIndex = 5;
@@ -130,24 +128,23 @@
             panelReciept.Name = "panelReciept";
             panelReciept.Size = new Size(562, 993);
             panelReciept.TabIndex = 0;
-           
             // 
             // flReceipt
             // 
             flReceipt.Anchor = AnchorStyles.Top;
             flReceipt.AutoScroll = true;
-            flReceipt.BackColor = Color.FromArgb(249, 246, 240);
+            flReceipt.BackColor = Color.Transparent;
             flReceipt.FlowDirection = FlowDirection.TopDown;
-            flReceipt.Location = new Point(0, 193);
+            flReceipt.Location = new Point(10, 193);
             flReceipt.Margin = new Padding(10);
             flReceipt.Name = "flReceipt";
-            flReceipt.Size = new Size(562, 536);
+            flReceipt.Size = new Size(542, 526);
             flReceipt.TabIndex = 19;
             flReceipt.WrapContents = false;
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(249, 246, 240);
+            panel6.BackColor = Color.Transparent;
             panel6.Controls.Add(pictureBox1);
             panel6.Controls.Add(lbOrderType);
             panel6.Controls.Add(label6);
@@ -163,13 +160,23 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(562, 188);
             panel6.TabIndex = 16;
-            
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.back;
+            pictureBox1.Location = new Point(3, 17);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(42, 33);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // lbOrderType
             // 
             lbOrderType.Anchor = AnchorStyles.Top;
             lbOrderType.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbOrderType.Location = new Point(159, 145);
+            lbOrderType.Location = new Point(140, 145);
             lbOrderType.Name = "lbOrderType";
             lbOrderType.Size = new Size(159, 29);
             lbOrderType.TabIndex = 7;
@@ -196,7 +203,7 @@
             // 
             // panel7
             // 
-            panel7.BackColor = Color.FromArgb(249, 246, 240);
+            panel7.BackColor = Color.Transparent;
             panel7.Controls.Add(label5);
             panel7.Controls.Add(panel3);
             panel7.Controls.Add(panel4);
@@ -254,7 +261,7 @@
             // 
             lbSubtotal.Anchor = AnchorStyles.Top;
             lbSubtotal.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbSubtotal.Location = new Point(136, 30);
+            lbSubtotal.Location = new Point(125, 30);
             lbSubtotal.Name = "lbSubtotal";
             lbSubtotal.Size = new Size(159, 29);
             lbSubtotal.TabIndex = 20;
@@ -274,7 +281,7 @@
             // 
             lbVat.Anchor = AnchorStyles.Top;
             lbVat.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbVat.Location = new Point(108, 59);
+            lbVat.Location = new Point(91, 59);
             lbVat.Name = "lbVat";
             lbVat.Size = new Size(159, 29);
             lbVat.TabIndex = 18;
@@ -304,22 +311,11 @@
             // 
             lbTotal.Anchor = AnchorStyles.Top;
             lbTotal.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbTotal.Location = new Point(108, 121);
+            lbTotal.Location = new Point(96, 121);
             lbTotal.Name = "lbTotal";
             lbTotal.Size = new Size(159, 29);
             lbTotal.TabIndex = 15;
             lbTotal.Text = "data";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.back;
-            pictureBox1.Location = new Point(3, 17);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(42, 33);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // Receipt
             // 
@@ -330,8 +326,8 @@
             Size = new Size(562, 993);
             panelReciept.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
