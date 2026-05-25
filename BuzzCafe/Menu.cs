@@ -33,7 +33,7 @@ namespace BuzzCafe
         {
 
             InitializeComponent();
-            
+
             ShowCoffee();
 
 
@@ -81,12 +81,13 @@ namespace BuzzCafe
 
 
         //to display first product
-        void ShowCoffee() 
+        void ShowCoffee()
         {
             isDrink = true;
             lbTopText.Text = "Drinks";
             panelSizes.Visible = true;
             panelPopup.Visible = false;
+            panelOrderAdded.Visible = false;
             resetQuan();
             LoadProduct(1);
         }
@@ -95,7 +96,6 @@ namespace BuzzCafe
         void LoadProduct(int category_id)
         {
             flPanel.Controls.Clear();
-
             using (SqlConnection con = DBConnection.GetConnection())
             {
                 string query = "SELECT * FROM Products WHERE category_id = @id";
@@ -258,7 +258,7 @@ namespace BuzzCafe
         {
             this.drinkSize = size;
         }
-        //for button(sizes, color)
+      
 
 
 
@@ -285,7 +285,7 @@ namespace BuzzCafe
                 return Convert.ToDouble(cmd.ExecuteScalar());
             }
         }
-      
+
 
 
         // add to cart
@@ -323,7 +323,7 @@ namespace BuzzCafe
                     updateCmd.Parameters.AddWithValue("@product_id", selectedProductId);
                     updateCmd.Parameters.AddWithValue("@size_id", selectedSize);
 
-                    MessageBox.Show("Order id: " + orderId +"\nSelected Product Id: " + selectedProductId  + "\nQuantity: "+ quan + "\nSize Id: "+ selectedSize + "\nPrice: " + productPrice + "\nItem total: " + total);
+                    //MessageBox.Show("Order id: " + orderId + "\nSelected Product Id: " + selectedProductId + "\nQuantity: " + quan + "\nSize Id: " + selectedSize + "\nPrice: " + productPrice + "\nItem total: " + total);
 
                     updateCmd.ExecuteNonQuery();
                 }
@@ -343,7 +343,7 @@ namespace BuzzCafe
                     insertCmd.Parameters.AddWithValue("@total_price_perItem", total);
                     insertCmd.Parameters.AddWithValue("@quantity", quan);
 
-                    MessageBox.Show("Order id: " + orderId + "\nSelected Product Id: " + selectedProductId + "\nQuantity: "+ quan + "\nSize Id: " + selectedSize + "\nPrice: " + productPrice + "\nItem total: " + total);
+                    //MessageBox.Show("Order id: " + orderId + "\nSelected Product Id: " + selectedProductId + "\nQuantity: " + quan + "\nSize Id: " + selectedSize + "\nPrice: " + productPrice + "\nItem total: " + total);
 
                     insertCmd.ExecuteNonQuery();
                 }
@@ -352,7 +352,7 @@ namespace BuzzCafe
                 resetOrder();
 
 
-               
+
 
             }
             void resetOrder()
@@ -365,14 +365,13 @@ namespace BuzzCafe
                 lbTotalPrice.Text = "₱0";
                 sizePrice = 0;
 
-                panelPopup.Visible = false;
+                panelPopup.Visible = true;
+                panelOrderAdded.Visible = true;
+
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void btnVewCart_Click(object sender, EventArgs e)
         {
@@ -385,6 +384,24 @@ namespace BuzzCafe
             cart.Dock = DockStyle.Fill;
             cart.BringToFront();
 
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            panelPopup.Visible = false;
+            panelOrderAdded.Visible = false;
+        }
+
+        private void btnViewCart_Click(object sender, EventArgs e)
+        {
+            MainForm main = (MainForm)this.ParentForm;
+            Cartt cart = new Cartt();
+
+            main.mainPanel.Controls.Clear();
+            main.mainPanel.Controls.Add(cart);
+
+            cart.Dock = DockStyle.Fill;
+            cart.BringToFront();
         }
     }
 }

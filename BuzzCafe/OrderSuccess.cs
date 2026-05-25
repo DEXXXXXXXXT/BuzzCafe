@@ -25,6 +25,9 @@ namespace BuzzCafe
             ViewReceiptClicked?.Invoke(this, EventArgs.Empty);
         }
 
-       
+        private void btnOrderAgain_Click(object sender, EventArgs e)
+        {
+            OrderAgainClicked?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

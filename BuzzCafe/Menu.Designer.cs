@@ -58,6 +58,11 @@
             lblPrices = new Label();
             lblProductname = new Label();
             pbProduct = new PictureBox();
+            panelOrderAdded = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            btnContinue = new Button();
+            btnViewCart = new Button();
             panel2 = new Panel();
             lbTopText = new Label();
             flPanel = new FlowLayoutPanel();
@@ -69,6 +74,7 @@
             panelQuantity.SuspendLayout();
             panelSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbProduct).BeginInit();
+            panelOrderAdded.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
@@ -181,6 +187,7 @@
             panelPopup.BackColor = Color.LightSteelBlue;
             panelPopup.BackgroundImage = (Image)resources.GetObject("panelPopup.BackgroundImage");
             panelPopup.BackgroundImageLayout = ImageLayout.Stretch;
+            panelPopup.Controls.Add(panelOrderAdded);
             panelPopup.Controls.Add(button2);
             panelPopup.Controls.Add(btnAddOrder);
             panelPopup.Controls.Add(lbTotalPrice);
@@ -306,10 +313,10 @@
             lbquanCount.ForeColor = Color.FromArgb(212, 143, 56);
             lbquanCount.Location = new Point(75, 37);
             lbquanCount.Name = "lbquanCount";
-            lbquanCount.Size = new Size(32, 31);
+            lbquanCount.Size = new Size(44, 31);
             lbquanCount.TabIndex = 13;
             lbquanCount.Text = "1";
-            lbquanCount.TextAlign = ContentAlignment.MiddleCenter;
+            lbquanCount.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -322,7 +329,6 @@
             label2.TabIndex = 9;
             label2.Text = "Quantity";
             label2.TextAlign = ContentAlignment.TopCenter;
-            label2.Click += label2_Click;
             // 
             // panelSizes
             // 
@@ -452,6 +458,72 @@
             pbProduct.TabIndex = 0;
             pbProduct.TabStop = false;
             // 
+            // panelOrderAdded
+            // 
+            panelOrderAdded.BackColor = Color.Transparent;
+            panelOrderAdded.Controls.Add(label5);
+            panelOrderAdded.Controls.Add(label4);
+            panelOrderAdded.Controls.Add(btnContinue);
+            panelOrderAdded.Controls.Add(btnViewCart);
+            panelOrderAdded.Location = new Point(21, 18);
+            panelOrderAdded.Name = "panelOrderAdded";
+            panelOrderAdded.Size = new Size(624, 360);
+            panelOrderAdded.TabIndex = 18;
+            // 
+            // label5
+            // 
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Microsoft Himalaya", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(212, 143, 56);
+            label5.Location = new Point(142, 168);
+            label5.Name = "label5";
+            label5.Size = new Size(383, 46);
+            label5.TabIndex = 20;
+            label5.Text = "Your item added to cart.";
+            // 
+            // label4
+            // 
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Microsoft Himalaya", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(212, 143, 56);
+            label4.Location = new Point(70, 82);
+            label4.Name = "label4";
+            label4.Size = new Size(526, 69);
+            label4.TabIndex = 19;
+            label4.Text = "Order Added Successfully!";
+            // 
+            // btnContinue
+            // 
+            btnContinue.BackColor = Color.FromArgb(153, 102, 51);
+            btnContinue.FlatAppearance.BorderSize = 0;
+            btnContinue.FlatStyle = FlatStyle.Flat;
+            btnContinue.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
+            btnContinue.ForeColor = Color.White;
+            btnContinue.Location = new Point(95, 242);
+            btnContinue.Margin = new Padding(3, 4, 3, 4);
+            btnContinue.Name = "btnContinue";
+            btnContinue.Size = new Size(179, 65);
+            btnContinue.TabIndex = 19;
+            btnContinue.Text = "Continue";
+            btnContinue.UseVisualStyleBackColor = false;
+            btnContinue.Click += btnContinue_Click;
+            // 
+            // btnViewCart
+            // 
+            btnViewCart.BackColor = Color.FromArgb(153, 102, 51);
+            btnViewCart.FlatAppearance.BorderSize = 0;
+            btnViewCart.FlatStyle = FlatStyle.Flat;
+            btnViewCart.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
+            btnViewCart.ForeColor = Color.White;
+            btnViewCart.Location = new Point(356, 242);
+            btnViewCart.Margin = new Padding(3, 4, 3, 4);
+            btnViewCart.Name = "btnViewCart";
+            btnViewCart.Size = new Size(179, 65);
+            btnViewCart.TabIndex = 18;
+            btnViewCart.Text = "View Cart";
+            btnViewCart.UseVisualStyleBackColor = false;
+            btnViewCart.Click += btnViewCart_Click;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(192, 138, 93);
@@ -506,6 +578,7 @@
             panelQuantity.ResumeLayout(false);
             panelSizes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbProduct).EndInit();
+            panelOrderAdded.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
@@ -547,5 +620,11 @@
         private PictureBox pictureBox2;
         public Button btnCart;
         public Button btnVewCart;
+        public Panel panelOrderAdded;
+        public Label label5;
+        public Label label4;
+        public Button btnContinue;
+        public Button btnViewCart;
+        private Button button3;
     }
 }

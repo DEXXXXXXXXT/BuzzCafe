@@ -61,7 +61,7 @@ namespace BuzzCafe
                 while (reader.Read())
                 {
                     CartItem cart = new CartItem();
-
+                    cart.panelRemoveValidation.Visible = false;
 
                     cart.lbProdName.Text = reader["name"].ToString();
                     cart.lbSize.Text = reader["size_name"].ToString();
@@ -145,19 +145,29 @@ namespace BuzzCafe
 
                     cart.DeleteItem += (s, e) =>
                     {
-                        using (SqlConnection con = DBConnection.GetConnection())
+                        cart.panelRemoveValidation.Visible = true;
+                        cart.Yes += (s, e) =>
                         {
-                            string query = "UPDATE Order_Items SET is_archived = 1 WHERE order_item_id = @id";
 
-                            SqlCommand cmd = new SqlCommand(query, con);
+                            using (SqlConnection con = DBConnection.GetConnection())
+                            {
+                                string query = "UPDATE Order_Items SET is_archived = 1 WHERE order_item_id = @id";
 
-                            cmd.Parameters.AddWithValue("@id", orderItemId);
+                                SqlCommand cmd = new SqlCommand(query, con);
 
-                            con.Open();
-                            cmd.ExecuteNonQuery();
-                        }
+                                cmd.Parameters.AddWithValue("@id", orderItemId);
 
-                        LoadCart();
+                                con.Open();
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            LoadCart();
+                        };
+
+                        cart.No += (s, e) =>
+                        {
+                            cart.panelRemoveValidation.Visible = false;
+                        };
 
                     };
 
@@ -230,6 +240,8 @@ namespace BuzzCafe
 
             MainForm main = (MainForm)this.ParentForm;
 
+
+            //when cart has no item
             if (totalPrice <= 0)
             {
                 MessageBoxCustom vb = new MessageBoxCustom();
@@ -262,7 +274,7 @@ namespace BuzzCafe
             using (SqlConnection con = DBConnection.GetConnection())
             {
                // string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";
-                string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";       //dex query
+                string query = "UPDATE Orders SET total_price = @total_price WHERE order_Id = @order_Id";       //dex query
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 orderId = MainForm.CurrentOrderId;

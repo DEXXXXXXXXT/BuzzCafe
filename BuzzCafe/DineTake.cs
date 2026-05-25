@@ -59,7 +59,7 @@ namespace BuzzCafe
 
                 MainForm.CurrentOrderId = Convert.ToInt32(cmd.ExecuteScalar());
 
-                MessageBox.Show("Order ID: "+ MainForm.CurrentOrderId.ToString() + "\nOrder Type: " + MainForm.CurrentOrderType.ToString());
+             //   MessageBox.Show("Order ID: "+ MainForm.CurrentOrderId.ToString() + "\nOrder Type: " + MainForm.CurrentOrderType.ToString());
 
 
             }
