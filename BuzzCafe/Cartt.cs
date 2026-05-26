@@ -233,7 +233,7 @@ namespace BuzzCafe
             int orderId = MainForm.CurrentOrderId;
 
             double subTotal = totalPrice;
-            double taxRate = 0;
+            double taxRate = 0.12;
             double tax = subTotal * taxRate;
             double total = tax + subTotal;
 
