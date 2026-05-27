@@ -50,7 +50,10 @@ namespace BuzzCafe
 
             using (SqlConnection con = DBConnection.GetConnection())
             {
-                string query = "SELECT oi.order_item_id, oi.order_Id, p.Product_id, p.name, p.price, p.product_image, oi.quantity, s.size_id, s.size_name, s.price_to_add, oi.total_price_perItem FROM Order_Items oi INNER JOIN Products p ON oi.Product_id = p.Product_id INNER JOIN Sizes s ON oi.size_id = s.size_id WHERE oi.order_Id = @order_Id AND oi.is_archived = 0";
+                string query = "SELECT oi.order_item_id, oi.order_Id, p.Product_id, p.name, p.price, p.product_image, oi.quantity" +
+                    ", s.size_id, s.size_name, s.price_to_add, oi.total_price_perItem " +
+                    "FROM Order_Items oi INNER JOIN Products p  ON oi.Product_id = p.Product_id " +
+                    "INNER JOIN Sizes s ON oi.size_id = s.size_id WHERE oi.order_Id = @order_Id AND oi.is_archived = 0";
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@order_Id", MainForm.CurrentOrderId);
@@ -246,8 +249,8 @@ namespace BuzzCafe
 
 
             main.mainPanel.Controls.Add(v);   
-            v.Left = (main.mainPanel.Width - v.Width) / 2;
-            v.Top = (main.mainPanel.Height - v.Height) / 2;
+            v.Left = (panelCart.Width - v.Width) / 2;
+            v.Top = (panelCart.Height - v.Height) / 2;
 
             v.Visible = true;
             v.BringToFront();
@@ -265,8 +268,8 @@ namespace BuzzCafe
 
                 v.lbAction.Text = "Empty Cart";
                 v.lbMessage.Text = "Add items before placing an order.";
-                v.Left = (main.mainPanel.Width - v.Width) / 2;
-                v.Top = (main.mainPanel.Height - v.Height) / 2;
+                v.Left = (panelCart.Width - v.Width) / 2;
+                v.Top = (panelCart.Height - v.Height) / 2;
 
                 v.Visible = true;
                 v.BringToFront();
@@ -304,7 +307,7 @@ namespace BuzzCafe
                 using (SqlConnection con = DBConnection.GetConnection())
                 {
                     // string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";
-                    string query = "UPDATE Orders SET total_price = @total_price WHERE order_Id = @order_Id";       //dex query
+                    string query = "UPDATE Orders SET total_price = @total_price WHERE order_Id = @order_Id";      
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     orderId = MainForm.CurrentOrderId;

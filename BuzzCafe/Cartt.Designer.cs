@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            panelCart = new Panel();
             flCart = new FlowLayoutPanel();
             panelfortotals = new Panel();
             lbTotalPrice = new Label();
@@ -38,24 +38,24 @@
             pictureBox2 = new PictureBox();
             lblcart = new Label();
             pictureBox1 = new PictureBox();
-            panel1.SuspendLayout();
+            panelCart.SuspendLayout();
             panelfortotals.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // panelCart
             // 
-            panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(flCart);
-            panel1.Controls.Add(panelfortotals);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(733, 888);
-            panel1.TabIndex = 0;
+            panelCart.BackColor = Color.Transparent;
+            panelCart.Controls.Add(flCart);
+            panelCart.Controls.Add(panelfortotals);
+            panelCart.Controls.Add(panel2);
+            panelCart.Dock = DockStyle.Fill;
+            panelCart.Location = new Point(0, 0);
+            panelCart.Name = "panelCart";
+            panelCart.Size = new Size(733, 888);
+            panelCart.TabIndex = 0;
             // 
             // flCart
             // 
@@ -181,10 +181,10 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.download__1_;
-            Controls.Add(panel1);
+            Controls.Add(panelCart);
             Name = "Cartt";
             Size = new Size(733, 888);
-            panel1.ResumeLayout(false);
+            panelCart.ResumeLayout(false);
             panelfortotals.ResumeLayout(false);
             panelfortotals.PerformLayout();
             panel2.ResumeLayout(false);
@@ -212,5 +212,6 @@
         public FlowLayoutPanel flCart;
         public Button btnPlace;
         public Label lbTotalPrice;
+        public Panel panelCart;
     }
 }

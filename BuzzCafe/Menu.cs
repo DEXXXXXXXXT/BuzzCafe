@@ -259,9 +259,6 @@ namespace BuzzCafe
             this.drinkSize = size;
         }
 
-
-
-
         //for price
         void updateTotalPrice()
         {
@@ -313,7 +310,7 @@ namespace BuzzCafe
 
                     double total = (productPrice + sizePrice) * quantity;
 
-                    string updateQuery = @"UPDATE Order_Items SET quantity = @quantity,total_price_perItem = @total_price_perItem WHERE order_Id = @order_Id AND Product_id = @product_id AND size_id = @size_id";
+                    string updateQuery = "UPDATE Order_Items SET quantity = @quantity,total_price_perItem = @total_price_perItem WHERE order_Id = @order_Id AND Product_id = @product_id AND size_id = @size_id";
 
                     SqlCommand updateCmd = new SqlCommand(updateQuery, con);
 
@@ -328,12 +325,12 @@ namespace BuzzCafe
                     updateCmd.ExecuteNonQuery();
                 }
 
-                // if not
+                // if not   
                 else
                 {
                     double total = (productPrice + sizePrice) * quan;
 
-                    string insertQuery = @"INSERT INTO Order_Items (order_Id, Product_id, size_id, quantity, total_price_perItem)VALUES (@order_Id, @product_id, @size_id, @quantity, @total_price_perItem)";
+                    string insertQuery = "INSERT INTO Order_Items (order_Id, Product_id, size_id, quantity, total_price_perItem)VALUES (@order_Id, @product_id, @size_id, @quantity, @total_price_perItem)";
 
                     SqlCommand insertCmd = new SqlCommand(insertQuery, con);
 
