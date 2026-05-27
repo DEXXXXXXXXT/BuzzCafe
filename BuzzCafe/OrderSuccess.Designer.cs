@@ -71,6 +71,7 @@
             // 
             // lborderData
             // 
+            lborderData.Anchor = AnchorStyles.Top;
             lborderData.Font = new Font("Courier New", 18F, FontStyle.Bold);
             lborderData.ForeColor = Color.FromArgb(184, 98, 48);
             lborderData.Location = new Point(369, 450);
@@ -81,6 +82,7 @@
             // 
             // btnView
             // 
+            btnView.Anchor = AnchorStyles.Bottom;
             btnView.BackColor = Color.FromArgb(166, 94, 46);
             btnView.FlatAppearance.BorderSize = 0;
             btnView.FlatStyle = FlatStyle.Flat;
@@ -96,6 +98,7 @@
             // 
             // btnOrderAgain
             // 
+            btnOrderAgain.Anchor = AnchorStyles.Bottom;
             btnOrderAgain.BackColor = Color.FromArgb(166, 94, 46);
             btnOrderAgain.FlatAppearance.BorderSize = 0;
             btnOrderAgain.FlatStyle = FlatStyle.Flat;
@@ -107,9 +110,11 @@
             btnOrderAgain.TabIndex = 4;
             btnOrderAgain.Text = "Order Again";
             btnOrderAgain.UseVisualStyleBackColor = false;
+            btnOrderAgain.Click += btnOrderAgain_Click;
             // 
             // lblOrderNum
             // 
+            lblOrderNum.Anchor = AnchorStyles.Top;
             lblOrderNum.Font = new Font("Courier New", 18F, FontStyle.Bold);
             lblOrderNum.ForeColor = Color.FromArgb(184, 98, 48);
             lblOrderNum.Location = new Point(223, 450);
@@ -120,9 +125,10 @@
             // 
             // lblThanks
             // 
+            lblThanks.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblThanks.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblThanks.ForeColor = SystemColors.WindowFrame;
-            lblThanks.Location = new Point(223, 389);
+            lblThanks.Location = new Point(225, 389);
             lblThanks.Name = "lblThanks";
             lblThanks.Size = new Size(271, 33);
             lblThanks.TabIndex = 2;
@@ -131,9 +137,10 @@
             // 
             // lblStatus
             // 
+            lblStatus.Anchor = AnchorStyles.Top;
             lblStatus.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblStatus.ForeColor = Color.DimGray;
-            lblStatus.Location = new Point(169, 328);
+            lblStatus.Location = new Point(178, 328);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(364, 40);
             lblStatus.TabIndex = 1;
@@ -142,6 +149,7 @@
             // 
             // lblHeader
             // 
+            lblHeader.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblHeader.Font = new Font("Georgia", 24F, FontStyle.Bold);
             lblHeader.Location = new Point(153, 257);
             lblHeader.Name = "lblHeader";

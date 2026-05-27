@@ -16,6 +16,9 @@ namespace BuzzCafe
         public event EventHandler AddClicked;
         public event EventHandler RemoveClicked;
         public event EventHandler DeleteItem;
+        public event EventHandler Yes;
+        public event EventHandler No;
+
         public CartItem()
         {
             InitializeComponent();
@@ -35,6 +38,16 @@ namespace BuzzCafe
         private void pbDelete_Click(object sender, EventArgs e)
         {
             DeleteItem?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnYesDel_Click(object sender, EventArgs e)
+        {
+            Yes?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnNoDel_Click(object sender, EventArgs e)
+        {
+            No?.Invoke(this, EventArgs.Empty);
         }
     }
 }

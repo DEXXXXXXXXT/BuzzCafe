@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             ItemCart = new Panel();
+            panelRemoveValidation = new Panel();
+            btnYesDel = new Button();
+            btnNoDel = new Button();
+            label1 = new Label();
             pbDelete = new PictureBox();
             toAddPrice = new Label();
             panelCartsize = new Panel();
@@ -43,6 +47,7 @@
             lbProdName = new Label();
             pbImage = new PictureBox();
             ItemCart.SuspendLayout();
+            panelRemoveValidation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbDelete).BeginInit();
             panelCartsize.SuspendLayout();
             panelQuantity.SuspendLayout();
@@ -53,6 +58,7 @@
             // 
             ItemCart.BackColor = Color.FromArgb(64, 64, 64);
             ItemCart.BorderStyle = BorderStyle.FixedSingle;
+            ItemCart.Controls.Add(panelRemoveValidation);
             ItemCart.Controls.Add(pbDelete);
             ItemCart.Controls.Add(toAddPrice);
             ItemCart.Controls.Add(panelCartsize);
@@ -66,6 +72,60 @@
             ItemCart.Name = "ItemCart";
             ItemCart.Size = new Size(610, 168);
             ItemCart.TabIndex = 1;
+            // 
+            // panelRemoveValidation
+            // 
+            panelRemoveValidation.BorderStyle = BorderStyle.Fixed3D;
+            panelRemoveValidation.Controls.Add(btnYesDel);
+            panelRemoveValidation.Controls.Add(btnNoDel);
+            panelRemoveValidation.Controls.Add(label1);
+            panelRemoveValidation.Dock = DockStyle.Right;
+            panelRemoveValidation.Location = new Point(309, 0);
+            panelRemoveValidation.Name = "panelRemoveValidation";
+            panelRemoveValidation.Size = new Size(299, 166);
+            panelRemoveValidation.TabIndex = 19;
+            // 
+            // btnYesDel
+            // 
+            btnYesDel.Anchor = AnchorStyles.Top;
+            btnYesDel.FlatStyle = FlatStyle.Flat;
+            btnYesDel.Font = new Font("Gill Sans Ultra Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnYesDel.ForeColor = Color.White;
+            btnYesDel.Location = new Point(160, 90);
+            btnYesDel.Margin = new Padding(3, 4, 3, 4);
+            btnYesDel.Name = "btnYesDel";
+            btnYesDel.Size = new Size(91, 35);
+            btnYesDel.TabIndex = 16;
+            btnYesDel.Text = "Yes";
+            btnYesDel.UseVisualStyleBackColor = true;
+            btnYesDel.Click += btnYesDel_Click;
+            // 
+            // btnNoDel
+            // 
+            btnNoDel.Anchor = AnchorStyles.Top;
+            btnNoDel.FlatStyle = FlatStyle.Flat;
+            btnNoDel.Font = new Font("Gill Sans Ultra Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNoDel.ForeColor = Color.White;
+            btnNoDel.Location = new Point(41, 90);
+            btnNoDel.Margin = new Padding(3, 4, 3, 4);
+            btnNoDel.Name = "btnNoDel";
+            btnNoDel.Size = new Size(91, 35);
+            btnNoDel.TabIndex = 15;
+            btnNoDel.Text = "No";
+            btnNoDel.UseVisualStyleBackColor = true;
+            btnNoDel.Click += btnNoDel_Click;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Himalaya", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Transparent;
+            label1.Location = new Point(19, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(256, 47);
+            label1.TabIndex = 13;
+            label1.Text = "Remove this Item?";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pbDelete
             // 
@@ -230,6 +290,7 @@
             Name = "CartItem";
             Size = new Size(610, 168);
             ItemCart.ResumeLayout(false);
+            panelRemoveValidation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbDelete).EndInit();
             panelCartsize.ResumeLayout(false);
             panelQuantity.ResumeLayout(false);
@@ -252,5 +313,9 @@
         public Label toAddPrice;
         public Panel ItemCart;
         private PictureBox pbDelete;
+        public Button btnYesDel;
+        public Button btnNoDel;
+        public Label label1;
+        public Panel panelRemoveValidation;
     }
 }
