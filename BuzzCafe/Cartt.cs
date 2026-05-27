@@ -274,7 +274,7 @@ namespace BuzzCafe
             using (SqlConnection con = DBConnection.GetConnection())
             {
                // string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";
-                string query = "UPDATE Orders SET total_price = @total_price WHERE order_Id = @order_Id";       //dex query
+                string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";       //dex query
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 orderId = MainForm.CurrentOrderId;

@@ -13,9 +13,9 @@ namespace BuzzCafe
 
 
 
-     // public static string con = @"Data Source=JEANELLAAA\SQLEXPRESS01;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";// elai 
+     public static string con = @"Data Source=JEANELLAAA\SQLEXPRESS01;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";// elai 
 
-           public static string con = "Data Source=.\\SQLEXPRESS;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True"; //Dex server
+       //    public static string con = "Data Source=.\\SQLEXPRESS;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True"; //Dex server
 
        //public static string con = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FoodOrdering_DB;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";//Kurt Server
 
