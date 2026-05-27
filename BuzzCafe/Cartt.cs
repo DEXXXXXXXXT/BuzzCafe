@@ -233,132 +233,169 @@ namespace BuzzCafe
             int orderId = MainForm.CurrentOrderId;
 
             double subTotal = totalPrice;
-            double taxRate = 0.12;
+            double taxRate = 0;
             double tax = subTotal * taxRate;
             double total = tax + subTotal;
 
-
+            Validation v = new Validation();
             MainForm main = (MainForm)this.ParentForm;
+            v.lbAction.Text = "Place Order";
+            v.lbMessage.Text = "Please confirm your order.";
+            v.btnNo.Text = "Cancel";
+            v.btnYes.Text = "Place Order";
+
+
+            main.mainPanel.Controls.Add(v);   
+            v.Left = (main.mainPanel.Width - v.Width) / 2;
+            v.Top = (main.mainPanel.Height - v.Height) / 2;
+
+            v.Visible = true;
+            v.BringToFront();
 
 
             //when cart has no item
             if (totalPrice <= 0)
             {
-                MessageBoxCustom vb = new MessageBoxCustom();
+    
+                main.mainPanel.Controls.Add(v);
 
-                vb.lbMessageBox.Text = "Your Cart is empty.";
+                v.lbQuestion.Visible = false;
+                v.btnNo.Visible = false;
+                v.btnYes.Text = "Okay!";
 
-                main.mainPanel.Controls.Add(vb);
+                v.lbAction.Text = "Empty Cart";
+                v.lbMessage.Text = "Add items before placing an order.";
+                v.Left = (main.mainPanel.Width - v.Width) / 2;
+                v.Top = (main.mainPanel.Height - v.Height) / 2;
 
-                vb.Left = (main.mainPanel.Width - vb.Width) / 2;
-                vb.Top = (main.mainPanel.Height - vb.Height) / 2;
+                v.Visible = true;
+                v.BringToFront();
 
-                vb.BringToFront();
-
-                return;
-            }
-
-
-            //start new form
-         
-            Receipt rec = new Receipt();
-            OrderSuccess os = new OrderSuccess();
-
-            main.mainPanel.Controls.Clear();
-            main.mainPanel.Controls.Add(os);
-
-            os.Dock = DockStyle.Fill;
-            os.BringToFront();
-            os.lborderData.Text = orderId.ToString();
-
-            using (SqlConnection con = DBConnection.GetConnection())
-            {
-               // string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";
-                string query = "UPDATE Orders SET total_price = @total_price WHERE order_Id = @order_Id";       //dex query
-
-                SqlCommand cmd = new SqlCommand(query, con);
-                orderId = MainForm.CurrentOrderId;
-
-                cmd.Parameters.AddWithValue("@total_price", total);
-                cmd.Parameters.AddWithValue("@order_Id", orderId);
-
-
-                con.Open();
-                cmd.ExecuteNonQuery();
-
-
-            }
-
-            os.ViewReceiptClicked += (s, e) =>
-            {
-                main.mainPanel.Controls.Clear();
-                main.mainPanel.Controls.Add(rec);
-                rec.Dock = DockStyle.Fill;
-                rec.BringToFront();
-
-
-                //loop through cart to displa all in receipt
-                foreach (Control control in flCart.Controls)
+                v.YesClicked += (s, e) =>
                 {
-                    CartItem cart = (CartItem)control;
-                    ReceiptItem item = new ReceiptItem();
+                    v.Visible = false;
+                    Menu menu = new Menu();
+                    MainForm main = (MainForm)this.ParentForm;
 
+                    main.mainPanel.Controls.Clear();
+                    main.mainPanel.Controls.Add(menu);
 
-                    item.lbItemName.Text = cart.lbProdName.Text;
-                    item.lbQuantity.Text = cart.lbqCount.Text;
-                    item.lbItemPrice.Text = cart.lbProductPrice.Text;
-                    item.lbItemTotalPrice.Text = cart.lbItemPrice.Text;
-                    item.lbSize.Text = cart.lbSize.Text;
-                    item.lbPricetoadd.Text = cart.toAddPrice.Text;
+                    menu.Dock = DockStyle.Fill;
+                    menu.BringToFront();
 
-                    if (item.lbSize.Text == "None")
-                    {
-                        item.lbSize.Visible = false;
-                        item.lbPricetoadd.Visible = false;
+                };
+                return;
 
-                    }
-                    else if (item.lbSize.Text == "Small")
-                    {
-                        item.lbSize.Visible = true;
-                        item.lbPricetoadd.Visible = false;
-                    }
+              
+            }
 
-                    rec.flReceipt.Controls.Add(item);
-                }
-
-                rec.lborderNum.Text = orderId.ToString();
-                rec.lbDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-                rec.lbSubtotal.Text = "₱" + subTotal.ToString("0.00");
-                rec.lbVat.Text = tax.ToString("0.00");
-                rec.lbTotal.Text = "₱" + total.ToString("0.00");
-                rec.lbOrderType.Text = orderType;
-            };
-
-            rec.ReceiptBackClicked += (s, e) =>
+            v.YesClicked += (s, e) =>
             {
+                Receipt rec = new Receipt();
+                OrderSuccess os = new OrderSuccess();
+
                 main.mainPanel.Controls.Clear();
                 main.mainPanel.Controls.Add(os);
 
                 os.Dock = DockStyle.Fill;
                 os.BringToFront();
+                os.lborderData.Text = orderId.ToString();
+
+                using (SqlConnection con = DBConnection.GetConnection())
+                {
+                    // string query = "UPDATE Orders SET total_amount = @total_price WHERE order_Id = @order_Id";
+                    string query = "UPDATE Orders SET total_price = @total_price WHERE order_Id = @order_Id";       //dex query
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    orderId = MainForm.CurrentOrderId;
+
+                    cmd.Parameters.AddWithValue("@total_price", total);
+                    cmd.Parameters.AddWithValue("@order_Id", orderId);
+
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+
+
+                }
+
+                os.ViewReceiptClicked += (s, e) =>
+                {
+                    main.mainPanel.Controls.Clear();
+                    main.mainPanel.Controls.Add(rec);
+                    rec.Dock = DockStyle.Fill;
+                    rec.BringToFront();
+
+
+                    //loop through cart to displa all in receipt
+                    foreach (Control control in flCart.Controls)
+                    {
+                        CartItem cart = (CartItem)control;
+                        ReceiptItem item = new ReceiptItem();
+
+
+                        item.lbItemName.Text = cart.lbProdName.Text;
+                        item.lbQuantity.Text = cart.lbqCount.Text;
+                        item.lbItemPrice.Text = cart.lbProductPrice.Text;
+                        item.lbItemTotalPrice.Text = cart.lbItemPrice.Text;
+                        item.lbSize.Text = cart.lbSize.Text;
+                        item.lbPricetoadd.Text = cart.toAddPrice.Text;
+
+                        if (item.lbSize.Text == "None")
+                        {
+                            item.lbSize.Visible = false;
+                            item.lbPricetoadd.Visible = false;
+
+                        }
+                        else if (item.lbSize.Text == "Small")
+                        {
+                            item.lbSize.Visible = true;
+                            item.lbPricetoadd.Visible = false;
+                        }
+
+                        rec.flReceipt.Controls.Add(item);
+                    }
+
+                    rec.lborderNum.Text = orderId.ToString();
+                    rec.lbDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+                    rec.lbSubtotal.Text = "₱" + subTotal.ToString("0.00");
+                    rec.lbVat.Text = tax.ToString("0.00");
+                    rec.lbTotal.Text = "₱" + total.ToString("0.00");
+                    rec.lbOrderType.Text = orderType;
+                };
+
+                rec.ReceiptBackClicked += (s, e) =>
+                {
+                    main.mainPanel.Controls.Clear();
+                    main.mainPanel.Controls.Add(os);
+
+                    os.Dock = DockStyle.Fill;
+                    os.BringToFront();
+                };
+                os.OrderAgainClicked += (s, e) => {
+
+                    flCart.Controls.Clear();
+                    totalPrice = 0.00;
+                    MainForm.CurrentOrderId = 0;
+
+                    WelcomeHome wc = new WelcomeHome();
+                    main.mainPanel.Controls.Clear();
+                    main.mainPanel.Controls.Add(wc);
+
+                    wc.Dock = DockStyle.Fill;
+                    wc.BringToFront();
+
+                };
             };
-            os.OrderAgainClicked += (s, e) =>{
 
-                flCart.Controls.Clear();
-                totalPrice = 0.00;
-                MainForm.CurrentOrderId = 0;
-
-                WelcomeHome wc = new WelcomeHome();
-                main.mainPanel.Controls.Clear();
-                main.mainPanel.Controls.Add(wc);
-
-                wc.Dock = DockStyle.Fill;
-                wc.BringToFront();
-
-            };          
-
+            v.NoClicked += (s, e) =>
+            {
+                v.Visible = false;
+            };
 
 
         }
+
+       
     }
 }

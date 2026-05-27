@@ -45,7 +45,7 @@ namespace BuzzCafe
             Yes?.Invoke(this, EventArgs.Empty);
         }
 
-        private void btnNoDel_Click(object sender, EventArgs e)
+        private void btnNoDel_Click(object sender, EventArgs e) 
         {
             No?.Invoke(this, EventArgs.Empty);
         }

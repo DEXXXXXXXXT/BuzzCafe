@@ -39,6 +39,11 @@
             btnDrinks = new Button();
             pictureBox1 = new PictureBox();
             panelPopup = new Panel();
+            panelOrderAdded = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            btnContinue = new Button();
+            btnViewCart = new Button();
             button2 = new Button();
             btnAddOrder = new Button();
             lbTotalPrice = new Label();
@@ -58,23 +63,19 @@
             lblPrices = new Label();
             lblProductname = new Label();
             pbProduct = new PictureBox();
-            panelOrderAdded = new Panel();
-            label5 = new Label();
-            label4 = new Label();
-            btnContinue = new Button();
-            btnViewCart = new Button();
             panel2 = new Panel();
             lbTopText = new Label();
             flPanel = new FlowLayoutPanel();
             bindingSource1 = new BindingSource(components);
+            btnCancelOrder = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelPopup.SuspendLayout();
+            panelOrderAdded.SuspendLayout();
             panelQuantity.SuspendLayout();
             panelSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbProduct).BeginInit();
-            panelOrderAdded.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
@@ -82,6 +83,7 @@
             // panel1
             // 
             panel1.BackColor = Color.DarkGray;
+            panel1.Controls.Add(btnCancelOrder);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(btnVewCart);
             panel1.Controls.Add(btnRicemeal);
@@ -92,7 +94,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(184, 878);
+            panel1.Size = new Size(184, 924);
             panel1.TabIndex = 0;
             // 
             // pictureBox2
@@ -198,11 +200,77 @@
             panelPopup.Controls.Add(lblPrices);
             panelPopup.Controls.Add(lblProductname);
             panelPopup.Controls.Add(pbProduct);
-            panelPopup.Location = new Point(25, 453);
+            panelPopup.Location = new Point(28, 499);
             panelPopup.Name = "panelPopup";
             panelPopup.Size = new Size(666, 404);
             panelPopup.TabIndex = 1;
             panelPopup.Visible = false;
+            // 
+            // panelOrderAdded
+            // 
+            panelOrderAdded.BackColor = Color.Transparent;
+            panelOrderAdded.Controls.Add(label5);
+            panelOrderAdded.Controls.Add(label4);
+            panelOrderAdded.Controls.Add(btnContinue);
+            panelOrderAdded.Controls.Add(btnViewCart);
+            panelOrderAdded.Location = new Point(21, 18);
+            panelOrderAdded.Name = "panelOrderAdded";
+            panelOrderAdded.Size = new Size(624, 360);
+            panelOrderAdded.TabIndex = 18;
+            // 
+            // label5
+            // 
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Microsoft Himalaya", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(212, 143, 56);
+            label5.Location = new Point(142, 168);
+            label5.Name = "label5";
+            label5.Size = new Size(383, 46);
+            label5.TabIndex = 20;
+            label5.Text = "Your item added to cart.";
+            // 
+            // label4
+            // 
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Microsoft Himalaya", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(212, 143, 56);
+            label4.Location = new Point(70, 82);
+            label4.Name = "label4";
+            label4.Size = new Size(526, 69);
+            label4.TabIndex = 19;
+            label4.Text = "Order Added Successfully!";
+            // 
+            // btnContinue
+            // 
+            btnContinue.BackColor = Color.FromArgb(153, 102, 51);
+            btnContinue.FlatAppearance.BorderSize = 0;
+            btnContinue.FlatStyle = FlatStyle.Flat;
+            btnContinue.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
+            btnContinue.ForeColor = Color.White;
+            btnContinue.Location = new Point(95, 242);
+            btnContinue.Margin = new Padding(3, 4, 3, 4);
+            btnContinue.Name = "btnContinue";
+            btnContinue.Size = new Size(179, 65);
+            btnContinue.TabIndex = 19;
+            btnContinue.Text = "Continue";
+            btnContinue.UseVisualStyleBackColor = false;
+            btnContinue.Click += btnContinue_Click;
+            // 
+            // btnViewCart
+            // 
+            btnViewCart.BackColor = Color.FromArgb(153, 102, 51);
+            btnViewCart.FlatAppearance.BorderSize = 0;
+            btnViewCart.FlatStyle = FlatStyle.Flat;
+            btnViewCart.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
+            btnViewCart.ForeColor = Color.White;
+            btnViewCart.Location = new Point(356, 242);
+            btnViewCart.Margin = new Padding(3, 4, 3, 4);
+            btnViewCart.Name = "btnViewCart";
+            btnViewCart.Size = new Size(179, 65);
+            btnViewCart.TabIndex = 18;
+            btnViewCart.Text = "View Cart";
+            btnViewCart.UseVisualStyleBackColor = false;
+            btnViewCart.Click += btnViewCart_Click;
             // 
             // button2
             // 
@@ -458,72 +526,6 @@
             pbProduct.TabIndex = 0;
             pbProduct.TabStop = false;
             // 
-            // panelOrderAdded
-            // 
-            panelOrderAdded.BackColor = Color.Transparent;
-            panelOrderAdded.Controls.Add(label5);
-            panelOrderAdded.Controls.Add(label4);
-            panelOrderAdded.Controls.Add(btnContinue);
-            panelOrderAdded.Controls.Add(btnViewCart);
-            panelOrderAdded.Location = new Point(21, 18);
-            panelOrderAdded.Name = "panelOrderAdded";
-            panelOrderAdded.Size = new Size(624, 360);
-            panelOrderAdded.TabIndex = 18;
-            // 
-            // label5
-            // 
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Microsoft Himalaya", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(212, 143, 56);
-            label5.Location = new Point(142, 168);
-            label5.Name = "label5";
-            label5.Size = new Size(383, 46);
-            label5.TabIndex = 20;
-            label5.Text = "Your item added to cart.";
-            // 
-            // label4
-            // 
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Microsoft Himalaya", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(212, 143, 56);
-            label4.Location = new Point(70, 82);
-            label4.Name = "label4";
-            label4.Size = new Size(526, 69);
-            label4.TabIndex = 19;
-            label4.Text = "Order Added Successfully!";
-            // 
-            // btnContinue
-            // 
-            btnContinue.BackColor = Color.FromArgb(153, 102, 51);
-            btnContinue.FlatAppearance.BorderSize = 0;
-            btnContinue.FlatStyle = FlatStyle.Flat;
-            btnContinue.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
-            btnContinue.ForeColor = Color.White;
-            btnContinue.Location = new Point(95, 242);
-            btnContinue.Margin = new Padding(3, 4, 3, 4);
-            btnContinue.Name = "btnContinue";
-            btnContinue.Size = new Size(179, 65);
-            btnContinue.TabIndex = 19;
-            btnContinue.Text = "Continue";
-            btnContinue.UseVisualStyleBackColor = false;
-            btnContinue.Click += btnContinue_Click;
-            // 
-            // btnViewCart
-            // 
-            btnViewCart.BackColor = Color.FromArgb(153, 102, 51);
-            btnViewCart.FlatAppearance.BorderSize = 0;
-            btnViewCart.FlatStyle = FlatStyle.Flat;
-            btnViewCart.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
-            btnViewCart.ForeColor = Color.White;
-            btnViewCart.Location = new Point(356, 242);
-            btnViewCart.Margin = new Padding(3, 4, 3, 4);
-            btnViewCart.Name = "btnViewCart";
-            btnViewCart.Size = new Size(179, 65);
-            btnViewCart.TabIndex = 18;
-            btnViewCart.Text = "View Cart";
-            btnViewCart.UseVisualStyleBackColor = false;
-            btnViewCart.Click += btnViewCart_Click;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(192, 138, 93);
@@ -531,7 +533,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(184, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(523, 141);
+            panel2.Size = new Size(526, 141);
             panel2.TabIndex = 1;
             // 
             // lbTopText
@@ -542,7 +544,7 @@
             lbTopText.ForeColor = Color.Black;
             lbTopText.Location = new Point(11, 34);
             lbTopText.Name = "lbTopText";
-            lbTopText.Size = new Size(509, 87);
+            lbTopText.Size = new Size(512, 87);
             lbTopText.TabIndex = 15;
             lbTopText.Text = "Category Type";
             lbTopText.TextAlign = ContentAlignment.MiddleCenter;
@@ -556,29 +558,42 @@
             flPanel.Location = new Point(184, 141);
             flPanel.Name = "flPanel";
             flPanel.Padding = new Padding(20);
-            flPanel.Size = new Size(523, 737);
+            flPanel.Size = new Size(526, 783);
             flPanel.TabIndex = 2;
+            // 
+            // btnCancelOrder
+            // 
+            btnCancelOrder.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnCancelOrder.FlatStyle = FlatStyle.Flat;
+            btnCancelOrder.Font = new Font("Georgia", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelOrder.Location = new Point(0, 793);
+            btnCancelOrder.Name = "btnCancelOrder";
+            btnCancelOrder.Size = new Size(184, 52);
+            btnCancelOrder.TabIndex = 22;
+            btnCancelOrder.Text = "Cancel Order";
+            btnCancelOrder.UseVisualStyleBackColor = true;
+            btnCancelOrder.Click += btnCancelOrder_Click;
             // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            Controls.Add(panelPopup);
             Controls.Add(flPanel);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panelPopup);
             Name = "Menu";
-            Size = new Size(707, 878);
+            Size = new Size(710, 924);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelPopup.ResumeLayout(false);
             panelPopup.PerformLayout();
+            panelOrderAdded.ResumeLayout(false);
             panelQuantity.ResumeLayout(false);
             panelSizes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbProduct).EndInit();
-            panelOrderAdded.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
@@ -626,5 +641,6 @@
         public Button btnContinue;
         public Button btnViewCart;
         private Button button3;
+        public Button btnCancelOrder;
     }
 }

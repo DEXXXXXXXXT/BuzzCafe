@@ -258,7 +258,7 @@ namespace BuzzCafe
         {
             this.drinkSize = size;
         }
-      
+
 
 
 
@@ -371,7 +371,7 @@ namespace BuzzCafe
             }
         }
 
-     
+
 
         private void btnVewCart_Click(object sender, EventArgs e)
         {
@@ -403,6 +403,47 @@ namespace BuzzCafe
             cart.Dock = DockStyle.Fill;
             cart.BringToFront();
         }
+
+        private void btnCancelOrder_Click(object sender, EventArgs e)
+        {
+            MainForm main = (MainForm)this.ParentForm;
+            Validation v = new Validation();
+
+            main.mainPanel.Controls.Add(v);
+          
+            v.lbAction.Text = "Cancel Order";
+            v.lbMessage.Text = "Your current order will be removed.";
+            v.Left = (main.mainPanel.Width - v.Width) / 2;
+            v.Top = (main.mainPanel.Height - v.Height) / 2;
+
+            v.Visible = true;
+            v.BringToFront();
+
+          
+            v.YesClicked += (s, e) =>
+            {
+                MainForm main = (MainForm)this.ParentForm;
+                WelcomeHome wc = new WelcomeHome();
+
+                main.mainPanel.Controls.Clear();
+                main.mainPanel.Controls.Add(wc);
+
+                wc.Dock = DockStyle.Fill;
+                wc.BringToFront();
+
+                v.Visible = false;
+            };
+            v.NoClicked += (s, e) =>
+            {
+                v.Visible = false;
+
+            };
+
+            
+
+        }
+
+       
     }
 }
 
