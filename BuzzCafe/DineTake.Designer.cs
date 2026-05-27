@@ -59,10 +59,10 @@
             dineTakepanel.Name = "dineTakepanel";
             dineTakepanel.Size = new Size(648, 899);
             dineTakepanel.TabIndex = 0;
-         
             // 
             // panelValidation
             // 
+            panelValidation.Anchor = AnchorStyles.Top;
             panelValidation.BackColor = Color.FromArgb(245, 235, 220);
             panelValidation.Controls.Add(btnNo);
             panelValidation.Controls.Add(label2);

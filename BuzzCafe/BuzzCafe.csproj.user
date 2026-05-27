@@ -26,9 +26,6 @@
     <Compile Update="Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="MessageBoxCustom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="ReceiptItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -36,6 +33,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Resources\Toolbox\ButtonPic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Validation.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="WelcomeHome.cs">
