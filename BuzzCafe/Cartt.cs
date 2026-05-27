@@ -234,11 +234,11 @@ namespace BuzzCafe
         {
             string orderType = MainForm.CurrentOrderType;
             int orderId = MainForm.CurrentOrderId;
+            double total = totalPrice;
 
-            double subTotal = totalPrice;
-            double taxRate = 0;
-            double tax = subTotal * taxRate;
-            double total = tax + subTotal;
+            // VAT Inclusive breakdown
+            double vatSales = total / 1.12;
+            double vatAmount = total - vatSales;
 
             Validation v = new Validation();
             MainForm main = (MainForm)this.ParentForm;
@@ -361,8 +361,8 @@ namespace BuzzCafe
 
                     rec.lborderNum.Text = orderId.ToString();
                     rec.lbDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-                    rec.lbSubtotal.Text = "₱" + subTotal.ToString("0.00");
-                    rec.lbVat.Text = tax.ToString("0.00");
+                    rec.lbSubtotal.Text = "₱" + vatSales.ToString("0.00");
+                    rec.lbVat.Text = "₱"+ vatAmount.ToString("0.00");
                     rec.lbTotal.Text = "₱" + total.ToString("0.00");
                     rec.lbOrderType.Text = orderType;
                 };

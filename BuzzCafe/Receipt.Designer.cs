@@ -209,9 +209,9 @@
             // 
             lbSubtotal.Anchor = AnchorStyles.Top;
             lbSubtotal.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbSubtotal.Location = new Point(125, 30);
+            lbSubtotal.Location = new Point(423, 30);
             lbSubtotal.Name = "lbSubtotal";
-            lbSubtotal.Size = new Size(159, 29);
+            lbSubtotal.Size = new Size(144, 29);
             lbSubtotal.TabIndex = 20;
             lbSubtotal.Text = "data";
             // 
@@ -230,9 +230,9 @@
             // 
             lbVat.Anchor = AnchorStyles.Top;
             lbVat.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbVat.Location = new Point(91, 59);
+            lbVat.Location = new Point(423, 59);
             lbVat.Name = "lbVat";
-            lbVat.Size = new Size(159, 29);
+            lbVat.Size = new Size(142, 29);
             lbVat.TabIndex = 18;
             lbVat.Text = "data";
             // 
@@ -262,9 +262,9 @@
             // 
             lbTotal.Anchor = AnchorStyles.Top;
             lbTotal.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbTotal.Location = new Point(107, 125);
+            lbTotal.Location = new Point(423, 125);
             lbTotal.Name = "lbTotal";
-            lbTotal.Size = new Size(159, 29);
+            lbTotal.Size = new Size(147, 29);
             lbTotal.TabIndex = 15;
             lbTotal.Text = "data";
             // 
